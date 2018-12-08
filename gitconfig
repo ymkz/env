@@ -1,0 +1,26 @@
+[user]
+  name = ymkz
+  email = ymkzly@gmail.com
+[core]
+  editor = code
+  precomposeunicode = true
+  excludesfile = $HOME/.globalignore
+  quotepath = false
+[push]
+  default = current
+[status]
+  showUntrackedFiles = all
+[diff]
+  renames = true
+  compactionHeuristic = true
+[color]
+  ui = true
+  status = always
+  branch = always
+  grep = always
+  diff = always
+  diff-highlight = always
+[pull]
+  rebase = true
+[ghq]
+  root = ~/workspace/ghq

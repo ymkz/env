@@ -22,5 +22,20 @@
   diff-highlight = always
 [pull]
   rebase = true
+[alias]
+  l = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
+  ll = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
+  b = branch
+  ba = branch -a
+  bl = branch -a -vv
+  co = checkout
+  d = diff
+  s = status --short --branch
+  st = status
+  a = add
+  cm = commit -m
+  amend = commit --amend -C HEAD
+  remotes = remote -v
+  undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
 [ghq]
   root = ~/workspace/ghq

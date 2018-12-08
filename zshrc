@@ -92,6 +92,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # rvm
 export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # exa as ls
 if [[ -x `which exa` ]]; then

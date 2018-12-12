@@ -16,7 +16,7 @@ zplug "lukechilds/zsh-nvm"
 zplug "b4b4r07/enhancd", use:init.sh, on:junegunn/fzf-bin
 
 # theme and prompt
-zplug "geometry-zsh/geometry"
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
 if ! zplug check; then
   zplug install

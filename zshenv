@@ -7,12 +7,9 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 export ZPLUG_HOME="$HOME/.zplug"
 
-export GEOMETRY_COLOR_PACKAGER_VERSION="green"
-export GEOMETRY_PROMPT_PLUGINS=(exec_time git node virtualenv)
-export GEOMETRY_SYMBOL_GIT_DIRTY=${GEOMETRY_SYMBOL_GIT_DIRTY:-"⬡ "}
-export GEOMETRY_SYMBOL_GIT_CLEAN=${GEOMETRY_SYMBOL_GIT_CLEAN:-"⬢ "}
-export GEOMETRY_SYMBOL_GIT_BARE=${GEOMETRY_SYMBOL_GIT_BARE:-"⬢ "}
-export GEOMETRY_SYMBOL_NODE_NPM_VERSION="⬡ "
-export GEOMETRY_SYMBOL_PROMPT="▲ "
+export SPACESHIP_CHAR_SYMBOL="> "
 
 export PIPENV_VENV_IN_PROJECT=true
+
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"

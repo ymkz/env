@@ -121,5 +121,9 @@ alias gl="git l"
 alias gb="git b"
 alias ga="git a"
 alias gd="git d"
+alias gn="git new"
 alias gcm="git cm"
 alias gco="git co"
+
+# trash-cli alias
+alias rm="trash"

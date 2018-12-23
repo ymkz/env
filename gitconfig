@@ -5,6 +5,7 @@
   editor = code
   precomposeunicode = true
   excludesfile = $HOME/.globalignore
+  ignorecase = false
   quotepath = false
 [push]
   default = current
@@ -29,6 +30,7 @@
   ba = branch -a
   bl = branch -a -vv
   co = checkout
+  new = checkout -b
   d = diff
   s = status --short --branch
   st = status

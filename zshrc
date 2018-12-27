@@ -60,9 +60,6 @@ setopt hist_reduce_blanks
 unsetopt caseglob
 unsetopt promptcr
 
-# command completion for pipenv
-eval "$(pipenv --completion)"
-
 # fzf: history search
 function history-fzf() {
   BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
@@ -93,6 +90,9 @@ export NVM_DIR="$HOME/.nvm"
 # rvm
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Poetry
+fpath+=~/.zfunc
 
 # exa as ls
 if [[ -x `which exa` ]]; then
@@ -125,5 +125,5 @@ alias gn="git new"
 alias gcm="git cm"
 alias gco="git co"
 
-# trash-cli alias
-alias rm="trash"
+# gomi-cli alias
+alias rm="gomi"

@@ -37,6 +37,8 @@
   a = add
   cm = commit -m
   amend = commit --amend -C HEAD
+  recommit = commit --amend -m
+  unstage = reset HEAD
   remotes = remote -v
   undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
 [ghq]

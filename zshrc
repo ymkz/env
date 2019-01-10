@@ -10,6 +10,7 @@ zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
 zplug "b4b4r07/zsh-gomi", as:command, use:bin/gomi, on:junegunn/fzf-bin
+zplug "g-plane/zsh-yarn-autocompletions", hook-build:"./zplug.zsh", defer:2
 
 # environment
 zplug "lukechilds/zsh-nvm"
@@ -44,13 +45,12 @@ setopt auto_menu
 setopt list_packed
 setopt list_types
 setopt pushd_ignore_dups
-
+setopt share_history
 setopt correct
 setopt magic_equal_subst
 setopt complete_aliases
 setopt extended_glob
 setopt nonomatch
-
 setopt extended_history
 setopt hist_ignore_dups
 setopt hist_ignore_space
@@ -92,6 +92,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Poetry
+export PATH="$PATH:$HOME/.poetry/bin"
 fpath+=~/.zfunc
 
 # exa as ls

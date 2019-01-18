@@ -70,18 +70,27 @@ zle -N history-fzf
 bindkey '^r' history-fzf
 
 # fzf: ghq search
-function ghq-fzf() {
-  local selected_dir=$(ghq list --full-path | fzf --query="$LBUFFER")
-
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
+function cd-fzf-ghqlist() {
+  local GHQ_ROOT=`ghq root`
+  local REPO=`ghq list -p | sed -e 's;'${GHQ_ROOT}/';;g' | fzf +m`
+  if [ -n "${REPO}" ]; then
+    BUFFER="cd ${GHQ_ROOT}/${REPO}"
   fi
-
-  zle reset-prompt
+  zle accept-line
 }
-zle -N ghq-fzf
-bindkey '^t' ghq-fzf
+zle -N cd-fzf-ghqlist
+bindkey '^g' cd-fzf-ghqlist
+
+# fzf: git change branch
+function checkout-fzf-gitbranch() {
+  local GIT_BRANCH=$(git branch --all | grep -v HEAD | fzf --ansi +m)
+  if [ -n "$GIT_BRANCH" ]; then
+    git checkout $(echo "$GIT_BRANCH" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+  fi
+  zle accept-line
+}
+zle -N checkout-fzf-gitbranch
+bindkey '^o' checkout-fzf-gitbranch
 
 # nvm
 export NVM_DIR="$HOME/.nvm"

@@ -126,15 +126,16 @@ fi
 
 # git alias
 alias g="git"
-alias gf="git f"
-alias gs="git s"
-alias gl="git l"
-alias gb="git b"
-alias ga="git a"
-alias gd="git d"
-alias gn="git new"
-alias gcm="git cm"
-alias gco="git co"
+alias gf="git fetch"
+alias gs="git status --short --branch"
+alias gl="git log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'"
+alias gb="git branch"
+alias gbl="git branch -a -vv"
+alias ga="git add"
+alias gd="git diff"
+alias gn="git checkout -b"
+alias gcm="git commit -m"
+alias gco="git checkout"
 
 # gomi-cli alias
 alias rm="gomi"

@@ -126,6 +126,7 @@ fi
 
 # git alias
 alias g="git"
+alias gf="git f"
 alias gs="git s"
 alias gl="git l"
 alias gb="git b"

@@ -104,6 +104,11 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/.poetry/bin"
 fpath+=~/.zfunc
 
+# Notion CLI
+export NOTION_HOME="$HOME/.notion"
+[ -s "$NOTION_HOME/load.sh" ] && \. "$NOTION_HOME/load.sh"
+export PATH="$PATH:$NOTION_HOME/bin"
+
 # exa as ls
 if [[ -x `which exa` ]]; then
   alias ls="exa -F"
@@ -139,3 +144,6 @@ alias gco="git checkout"
 
 # gomi-cli alias
 alias rm="gomi"
+
+# python alias
+alias python="python3"

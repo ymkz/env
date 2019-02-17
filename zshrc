@@ -143,7 +143,7 @@ alias gcm="git commit -m"
 alias gco="git checkout"
 
 # gomi-cli alias
-alias rm="gomi"
+alias rm="gomi -s"
 
 # python alias
 alias python="python3"

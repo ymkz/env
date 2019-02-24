@@ -141,6 +141,8 @@ alias gd="git diff"
 alias gn="git checkout -b"
 alias gcm="git commit -m"
 alias gco="git checkout"
+alias gro="git rebase origin/master"
+alias gru="git rebase upstream/master"
 
 # gomi-cli alias
 alias rm="gomi -s"

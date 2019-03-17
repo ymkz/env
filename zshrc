@@ -1,36 +1,10 @@
-source $HOME/.zplug/init.zsh
-
-# zsh package
-zplug "zsh-users/zsh-completions", defer:0
-zplug "zsh-users/zsh-autosuggestions", defer:0
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:3
-
-# command
-zplug "zplug/zplug", hook-build:"zplug --self-manage"
-zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
-zplug "b4b4r07/zsh-gomi", as:command, use:bin/gomi, on:junegunn/fzf-bin
-zplug "g-plane/zsh-yarn-autocompletions", hook-build:"./zplug.zsh", defer:2
-
-# environment
-zplug "lukechilds/zsh-nvm"
-zplug "b4b4r07/enhancd", use:init.sh, on:junegunn/fzf-bin
-
-# theme and prompt
-zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
-
-if ! zplug check; then
-  zplug install
-fi
-
-zplug load
+source "$HOME/.slimzsh/slim.zsh"
 
 autoload -Uz compinit; compinit
 autoload -Uz colors; colors
 
 zstyle ':completion::complete:*' use-cache true
 zstyle ':completion:*:default' menu select=1
-
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 
@@ -99,15 +73,6 @@ export NVM_DIR="$HOME/.nvm"
 # rvm
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# Poetry
-export PATH="$PATH:$HOME/.poetry/bin"
-fpath+=~/.zfunc
-
-# Notion CLI
-export NOTION_HOME="$HOME/.notion"
-[ -s "$NOTION_HOME/load.sh" ] && \. "$NOTION_HOME/load.sh"
-export PATH="$PATH:$NOTION_HOME/bin"
 
 # exa as ls
 if [[ -x `which exa` ]]; then

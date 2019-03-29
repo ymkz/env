@@ -1,4 +1,17 @@
-source "$HOME/.slimzsh/slim.zsh"
+source $HOME/.zplug/init.zsh
+
+zplug "zsh-users/zsh-completions", defer:0
+zplug "zsh-users/zsh-autosuggestions", defer:0
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search", defer:3
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "zplug/zplug", hook-build:"zplug --self-manage"
+
+if ! zplug check; then
+  zplug install
+fi
+
+zplug load
 
 autoload -Uz compinit; compinit
 autoload -Uz colors; colors

@@ -2,8 +2,8 @@ source $HOME/.zplug/init.zsh
 
 zplug "zsh-users/zsh-completions", defer:0
 zplug "zsh-users/zsh-autosuggestions", defer:0
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:3
+zplug "zsh-users/zsh-history-substring-search", defer:1
+zplug "zdharma/fast-syntax-highlighting", defer:1
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 

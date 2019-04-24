@@ -89,6 +89,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # exa as ls
 if [[ -x `which exa` ]]; then
+  alias l="exa -F"
   alias ls="exa -F"
   alias la="exa -Fa"
   alias ll="exa -bhlHF"

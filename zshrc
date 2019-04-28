@@ -58,12 +58,12 @@ bindkey '^r' history-fzf
 
 # fzf: ghq search
 function cd-fzf-ghqlist() {
-  local GHQ_ROOT=`ghq root`
-  local REPO=`ghq list -p | sed -e 's;'${GHQ_ROOT}/';;g' | fzf +m`
-  if [ -n "${REPO}" ]; then
-    BUFFER="cd ${GHQ_ROOT}/${REPO}"
+  local selected_dir=$(ghq list | fzf --query="$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd $(ghq root)/${selected_dir}"
+    zle accept-line
   fi
-  zle accept-line
+  zle reset-prompt
 }
 zle -N cd-fzf-ghqlist
 bindkey '^g' cd-fzf-ghqlist
@@ -121,7 +121,6 @@ alias gn="git checkout -b"
 alias gcm="git commit -m"
 alias gco="git checkout"
 alias gro="git rebase origin/master"
-alias gru="git rebase upstream/master"
 
 # gomi-cli alias
 alias rm="gomi -s"

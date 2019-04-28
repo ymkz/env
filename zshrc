@@ -127,3 +127,7 @@ alias rm="gomi -s"
 
 # python alias
 alias python="python3"
+
+# other alias
+alias cds="cd ~/workspace/sandbox"
+alias coder="code . -r"

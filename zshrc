@@ -49,7 +49,7 @@ unsetopt promptcr
 
 # fzf: history search
 function history-fzf() {
-  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+  BUFFER=$(history -n -r 1 | fzf --no-sort --ansi +m --query "$LBUFFER" --prompt="history > ")
   CURSOR=$#BUFFER
   zle reset-prompt
 }
@@ -58,7 +58,7 @@ bindkey '^r' history-fzf
 
 # fzf: ghq search
 function cd-fzf-ghqlist() {
-  local selected_dir=$(ghq list | fzf --query="$LBUFFER")
+  local selected_dir=$(ghq list | fzf --ansi +m --query="$LBUFFER" --prompt="ghq > ")
   if [ -n "$selected_dir" ]; then
     BUFFER="cd $(ghq root)/${selected_dir}"
     zle accept-line
@@ -70,7 +70,7 @@ bindkey '^g' cd-fzf-ghqlist
 
 # fzf: git change branch
 function checkout-fzf-gitbranch() {
-  local GIT_BRANCH=$(git branch --all | grep -v HEAD | fzf --ansi +m)
+  local GIT_BRANCH=$(git branch --all | grep -v HEAD | fzf --ansi +m --prompt="git-branch > ")
   if [ -n "$GIT_BRANCH" ]; then
     git checkout $(echo "$GIT_BRANCH" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
   fi

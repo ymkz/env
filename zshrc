@@ -47,6 +47,9 @@ setopt hist_reduce_blanks
 unsetopt caseglob
 unsetopt promptcr
 
+# activate anyenv
+eval "$(anyenv init -)"
+
 # fzf: history search
 function history-fzf() {
   BUFFER=$(history -n -r 1 | fzf --no-sort --ansi +m --query "$LBUFFER" --prompt="history > ")
@@ -78,14 +81,6 @@ function checkout-fzf-gitbranch() {
 }
 zle -N checkout-fzf-gitbranch
 bindkey '^o' checkout-fzf-gitbranch
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-# rvm
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # exa as ls
 if [[ -x `which exa` ]]; then

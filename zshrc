@@ -131,3 +131,8 @@ alias python="python3"
 # other alias
 alias cds="cd ~/workspace/sandbox"
 alias coder="code . -r"
+
+# yoink: stack file to yoink space from cli
+if [ -d "/Applications/Yoink.app" ]; then
+  alias yoink="open -a Yoink"
+fi

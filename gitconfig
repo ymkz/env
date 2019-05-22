@@ -24,8 +24,6 @@
   grep = always
   diff = always
   diff-highlight = always
-[pull]
-  rebase = true
 [alias]
   l = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
   ll = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'

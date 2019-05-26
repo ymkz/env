@@ -7,8 +7,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 export ZPLUG_HOME="$HOME/.zplug"
 
-export SPACESHIP_CHAR_SYMBOL="> "
-
 export PIPENV_VENV_IN_PROJECT=true
 
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"

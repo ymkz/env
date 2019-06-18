@@ -50,6 +50,9 @@ unsetopt promptcr
 # activate anyenv
 eval "$(anyenv init -)"
 
+# activate direnv
+eval "$(direnv hook zsh)"
+
 # fzf: history search
 function history-fzf() {
   BUFFER=$(history -n -r 1 | fzf --no-sort --ansi +m --query "$LBUFFER" --prompt="history > ")
@@ -111,11 +114,11 @@ alias gl="git log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%c
 alias gb="git branch"
 alias gbl="git branch -a -vv"
 alias ga="git add"
+alias ga.="git add ."
 alias gd="git diff"
 alias gn="git checkout -b"
 alias gcm="git commit -m"
 alias gco="git checkout"
-alias gro="git rebase origin/master"
 
 # gomi-cli alias
 alias rm="gomi -s"

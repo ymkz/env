@@ -114,11 +114,11 @@ alias gl="git log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%c
 alias gb="git branch"
 alias gbl="git branch -a -vv"
 alias ga="git add"
-alias ga.="git add ."
 alias gd="git diff"
 alias gn="git checkout -b"
 alias gcm="git commit -m"
 alias gco="git checkout"
+alias gwip="git commit -m 'chore(wip): work-in-progress''"
 
 # gomi-cli alias
 alias rm="gomi -s"

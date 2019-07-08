@@ -130,7 +130,12 @@ alias python="python3"
 alias cds="cd ~/workspace/sandbox"
 alias coder="code . -r"
 
+alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+
 # yoink: stack file to yoink space from cli
 if [ -d "/Applications/Yoink.app" ]; then
   alias yoink="open -a Yoink"
 fi
+
+export YVM_DIR=/usr/local/opt/yvm
+[ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh

@@ -73,3 +73,36 @@ alias gcm="git commit -m"
 alias gco="git checkout"
 alias gwip="git commit -m 'chore(wip): work-in-progress'"
 alias gci="git commit --allow-empty -m 'chore(git): initialize'"
+
+# fzf: history search
+function fzf-history() {
+  BUFFER=$(history -n -r 1 | fzf --no-multi --no-sort --query "$LBUFFER" --prompt="history > ")
+  CURSOR=$#BUFFER
+  zle reset-prompt
+}
+zle -N fzf-history
+bindkey '^h' fzf-history
+
+# fzf: ghq search
+function fzf-cd-ghq-repository() {
+  local selected_dir=$(ghq list | fzf --no-multi --query="$LBUFFER" --prompt="ghq > ")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd $(ghq root)/${selected_dir}"
+    zle accept-line
+  fi
+  zle reset-prompt
+}
+zle -N fzf-cd-ghq-repository
+bindkey '^g' fzf-cd-ghq-repository
+
+# fzf: git change branch
+function fzf-switch-git-branch() {
+  local GIT_BRANCH=$(git branch --all | grep -v HEAD | fzf --no-multi --prompt="branch > ")
+  if [ -n "$GIT_BRANCH" ]; then
+    git switch $(echo "$GIT_BRANCH" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+    zle accept-line
+  fi
+  zle reset-prompt
+}
+zle -N fzf-switch-git-branch
+bindkey '^b' fzf-switch-git-branch

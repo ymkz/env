@@ -5,14 +5,16 @@ export FCEDIT=code
 
 export LANG=ja_JP.UTF-8
 
-export HISTFILE=$HOME/.zhistory
+export HISTFILE="$HOME/.zhistory"
 export HISTSIZE=100000
 export SAVEHIST=100000
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
+export SPACESHIP_PACKAGE_SHOW=false
+
 export ZPLUG_HOME="$HOME/.zplug"
 
-export FZF_DEFAULT_OPTS="--height 50% --reverse --preview-window down:1"
+export FZF_DEFAULT_OPTS="--height 50% --ansi --reverse --preview-window down:1"
 
 export PATH="$PATH:$HOME/workspace/bin"

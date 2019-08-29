@@ -1,20 +1,11 @@
 export LESS="-R"
-
-export EDITOR=code
-export FCEDIT=code
-
-export LANG=ja_JP.UTF-8
-
+export EDITOR="code"
+export FCEDIT="code"
+export LANG="ja_JP.UTF-8"
+export ZPLUG_HOME="$HOME/.zplug"
 export HISTFILE="$HOME/.zhistory"
+export XDG_CONFIG_HOME="$HOME/.config"
 export HISTSIZE=100000
 export SAVEHIST=100000
-
-export XDG_CONFIG_HOME="$HOME/.config"
-
 export SPACESHIP_PACKAGE_SHOW=false
-
-export ZPLUG_HOME="$HOME/.zplug"
-
 export FZF_DEFAULT_OPTS="--height 50% --ansi --reverse --preview-window down:1"
-
-export PATH="$PATH:$HOME/workspace/bin"

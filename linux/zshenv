@@ -8,4 +8,4 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export HISTSIZE=100000
 export SAVEHIST=100000
 export SPACESHIP_PACKAGE_SHOW=false
-export FZF_DEFAULT_OPTS="--height 50% --ansi --reverse --preview-window down:1"
+export FZF_DEFAULT_OPTS="--height 40% --ansi --reverse --preview-window down:1"

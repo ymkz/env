@@ -4,6 +4,7 @@ zplug "zsh-users/zsh-completions", defer:0
 zplug "zsh-users/zsh-autosuggestions", defer:0
 zplug "zsh-users/zsh-history-substring-search", defer:1
 zplug "zdharma/fast-syntax-highlighting", defer:1
+zplug "mollifier/anyframe", defer:1
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
@@ -16,8 +17,8 @@ zplug load
 autoload -Uz compinit; compinit
 autoload -Uz colors; colors
 
-zstyle ':completion::complete:*' use-cache true
 zstyle ':completion:*:default' menu select=1
+zstyle ':completion::complete:*' use-cache true
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 setopt no_beep
@@ -74,35 +75,7 @@ alias gco="git checkout"
 alias gwip="git commit -m 'chore(wip): work-in-progress'"
 alias gci="git commit --allow-empty -m 'chore(git): initialize'"
 
-# fzf: history search
-function fzf-history() {
-  BUFFER=$(history -n -r 1 | fzf --no-multi --no-sort --query "$LBUFFER" --prompt="history > ")
-  CURSOR=$#BUFFER
-  zle reset-prompt
-}
-zle -N fzf-history
-bindkey '^h' fzf-history
-
-# fzf: ghq search
-function fzf-cd-ghq-repository() {
-  local selected_dir=$(ghq list | fzf --no-multi --query="$LBUFFER" --prompt="ghq > ")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd $(ghq root)/${selected_dir}"
-    zle accept-line
-  fi
-  zle reset-prompt
-}
-zle -N fzf-cd-ghq-repository
-bindkey '^g' fzf-cd-ghq-repository
-
-# fzf: git change branch
-function fzf-switch-git-branch() {
-  local GIT_BRANCH=$(git branch --all | grep -v HEAD | fzf --no-multi --prompt="branch > ")
-  if [ -n "$GIT_BRANCH" ]; then
-    git switch $(echo "$GIT_BRANCH" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-    zle accept-line
-  fi
-  zle reset-prompt
-}
-zle -N fzf-switch-git-branch
-bindkey '^b' fzf-switch-git-branch
+# bind `fzf` selector function with `anyframe`
+bindkey '^b' anyframe-widget-checkout-git-branch
+bindkey '^h' anyframe-widget-put-history
+bindkey '^g' anyframe-widget-cd-ghq-repository

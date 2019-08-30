@@ -39,7 +39,6 @@
   recommit = commit --amend -m
   unstage = reset HEAD
   remotes = remote -v
-  ignore = "!f() { curl -sL https://www.gitignore.io/api/$@; }; f"
 [ghq]
   root = ~/workspace/ghq
 [filter "lfs"]

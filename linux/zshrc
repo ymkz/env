@@ -57,6 +57,7 @@ if [[ -x `which exa` ]]; then
   alias l="exa -F"
   alias ls="exa -F"
   alias la="exa -Fa"
+  alias lt="exa -T"
   alias ll="exa -bhlHF"
   alias lla="exa -bhlHFa"
 fi

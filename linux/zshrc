@@ -44,12 +44,14 @@ setopt hist_reduce_blanks
 unsetopt caseglob
 unsetopt promptcr
 
-# activate linuxbrew
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-source /home/linuxbrew/.linuxbrew/opt/asdf/asdf.sh
-source /home/linuxbrew/.linuxbrew/opt/asdf/etc/bash_completion.d/asdf.bash
+# activate `linuxbrew`
+eval $($(brew --prefix)/bin/brew shellenv)
 
-# activate fzf keybinding and completion
+# activate `asdf`
+source $(brew --prefix asdf)/asdf.sh
+source $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+
+# activate `fzf` keybinding and completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # alias `ls` if `exa` installed

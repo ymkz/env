@@ -54,16 +54,6 @@ source $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 # activate `fzf` keybinding and completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# alias `ls` if `exa` installed
-if [[ -x `which exa` ]]; then
-  alias l="exa -F"
-  alias ls="exa -F"
-  alias la="exa -Fa"
-  alias lt="exa -T"
-  alias ll="exa -bhlHF"
-  alias lla="exa -bhlHFa"
-fi
-
 # alias `git`
 alias g="git"
 alias gf="git fetch"
@@ -78,6 +68,21 @@ alias gcm="git commit -m"
 alias gco="git checkout"
 alias gwip="git commit -m 'chore(wip): work-in-progress'"
 alias gci="git commit --allow-empty -m 'chore(git): initialize'"
+
+# alias `ls` if `exa` is installed
+if [[ -x `which exa` ]]; then
+  alias l="exa -F"
+  alias ls="exa -F"
+  alias la="exa -Fa"
+  alias lt="exa -T"
+  alias ll="exa -bhlHF"
+  alias lla="exa -bhlHFa"
+else
+  alias ls="ls -F --color=auto"
+  alias la="ls -A"
+  alias ll="ls -l"
+  alias lla="ls -lA"
+fi
 
 # bind `fzf` selector function with `anyframe`
 bindkey '^b' anyframe-widget-checkout-git-branch

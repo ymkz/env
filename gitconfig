@@ -4,7 +4,7 @@
 [core]
   editor = code
   precomposeunicode = true
-  excludesfile = $HOME/.globalignore
+  excludesfile = $HOME/.globalgitignore
   ignorecase = false
   quotepath = false
   pager = less -FRX
@@ -31,19 +31,14 @@
   b = branch
   ba = branch -a
   bl = branch -a -vv
-  co = checkout
-  new = checkout -b
   d = diff
   s = status --short --branch
-  st = status
   a = add
   cm = commit -m
   amend = commit --amend -C HEAD
   recommit = commit --amend -m
   unstage = reset HEAD
   remotes = remote -v
-  undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
-  ignore = "!f() { curl -sL https://www.gitignore.io/api/$@; }; f"
 [ghq]
   root = ~/workspace/ghq
 [filter "lfs"]

@@ -4,6 +4,8 @@ zplug "zsh-users/zsh-completions", defer:0
 zplug "zsh-users/zsh-autosuggestions", defer:0
 zplug "zsh-users/zsh-history-substring-search", defer:1
 zplug "zdharma/fast-syntax-highlighting", defer:1
+zplug "mollifier/anyframe", defer:1
+zplug "voronkovich/gitignore.plugin.zsh", defer:1
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
@@ -16,14 +18,9 @@ zplug load
 autoload -Uz compinit; compinit
 autoload -Uz colors; colors
 
-zstyle ':completion::complete:*' use-cache true
 zstyle ':completion:*:default' menu select=1
+zstyle ':completion::complete:*' use-cache true
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-zstyle ':completion:*' list-colors "${LS_COLORS}"
-
-HISTFILE=$HOME/.zhistory
-HISTSIZE=100000
-SAVEHIST=100000
 
 setopt no_beep
 setopt auto_cd
@@ -47,66 +44,19 @@ setopt hist_reduce_blanks
 unsetopt caseglob
 unsetopt promptcr
 
-# activate anyenv
+# activate `anyenv`
 eval "$(anyenv init -)"
 
-# activate direnv
+# activate `direnv`
 eval "$(direnv hook zsh)"
 
-# fzf: history search
-function history-fzf() {
-  BUFFER=$(history -n -r 1 | fzf --no-sort --ansi +m --query "$LBUFFER" --prompt="history > ")
-  CURSOR=$#BUFFER
-  zle reset-prompt
-}
-zle -N history-fzf
-bindkey '^r' history-fzf
+# activate `yvm`
+[ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
 
-# fzf: ghq search
-function cd-fzf-ghqlist() {
-  local selected_dir=$(ghq list | fzf --ansi +m --query="$LBUFFER" --prompt="ghq > ")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd $(ghq root)/${selected_dir}"
-    zle accept-line
-  fi
-  zle reset-prompt
-}
-zle -N cd-fzf-ghqlist
-bindkey '^g' cd-fzf-ghqlist
+# activate `fzf` keybinding and completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# fzf: git change branch
-function checkout-fzf-gitbranch() {
-  local GIT_BRANCH=$(git branch --all | grep -v HEAD | fzf --ansi +m --prompt="git-branch > ")
-  if [ -n "$GIT_BRANCH" ]; then
-    git checkout $(echo "$GIT_BRANCH" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-  fi
-  zle accept-line
-}
-zle -N checkout-fzf-gitbranch
-bindkey '^o' checkout-fzf-gitbranch
-
-# exa as ls
-if [[ -x `which exa` ]]; then
-  alias l="exa -F"
-  alias ls="exa -F"
-  alias la="exa -Fa"
-  alias ll="exa -bhlHF"
-  alias lla="exa -bhlHFa"
-else
-  case ${OSTYPE} in
-    darwin*)
-      alias ls="ls -GF"
-      ;;
-    linux*)
-      alias ls="ls -F --color=auto"
-      ;;
-  esac
-  alias la="ls -A"
-  alias ll="ls -l"
-  alias lla="ls -lA"
-fi
-
-# git alias
+# alias `git`
 alias g="git"
 alias gf="git fetch"
 alias gs="git status --short --branch"
@@ -118,24 +68,36 @@ alias gd="git diff"
 alias gn="git checkout -b"
 alias gcm="git commit -m"
 alias gco="git checkout"
-alias gwip="git commit -m 'chore(wip): work-in-progress''"
+alias gwip="git commit -m 'chore(wip): work-in-progress'"
+alias gci="git commit --allow-empty -m 'chore(git): initialize'"
 
-# gomi-cli alias
+# alias `gomi`
 alias rm="gomi -s"
 
-# python alias
-alias python="python3"
-
-# other alias
-alias cds="cd ~/workspace/sandbox"
-alias coder="code . -r"
-
+# alias `simulator`
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 
-# yoink: stack file to yoink space from cli
+# alias `ls` if `exa` is installed
+if [[ -x `which exa` ]]; then
+  alias l="exa -F"
+  alias ls="exa -F"
+  alias la="exa -Fa"
+  alias lt="exa -T"
+  alias ll="exa -bhlHF"
+  alias lla="exa -bhlHFa"
+else
+  alias ls="ls -GF"
+  alias la="ls -A"
+  alias ll="ls -l"
+  alias lla="ls -lA"
+fi
+
+# alias to passing files to `Yoink`
 if [ -d "/Applications/Yoink.app" ]; then
   alias yoink="open -a Yoink"
 fi
 
-export YVM_DIR=/usr/local/opt/yvm
-[ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
+# bind `fzf` selector function with `anyframe`
+bindkey '^b' anyframe-widget-checkout-git-branch
+bindkey '^h' anyframe-widget-put-history
+bindkey '^g' anyframe-widget-cd-ghq-repository

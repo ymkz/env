@@ -1,7 +1,31 @@
 {
+  "clock.datetimeFormat": "YYYY/M/D日 HH:mm",
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.fontFamily": "'Iosevka', 'Operator Mono', 'Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 18,
+  "editor.minimap.enabled": false,
+  "editor.renderControlCharacters": true,
+  "editor.renderIndentGuides": true,
+  "editor.tabSize": 2,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-、。「」【】『』（）！？　てにをはがのともへでや",
+  "editor.wordWrap": "bounded",
+  "eslint.enable": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
   "files.associations": {
     "zshrc": "shellscript",
     "zshenv": "shellscript",
     "editorconfig": "properties"
-  }
+  },
+  "latex-workshop.latex.tools": [{ "name": "compile", "command": "latexmk", "args": ["%DOC%"] }],
+  "latex-workshop.latex.recipes": [{ "name": "compile", "tools": ["compile"] }],
+  "latex-workshop.message.update.show": false,
+  "material-icon-theme.activeIconPack": "react_redux",
+  "search.smartCase": true,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.iconTheme": "material-icon-theme"
 }

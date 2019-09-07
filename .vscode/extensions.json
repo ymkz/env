@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "bierner.markdown-preview-github-styles",
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
+    "GitHub.vscode-pull-request-github",
+    "James-Yu.latex-workshop",
+    "jpoissonnier.vscode-styled-components",
+    "mechatroner.rainbow-csv",
+    "mikestead.dotenv",
+    "monokai.theme-monokai-pro-vscode",
+    "MS-CEINTL.vscode-language-pack-ja",
+    "PKief.material-icon-theme",
+    "redhat.vscode-yaml",
+    "satokaz.vscode-bs-ctrlchar-remover",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "yahya-gilany.vscode-clock"
+  ]
+}

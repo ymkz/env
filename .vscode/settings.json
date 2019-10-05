@@ -28,5 +28,6 @@
   "telemetry.enableTelemetry": false,
   "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
   "workbench.editor.highlightModifiedTabs": true,
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "newUntitledFile"
 }

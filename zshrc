@@ -118,8 +118,8 @@ alias gwip="git commit -m 'chore(wip): work in progress'"
 alias gci="git commit --allow-empty -m 'chore(git): initialize'"
 
 if type "code" &> /dev/null; then
-  alias codec="code ."
-  alias coder="code . -r"
+  alias code.="code ."
+  alias coder="code . --reuse-window"
 fi
 
 if type "exa" &> /dev/null; then

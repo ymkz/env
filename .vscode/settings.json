@@ -26,6 +26,8 @@
   "search.smartCase": true,
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
+  "window.newWindowDimensions": "fullscreen",
+  "window.restoreFullscreen": true,
   "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.iconTheme": "material-icon-theme",

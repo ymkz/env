@@ -14,6 +14,7 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.associations": {
+    "starship": "toml",
     "zshrc": "shellscript",
     "zshenv": "shellscript",
     "editorconfig": "properties"

@@ -4,7 +4,6 @@
     "dbaeumer.vscode-eslint",
     "EditorConfig.EditorConfig",
     "GitHub.vscode-pull-request-github",
-    "James-Yu.latex-workshop",
     "jpoissonnier.vscode-styled-components",
     "mechatroner.rainbow-csv",
     "mikestead.dotenv",
@@ -14,6 +13,9 @@
     "redhat.vscode-yaml",
     "satokaz.vscode-bs-ctrlchar-remover",
     "VisualStudioExptTeam.vscodeintellicode",
-    "yahya-gilany.vscode-clock"
+    "yahya-gilany.vscode-clock",
+    "SirTori.indenticator",
+    "wmaurer.change-case",
+    "ChakrounAnas.turbo-console-log"
   ]
 }

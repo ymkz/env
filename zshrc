@@ -138,10 +138,6 @@ else
   alias lla="ls -AlhF"
 fi
 
-if type "gomi" &> /dev/null; then
-  alias rm="gomi -s"
-fi
-
 if [ -d "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" ]; then
   alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 fi

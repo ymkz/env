@@ -11,6 +11,7 @@ export SPACESHIP_PACKAGE_SHOW=false
 export FZF_DEFAULT_OPTS="--height 40% --ansi --cycle --reverse --select-1 --exit-0 --bind=tab:down --bind=btab:up"
 export YVM_DIR="/usr/local/opt/yvm"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
-export PATH="$PATH:$HOME/workspace/bin"
-
+export PATH="$HOME/workspace/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"

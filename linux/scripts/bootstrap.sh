@@ -24,6 +24,7 @@ sudo apt install -y \
   automake \
   autoconf \
   apt-transport-https \
+  build-essential \
   libreadline-dev \
   libncurses-dev \
   libssl-dev \
@@ -32,7 +33,9 @@ sudo apt install -y \
   libffi-dev \
   libtool \
   unixodbc-dev \
+  unzip \
   curl \
+  file \
   git \
   exa \
   zsh
@@ -54,8 +57,16 @@ cp ./gitconfig $HOME/.gitconfig
 $HOME/workspace/bin/ghq get ymkz/dotfiles
 rm $HOME/.gitconfig
 
-scripts/symlink.sh
-echo
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/asdfrc $HOME/.asdfrc
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/editorconfig $HOME/.editorconfig
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/gitconfig $HOME/.gitconfig
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/globalgitignore $HOME/.globalgitignore
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/latexmkrc $HOME/.latexmkrc
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/npmrc $HOME/.npmrc
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/starship.toml $HOME/.config/starship.toml
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/vimrc $HOME/.vimrc
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/zshenv $HOME/.zshenv
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/zshrc $HOME/.zshrc
 
 echo "Install zplug"
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh

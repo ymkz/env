@@ -43,15 +43,12 @@ sudo apt install -y \
 sudo chsh $USER -s $(which zsh)
 
 echo "Install GHQ binary from GitHub Release"
-wget https://github.com/motemen/ghq/releases/download/v1.0.1/ghq_linux_amd64.zip -O $HOME/ghq.zip
-unzip $HOME/ghq.zip
 mkdir -p $HOME/workspace/bin
-ls $HOME
-ls $HOME/ghq_linux_amd64
-file $HOME/ghq_linux_amd64/ghq
-cp -rfp $HOME/ghq_linux_amd64/ghq $HOME/workspace/bin
-rm $HOME/ghq.zip
-rm -r $HOME/ghq_linux_amd64
+wget https://github.com/motemen/ghq/releases/download/v1.0.1/ghq_linux_amd64.zip -O $HOME/ghq_linux_amd64.zip
+unzip -j $HOME/ghq_linux_amd64.zip -d extracted-ghq
+cp $HOME/extracted-ghq/ghq $HOME/workspace/bin
+rm $HOME/ghq_linux_amd64.zip
+rm -rf $HOME/extracted-ghq
 
 cp ./gitconfig $HOME/.gitconfig
 $HOME/workspace/bin/ghq get ymkz/dotfiles

@@ -3,5 +3,5 @@
 ## Bootstrap
 
 ```sh
-bash -c "$(wget https://raw.githubusercontent.com/naoya3e/dotfiles/master/scripts/bootstrap.sh)"
+wget -qO- https://raw.githubusercontent.com/ymkz/dotfiles/master/linux/scripts/bootstrap.sh | sh -
 ```

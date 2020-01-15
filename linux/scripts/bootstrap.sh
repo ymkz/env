@@ -37,7 +37,7 @@ sudo apt install -y \
   exa \
   zsh
 
-chsh -s $(which zsh)
+sudo chsh $USER -s $(which zsh)
 
 echo "Install GHQ binary from GitHub Release"
 wget https://github.com/motemen/ghq/releases/download/v1.0.1/ghq_linux_amd64.zip -O $HOME/ghq.zip

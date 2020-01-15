@@ -7,7 +7,7 @@ if [ -e "$HOME/dotfiles-master" ] || [ -e "$HOME/workspace/ghq/github.com/ymkz/d
   exit 1
 fi
 
-curl https://github.com/ymkz/dotfiles/archive/master.zip -o $HOME/dotfiles.zip
+wget https://github.com/ymkz/dotfiles/archive/master.zip -o $HOME/dotfiles.zip
 unzip $HOME/dotfiles.zip
 rm $HOME/dotfiles.zip
 cd $HOME/dotfiles-master/linux

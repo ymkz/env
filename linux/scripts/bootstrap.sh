@@ -43,6 +43,7 @@ echo "Install GHQ binary from GitHub Release"
 wget https://github.com/motemen/ghq/releases/download/v1.0.1/ghq_linux_amd64.zip -O $HOME/ghq.zip
 unzip $HOME/ghq.zip
 mkdir -p $HOME/workspace/bin
+ls $HOME
 ls $HOME/ghq_linux_amd64
 file $HOME/ghq_linux_amd64/ghq
 cp -rfp $HOME/ghq_linux_amd64/ghq $HOME/workspace/bin

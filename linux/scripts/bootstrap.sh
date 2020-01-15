@@ -2,15 +2,15 @@
 
 set -eu
 
-if [ -e "$HOME/extracted-dotfiles" ] || [ -e "$HOME/workspace/ghq/github.com/ymkz/dotfiles" ]; then
+if [ -e "$HOME/dotfiles-master" ] || [ -e "$HOME/workspace/ghq/github.com/ymkz/dotfiles" ]; then
   echo >&2 "Quit bootstrap because dotfiles already exist."
   exit 1
 fi
 
 wget https://github.com/ymkz/dotfiles/archive/master.zip -O $HOME/dotfiles.zip
-unzip $HOME/dotfiles.zip -d extracted-dotfiles
+unzip $HOME/dotfiles.zip
 rm $HOME/dotfiles.zip
-cd $HOME/extracted-dotfiles/linux
+cd $HOME/dotfiles-master/linux
 
 LANG=C xdg-user-dirs-gtk-update
 
@@ -41,11 +41,11 @@ sudo chsh $USER -s $(which zsh)
 
 echo "Install GHQ binary from GitHub Release"
 wget https://github.com/motemen/ghq/releases/download/v1.0.1/ghq_linux_amd64.zip -O $HOME/ghq.zip
-unzip $HOME/ghq.zip -d extracted-ghq
+unzip $HOME/ghq.zip
 rm $HOME/ghq.zip
 mkdir -p $HOME/workspace/bin
-cp -rfp $HOME/extracted-ghq/ghq $HOME/workspace/bin
-rm -r $HOME/extracted-ghq
+cp -rfp $HOME/ghq_linux_amd64/ghq $HOME/workspace/bin
+rm -r $HOME/ghq_linux_amd64
 
 cp ./gitconfig $HOME/.gitconfig
 $HOME/workspace/bin/ghq get ymkz/dotfiles
@@ -83,4 +83,4 @@ echo "Install Cascadia Code font from GitHub Release"
 mkdir $HOME/.fonts
 curl https://github.com/microsoft/cascadia-code/releases/download/v1911.21/CascadiaPL.ttf -o $HOME/.fonts/CascadiaPL.ttf
 
-rm -rf $HOME/extracted-dotfiles
+rm -rf $HOME/dotfiles-master

@@ -1,0 +1,89 @@
+if &compatible
+  set nocompatible
+endif
+
+syntax on
+set mouse=a
+set t_Co=256
+set whichwrap=b,s,h,l,<,>,[,]
+
+set sh=zsh
+
+set background=dark
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+set guioptions-=b
+
+set wildignorecase
+set wildmode=list:full
+
+set ignorecase
+set smartcase
+set wrapscan
+set incsearch
+set hlsearch
+
+set number
+set title
+set showcmd
+set showmatch
+set laststatus=2
+set t_vb=
+set novisualbell
+
+set backspace=indent,eol,start
+set tabstop=2
+set shiftwidth=2
+set softtabstop=0
+set expandtab
+set autoindent
+set smartindent
+set cindent
+set wrap
+set display=lastline
+set shiftround
+set infercase
+set matchpairs& matchpairs+=<:>
+
+set wildmenu
+set hidden
+set nobackup
+set noswapfile
+set nowritebackup
+set clipboard=unnamedplus
+
+inoremap <silent> jj <Esc>
+
+nmap <silent> <Esc><Esc> :nohlsearch<CR>
+
+noremap j gj
+noremap k gk
+
+noremap ; :
+
+inoremap <C-h> <Home>
+inoremap <C-l> <End>
+
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
+map q: :q
+
+tnoremap <silent> <ESC> <C-\><C-n>
+
+nnoremap n nzz
+nnoremap n Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
+nnoremap <S-Left> <C-w><<CR>
+nnoremap <S-Right> <C-w>><CR>
+nnoremap <S-Up> <C-w>-<CR>
+nnoremap <S-Down> <C-w>+<CR>

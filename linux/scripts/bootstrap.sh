@@ -70,7 +70,14 @@ echo "Install zplug"
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
 echo "Install starship shell prompt"
-curl -fsSL https://starship.rs/install.sh | bash
+curl -s https://api.github.com/repos/starship/starship/releases/latest \
+  | grep browser_download_url \
+  | grep x86_64-unknown-linux-gnu \
+  | cut -d '"' -f 4 \
+  | wget -qi -
+tar xvf starship-*.tar.gz
+sudo mv x86_64-unknown-linux-gnu/starship /usr/local/bin/
+starship --version
 
 echo "Install asdf-vm from Git"
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.6

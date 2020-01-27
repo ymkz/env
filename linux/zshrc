@@ -17,7 +17,11 @@ source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 
 if builtin command -v starship > /dev/null; then
-  eval "$(starship init zsh)"
+  eval $(starship init zsh)
+fi
+
+if builtin command -v brew > /dev/null; then
+  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
 
 autoload -Uz compinit; compinit

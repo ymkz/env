@@ -7,11 +7,6 @@ if [ -e "$HOME/dotfiles-master" ] || [ -e "$HOME/workspace/ghq/github.com/ymkz/d
   exit 1
 fi
 
-wget https://github.com/ymkz/dotfiles/archive/master.zip -O $HOME/dotfiles.zip
-unzip $HOME/dotfiles.zip
-rm $HOME/dotfiles.zip
-cd $HOME/dotfiles-master/linux
-
 LANG=C xdg-user-dirs-gtk-update
 
 # updatedbの無効化(locateコマンド使わないなら絶対しておくべき)
@@ -20,6 +15,8 @@ sudo chmod 644 /etc/cron.daily/mlocate
 
 sudo apt update -y
 sudo apt upgrade -y
+sudo apt autoremove -y
+sudo apt autoclean
 sudo apt install -y \
   automake \
   autoconf \
@@ -40,18 +37,22 @@ sudo apt install -y \
   exa \
   zsh
 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
+test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+brew install ghq
+
+wget https://github.com/ymkz/dotfiles/archive/master.zip -O $HOME/dotfiles.zip
+unzip $HOME/dotfiles.zip
+rm $HOME/dotfiles.zip
+cd $HOME/dotfiles-master/linux
+
 sudo chsh $USER -s $(which zsh)
 
-echo "Install GHQ binary from GitHub Release"
-mkdir -p $HOME/workspace/bin
-wget https://github.com/motemen/ghq/releases/download/v1.0.1/ghq_linux_amd64.zip -O $HOME/ghq_linux_amd64.zip
-unzip -j $HOME/ghq_linux_amd64.zip -d extracted-ghq
-cp $HOME/extracted-ghq/ghq $HOME/workspace/bin
-rm $HOME/ghq_linux_amd64.zip
-rm -rf $HOME/extracted-ghq
-
 cp ./gitconfig $HOME/.gitconfig
-$HOME/workspace/bin/ghq get ymkz/dotfiles
+ghq get ymkz/dotfiles
 rm $HOME/.gitconfig
 
 ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/asdfrc $HOME/.asdfrc

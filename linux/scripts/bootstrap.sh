@@ -72,7 +72,7 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 echo "Install starship shell prompt"
 curl -s https://api.github.com/repos/starship/starship/releases/latest \
   | grep browser_download_url \
-  | grep x86_64-unknown-linux-gnu \
+  | grep -m 1 x86_64-unknown-linux-gnu.tar.gz \
   | cut -d '"' -f 4 \
   | wget -qi -
 tar xvf starship-*.tar.gz

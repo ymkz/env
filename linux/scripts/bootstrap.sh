@@ -76,7 +76,7 @@ curl -s https://api.github.com/repos/starship/starship/releases/latest \
   | cut -d '"' -f 4 \
   | wget -qi -
 tar xvf starship-*.tar.gz
-sudo mv x86_64-unknown-linux-gnu/starship /usr/local/bin/
+sudo mv starship /usr/local/bin/
 starship --version
 
 echo "Install asdf-vm from Git"

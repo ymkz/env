@@ -82,8 +82,8 @@ sudo mv starship /usr/local/bin/
 echo "Install asdf"
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.6
 
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 
 asdf plugin-add nodejs
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring

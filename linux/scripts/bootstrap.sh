@@ -69,7 +69,8 @@ ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/zshrc $HOME/.zshrc
 echo "Install zplug"
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
-echo "Install starship shell prompt"
+# reference: How To Install Starship Shell Prompt - https://computingforgeeks.com/how-to-install-starship-shell-prompt-for-bash-zsh-fish/
+echo "Install starship"
 curl -s https://api.github.com/repos/starship/starship/releases/latest \
   | grep browser_download_url \
   | grep -m 1 x86_64-unknown-linux-gnu.tar.gz \
@@ -77,11 +78,13 @@ curl -s https://api.github.com/repos/starship/starship/releases/latest \
   | wget -qi -
 tar xvf starship-*.tar.gz
 sudo mv starship /usr/local/bin/
-starship --version
 
-echo "Install asdf-vm from Git"
+echo "Install asdf"
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.6
-source $HOME/.zshrc
+
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
+
 asdf plugin-add nodejs
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 asdf plugin-add yarn
@@ -97,9 +100,5 @@ sudo install -o root -g root -m 644 $HOME/microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt update -y
 sudo apt install code -y
-
-echo "Install Cascadia Code font from GitHub Release"
-mkdir $HOME/.fonts
-curl https://github.com/microsoft/cascadia-code/releases/download/v1911.21/CascadiaPL.ttf -o $HOME/.fonts/CascadiaPL.ttf
 
 rm -rf $HOME/dotfiles-master

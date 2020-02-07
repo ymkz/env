@@ -23,6 +23,9 @@ sudo apt install -y \
   automake \
   autoconf \
   apt-transport-https \
+  ca-certificates \
+  gnupg-agent \
+  software-properties-common \
   build-essential \
   libreadline-dev \
   libncurses-dev \
@@ -77,6 +80,14 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 sudo apt update -y
 sudo apt install code -y
 rm $HOME/microsoft.gpg
+
+echo ">>> Install Docker CE"
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update -y
+sudo apt install docker-ce -y
+sudo usermod -aG docker $(whoami)
 
 echo ">>> Change default shell"
 sudo chsh $USER -s $(which zsh)

@@ -81,6 +81,23 @@ sudo apt update -y
 sudo apt install code -y
 rm $HOME/microsoft.gpg
 
+echo ">>> Instal VSCode Extensions"
+code --install-extension bierner.markdown-preview-github-styles
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension EditorConfig.EditorConfig
+code --install-extension esbenp.prettier-vscode
+code --install-extension jpoissonnier.vscode-styled-components
+code --install-extension mechatroner.rainbow-csv
+code --install-extension monokai.theme-monokai-pro-vscode
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension MS-CEINTL.vscode-language-pack-ja
+code --install-extension PKief.material-icon-theme
+code --install-extension satokaz.vscode-bs-ctrlchar-remover
+code --install-extension shardulm94.trailing-spaces
+code --install-extension SirTori.indenticator
+code --install-extension stylelint.vscode-stylelint
+code --install-extension VisualStudioExptTeam.vscodeintellicode
+
 echo ">>> Install Docker CE"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88

@@ -93,7 +93,6 @@ code --install-extension ms-azuretools.vscode-docker
 code --install-extension MS-CEINTL.vscode-language-pack-ja
 code --install-extension PKief.material-icon-theme
 code --install-extension satokaz.vscode-bs-ctrlchar-remover
-code --install-extension shardulm94.trailing-spaces
 code --install-extension stylelint.vscode-stylelint
 code --install-extension VisualStudioExptTeam.vscodeintellicode
 

@@ -15,6 +15,7 @@ brew "mas"
 brew "nkf"
 brew "starship"
 brew "watchman"
+brew "wget"
 brew "zsh"
 
 cask "appcleaner"

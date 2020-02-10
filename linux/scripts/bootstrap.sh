@@ -105,7 +105,7 @@ sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt update -y
 sudo apt install docker-ce -y
-sudo usermod -aG docker $(whoami)
+sudo usermod -aG docker $USER
 
 echo ">>> Install Docker Compose"
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -113,6 +113,14 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 echo ">>> Change default shell"
 sudo chsh $USER -s $(which zsh)
+
+echo ">>> Download and deploy fonts"
+mkdir $HOME/.fonts
+wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.2.zip -o $HOME/JetBrainsMono.zip
+unzip $HOME/JetBrainsMono.zip
+rm $HOME/JetBrainsMono.zip
+mv $HOME/JetBrainsMono-* $HOME/JetBrainsMono
+mv $HOME/JetBrainsMono $HOME/.fonts
 
 echo ">>> ---"
 echo ">>> Done!"

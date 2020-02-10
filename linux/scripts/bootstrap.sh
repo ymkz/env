@@ -95,6 +95,9 @@ code --install-extension PKief.material-icon-theme
 code --install-extension satokaz.vscode-bs-ctrlchar-remover
 code --install-extension stylelint.vscode-stylelint
 code --install-extension VisualStudioExptTeam.vscodeintellicode
+code --install-extension WakaTime.vscode-wakatime
+code --install-extension wmaurer.change-case
+code --install-extension yahya-gilany.vscode-clock
 
 echo ">>> Install Docker CE"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -

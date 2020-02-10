@@ -117,3 +117,4 @@ sudo chsh $USER -s $(which zsh)
 echo ">>> ---"
 echo ">>> Done!"
 echo ">>> Please restart computer to activate brand new environment."
+echo ">>> ---"

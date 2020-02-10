@@ -38,6 +38,7 @@ sudo apt install -y \
   unzip \
   curl \
   file \
+  xsel \
   git \
   exa \
   fzf \

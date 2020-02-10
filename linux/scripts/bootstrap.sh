@@ -14,6 +14,9 @@ LANG=C xdg-user-dirs-gtk-update
 # もとに戻すなら `sudo chmod 755 /etc/cron.daily/mlocate`
 sudo chmod 644 /etc/cron.daily/mlocate
 
+echo ">>> Add latest git repository"
+sudo add-apt-repository ppa:git-core/ppa -y
+
 echo ">>> Install system from apt"
 sudo apt update -y
 sudo apt upgrade -y

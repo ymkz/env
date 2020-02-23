@@ -1,21 +1,21 @@
+cask_args appdir: "/Applications"
+
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-tap "homebrew/services"
 
-brew "asdf"
 brew "curl"
 brew "exa"
 brew "fzf"
 brew "ghq"
 brew "git"
 brew "git-secrets"
-brew "hub"
 brew "mas"
 brew "nkf"
 brew "starship"
 brew "watchman"
 brew "wget"
+brew "zplug"
 brew "zsh"
 
 cask "appcleaner"
@@ -25,13 +25,13 @@ cask "docker"
 cask "firefox"
 cask "google-chrome"
 cask "google-japanese-ime"
-cask "insomnia"
 cask "iterm2"
 cask "muzzle"
 cask "slack"
 cask "spotify"
 cask "visual-studio-code"
 
+mas "1Password", id: 443987910
 mas "Battery Indicator", id: 1206020918
 mas "Gifox", id: 1082624744
 mas "Keynote", id: 409183694

@@ -17,7 +17,9 @@ if ! builtin command -v brew > /dev/null 2>&1; then
 fi
 
 echo ">>> Install homebrew components"
+curl -OL https://raw.githubusercontent.com/ymkz/dotfiles/master/macos/Brewfile
 brew bundle
+rm Brewfile
 
 echo ">>> Install zplug"
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh

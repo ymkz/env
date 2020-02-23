@@ -13,8 +13,8 @@ fi
 
 zplug load
 
-eval $(/home/linuxbrew/.linuxbrew/bin/starship init zsh)
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/starship init zsh)
 
 autoload -Uz compinit; compinit
 autoload -Uz colors; colors
@@ -76,6 +76,9 @@ function fzf-switch-git-branch() {
 zle -N fzf-switch-git-branch
 bindkey '^b' fzf-switch-git-branch
 
+alias cd-="cd -"
+alias cds="cd ~/workspace/sandbox"
+
 if builtin command -v exa > /dev/null; then
   alias l="exa -F"
   alias ls="exa -F"
@@ -97,11 +100,6 @@ if builtin command -v code > /dev/null; then
   alias coder="code . --reuse-window"
 fi
 
-if builtin command -v xsel > /dev/null; then
-  alias pbcopy="xsel --clipboard --input"
-  alias pbpaste="xsel --clipboard --output"
-fi
-
 if builtin command -v git > /dev/null; then
   alias gf="git fetch"
   alias gfp="git fetch --prune"
@@ -120,4 +118,9 @@ if builtin command -v git > /dev/null; then
   alias gcmini="git commit --allow-empty -m 'chore(git): initialize'"
   alias gam="git commit --amend -C HEAD"
   alias grecm="git commit --amend -m"
+fi
+
+if builtin command -v xsel > /dev/null; then
+  alias pbcopy="xsel --clipboard --input"
+  alias pbpaste="xsel --clipboard --output"
 fi

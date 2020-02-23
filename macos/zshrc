@@ -81,6 +81,9 @@ function fzf-switch-git-branch() {
 zle -N fzf-switch-git-branch
 bindkey '^b' fzf-switch-git-branch
 
+alias cd-="cd -"
+alias cds="cd ~/workspace/sandbox"
+
 if builtin command -v exa > /dev/null; then
   alias l="exa -F"
   alias ls="exa -F"
@@ -102,6 +105,26 @@ if builtin command -v code > /dev/null; then
   alias coder="code . --reuse-window"
 fi
 
+if builtin command -v git > /dev/null; then
+  alias gf="git fetch"
+  alias gfp="git fetch --prune"
+  alias gs="git status --short --branch"
+  alias gl="git log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'"
+  alias gb="git branch"
+  alias gbl="git branch -a -vv"
+  alias ga="git add"
+  alias gd="git diff"
+  alias gdc="git diff --cached"
+  alias gnew="git switch --create"
+  alias grs="git restore"
+  alias grb="git rebase"
+  alias gun="git reset HEAD"
+  alias gcm="git commit --message"
+  alias gcmini="git commit --allow-empty -m 'chore(git): initialize'"
+  alias gam="git commit --amend -C HEAD"
+  alias grecm="git commit --amend -m"
+fi
+
 if [ -d "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" ]; then
   alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 fi
@@ -109,21 +132,3 @@ fi
 if [ -d "/Applications/Yoink.app" ]; then
   alias yoink="open -a Yoink"
 fi
-
-alias gf="git fetch"
-alias gfp="git fetch --prune"
-alias gs="git status --short --branch"
-alias gl="git log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'"
-alias gb="git branch"
-alias gbl="git branch -a -vv"
-alias ga="git add"
-alias gd="git diff"
-alias gdc="git diff --cached"
-alias gnew="git switch --create"
-alias grs="git restore"
-alias grb="git rebase"
-alias gun="git reset HEAD"
-alias gcm="git commit --message"
-alias gcmini="git commit --allow-empty -m 'chore(git): initialize'"
-alias gam="git commit --amend -C HEAD"
-alias grecm="git commit --amend -m"

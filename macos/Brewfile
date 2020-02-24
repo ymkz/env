@@ -33,6 +33,7 @@ cask "muzzle"
 cask "slack"
 cask "spotify"
 cask "visual-studio-code"
+cask "workflowy"
 
 mas "1Password", id: 443987910
 mas "Battery Indicator", id: 1206020918

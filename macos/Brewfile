@@ -36,6 +36,7 @@ cask "visual-studio-code"
 cask "workflowy"
 
 mas "1Password", id: 443987910
+mas "Amphetamine", id: 937984704
 mas "Battery Indicator", id: 1206020918
 mas "Gifox", id: 1082624744
 mas "LINE", id: 539883307

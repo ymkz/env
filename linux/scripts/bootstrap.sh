@@ -48,7 +48,7 @@ sudo apt install -y \
   zsh
 
 echo ">>> Install linuxbrew"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo ">>> Activate linuxbrew for temporarily"
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)

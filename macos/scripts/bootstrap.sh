@@ -21,9 +21,6 @@ curl -OL https://raw.githubusercontent.com/ymkz/dotfiles/master/macos/Brewfile
 brew bundle
 rm Brewfile
 
-echo ">>> Install zplug"
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-
 echo ">>> Install volta"
 curl https://get.volta.sh | bash
 

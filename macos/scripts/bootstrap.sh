@@ -24,9 +24,6 @@ rm Brewfile
 echo ">>> Install volta"
 curl https://get.volta.sh | bash
 
-echo ">>> Configure macOS default settings"
-scripts/configure.sh
-
 echo ">>> Fetch dotfiles"
 mkdir -p $HOME/workspace/ghq/github.com/ymkz
 git clone https://github.com/ymkz/dotfiles.git $HOME/workspace/ghq/github.com/ymkz/dotfiles
@@ -39,6 +36,9 @@ ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/starship.toml $HOME/.
 ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/vimrc $HOME/.vimrc
 ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/zshenv $HOME/.zshenv
 ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/zshrc $HOME/.zshrc
+
+echo ">>> Configure macOS default settings"
+$HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/scripts/configure.sh
 
 echo ">>> Instal VSCode Extensions"
 code --install-extension bierner.markdown-preview-github-styles

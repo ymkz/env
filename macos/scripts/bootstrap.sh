@@ -60,7 +60,7 @@ code --install-extension yahya-gilany.vscode-clock
 
 echo ">>> Download and deploy fonts"
 mkdir $HOME/.fonts
-wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.2.zip -o $HOME/JetBrainsMono.zip
+wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip -o $HOME/JetBrainsMono.zip
 unzip $HOME/JetBrainsMono.zip
 rm $HOME/JetBrainsMono.zip
 mv $HOME/JetBrainsMono-* $HOME/JetBrainsMono

@@ -29,13 +29,13 @@ mkdir -p $HOME/workspace/ghq/github.com/ymkz
 git clone https://github.com/ymkz/dotfiles.git $HOME/workspace/ghq/github.com/ymkz/dotfiles
 
 echo ">>> Link dotfiles"
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/editorconfig $HOME/.editorconfig
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/gitconfig $HOME/.gitconfig
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/globalgitignore $HOME/.globalgitignore
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/starship.toml $HOME/.config/starship.toml
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/vimrc $HOME/.vimrc
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/zshenv $HOME/.zshenv
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/zshrc $HOME/.zshrc
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/editorconfig $HOME/.editorconfig
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/gitconfig $HOME/.gitconfig
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/globalgitignore $HOME/.globalgitignore
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/starship.toml $HOME/.config/starship.toml
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/vimrc $HOME/.vimrc
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/zshenv $HOME/.zshenv
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/zshrc $HOME/.zshrc
 
 echo ">>> Configure macOS default settings"
 $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/scripts/configure.sh

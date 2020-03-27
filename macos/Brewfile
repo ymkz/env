@@ -10,7 +10,6 @@ brew "exa"
 brew "fzf"
 brew "ghq"
 brew "git"
-brew "git-secrets"
 brew "github/gh/gh"
 brew "jq"
 brew "mas"
@@ -30,17 +29,16 @@ cask "google-chrome"
 cask "google-japanese-ime"
 cask "iterm2"
 cask "muzzle"
+cask "simplenote"
 cask "slack"
 cask "spotify"
 cask "visual-studio-code"
 cask "workflowy"
 
 mas "1Password", id: 443987910
-mas "Amphetamine", id: 937984704
 mas "Battery Indicator", id: 1206020918
 mas "Gifox", id: 1082624744
 mas "LINE", id: 539883307
-mas "Magnet", id: 441258766
 mas "Spark", id: 1176895641
 mas "Xcode", id: 497799835
 mas "Yoink", id: 457622435

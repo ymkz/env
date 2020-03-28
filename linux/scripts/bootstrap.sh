@@ -56,6 +56,7 @@ test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew
 echo ">>> Install system from linuxbrew"
 brew install ghq
 brew install starship
+brew install github/gh/gh
 
 echo ">>> Install zplug"
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh

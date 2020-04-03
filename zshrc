@@ -97,6 +97,7 @@ bindkey '^b' fzf-switch-git-branch
 
 alias cdw="cd ~/workspace"
 alias cds="cd ~/workspace/sandbox"
+alias cdc="cd ~/workspace/cic"
 
 alias gf="git fetch"
 alias gp="git fetch --prune"

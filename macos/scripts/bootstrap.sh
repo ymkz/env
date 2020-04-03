@@ -66,6 +66,9 @@ rm $HOME/JetBrainsMono.zip
 mv $HOME/JetBrainsMono-* $HOME/JetBrainsMono
 mv $HOME/JetBrainsMono $HOME/.fonts
 
+echo ">>> Generate workspace"
+mkdir -p $HOME/workspace/cic
+
 echo ">>> ---"
 echo ">>> Done!"
 echo ">>> Please restart computer to activate brand new environment."

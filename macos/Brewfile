@@ -18,7 +18,6 @@ brew "starship"
 brew "watchman"
 brew "wget"
 brew "zplug"
-brew "zsh"
 
 cask "appcleaner"
 cask "authy"

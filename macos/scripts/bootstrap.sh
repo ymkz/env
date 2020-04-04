@@ -58,14 +58,6 @@ code --install-extension WakaTime.vscode-wakatime
 code --install-extension wmaurer.change-case
 code --install-extension yahya-gilany.vscode-clock
 
-echo ">>> Download and deploy fonts"
-mkdir $HOME/.fonts
-wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip -o $HOME/JetBrainsMono.zip
-unzip $HOME/JetBrainsMono.zip
-rm $HOME/JetBrainsMono.zip
-mv $HOME/JetBrainsMono-* $HOME/JetBrainsMono
-mv $HOME/JetBrainsMono $HOME/.fonts
-
 echo ">>> Generate workspace"
 mkdir -p $HOME/workspace/cic
 

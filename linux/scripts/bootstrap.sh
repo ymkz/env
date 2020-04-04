@@ -119,14 +119,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 echo ">>> Change default shell"
 sudo chsh $USER -s $(which zsh)
 
-echo ">>> Download and deploy fonts"
-mkdir $HOME/.fonts
-wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip -o $HOME/JetBrainsMono.zip
-unzip $HOME/JetBrainsMono.zip
-rm $HOME/JetBrainsMono.zip
-mv $HOME/JetBrainsMono-* $HOME/JetBrainsMono
-mv $HOME/JetBrainsMono $HOME/.fonts
-
 echo ">>> ---"
 echo ">>> Done!"
 echo ">>> Please restart computer to activate brand new environment."

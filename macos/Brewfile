@@ -1,6 +1,5 @@
 cask_args appdir: "/Applications"
 
-tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
@@ -17,7 +16,6 @@ brew "nkf"
 brew "starship"
 brew "watchman"
 brew "wget"
-brew "zplug"
 
 cask "appcleaner"
 cask "authy"

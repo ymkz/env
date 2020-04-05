@@ -26,6 +26,7 @@ mkdir -p $HOME/workspace/ghq/github.com/ymkz
 git clone https://github.com/ymkz/dotfiles.git $HOME/workspace/ghq/github.com/ymkz/dotfiles
 
 echo ">>> Link dotfiles"
+mkdir -p $HOME/.config
 ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/editorconfig $HOME/.editorconfig
 ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/gitconfig $HOME/.gitconfig
 ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/globalgitignore $HOME/.globalgitignore

@@ -34,6 +34,9 @@ cask "workflowy"
 
 mas "Battery Indicator", id: 1206020918
 mas "Gifox", id: 1082624744
+mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "Spark", id: 1176895641
 mas "Yoink", id: 457622435

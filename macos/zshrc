@@ -7,11 +7,14 @@ zplug "zdharma/fast-syntax-highlighting", defer:1
 zplug "voronkovich/gitignore.plugin.zsh", defer:1
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
-if ! zplug check; then
-  zplug install
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
 fi
 
-zplug load
+zplug load --verbose
 
 if builtin command -v brew > /dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -132,3 +135,5 @@ fi
 if [ -d "/Applications/Yoink.app" ]; then
   alias yoink="open -a Yoink"
 fi
+
+[ -s "/Users/ymkz/.jabba/jabba.sh" ] && source "/Users/ymkz/.jabba/jabba.sh"

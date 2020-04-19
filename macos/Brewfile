@@ -26,6 +26,7 @@ cask "google-chrome"
 cask "google-japanese-ime"
 cask "iterm2"
 cask "muzzle"
+cask "one-switch"
 cask "simplenote"
 cask "slack"
 cask "spotify"
@@ -37,6 +38,8 @@ mas "Gifox", id: 1082624744
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
 mas "Numbers", id: 409203825
+mas "NextDNS", id: 1464122853
 mas "Pages", id: 409201541
 mas "Spark", id: 1176895641
+mas "Tweetbot", id: 1384080005
 mas "Yoink", id: 457622435

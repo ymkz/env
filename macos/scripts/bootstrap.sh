@@ -21,9 +21,6 @@ curl -OL https://raw.githubusercontent.com/ymkz/dotfiles/master/macos/Brewfile
 brew bundle
 rm Brewfile
 
-echo ">>> Install zplug to .zplug"
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-
 echo ">>> Fetch dotfiles"
 mkdir -p $HOME/workspace/ghq/github.com/ymkz
 git clone https://github.com/ymkz/dotfiles.git $HOME/workspace/ghq/github.com/ymkz/dotfiles
@@ -58,9 +55,6 @@ code --install-extension VisualStudioExptTeam.vscodeintellicode
 code --install-extension WakaTime.vscode-wakatime
 code --install-extension wmaurer.change-case
 code --install-extension yahya-gilany.vscode-clock
-
-echo ">>> Install volta"
-curl https://get.volta.sh | bash
 
 echo ">>> Generate workspace"
 mkdir -p $HOME/workspace/cic

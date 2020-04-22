@@ -1,11 +1,9 @@
-source $HOME/.zplug/init.zsh
+source /usr/local/opt/zplug/init.zsh
 
 zplug "zsh-users/zsh-completions", defer:0
 zplug "zsh-users/zsh-autosuggestions", defer:0
 zplug "zsh-users/zsh-history-substring-search", defer:1
 zplug "zdharma/fast-syntax-highlighting", defer:1
-zplug "voronkovich/gitignore.plugin.zsh", defer:1
-zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
@@ -14,10 +12,10 @@ if ! zplug check --verbose; then
   fi
 fi
 
-zplug load --verbose
+zplug load
 
 if builtin command -v brew > /dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  FPATH=/usr/local/share/zsh/site-functions:$FPATH
 fi
 
 if builtin command -v starship > /dev/null; then

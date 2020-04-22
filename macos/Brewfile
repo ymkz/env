@@ -20,6 +20,7 @@ brew "watchman"
 brew "wget"
 brew "zplug"
 
+cask "1password"
 cask "appcleaner"
 cask "authy"
 cask "discord"

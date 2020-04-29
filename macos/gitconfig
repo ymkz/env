@@ -7,7 +7,8 @@
   excludesfile = ~/.globalgitignore
   ignorecase = false
   quotepath = false
-  pager = less -FRX
+  pager = delta --theme='OneHalfDark'
+  # pager = less -FRX
 [push]
   default = current
 [status]
@@ -24,5 +25,7 @@
   status = always
   branch = always
   diff-highlight = always
+[interactive]
+  diffFilter = delta --color-only
 [ghq]
   root = ~/workspace/ghq

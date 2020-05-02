@@ -43,9 +43,6 @@ sudo apt install -y \
   file \
   xsel \
   git \
-  exa \
-  fzf \
-  zsh
 
 echo ">>> Install linuxbrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -54,21 +51,26 @@ echo ">>> Activate linuxbrew for temporarily"
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 echo ">>> Install system from linuxbrew"
+brew install bat
+brew install exa
+brew install fzf
 brew install ghq
-brew install starship
 brew install github/gh/gh
-
-echo ">>> Install zplug"
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-
-echo ">>> Install volta"
-curl https://get.volta.sh | bash
+brew install git-delta
+brew install jq
+brew install loc
+brew install nkf
+brew install starship
+brew install volta
+brew install wget
+brew install zplug
 
 echo ">>> Fetch dotfiles"
 mkdir -p $HOME/workspace/ghq/github.com/ymkz
 git clone https://github.com/ymkz/dotfiles.git $HOME/workspace/ghq/github.com/ymkz/dotfiles
 
 echo ">>> Link dotfiles"
+mkdir -p $HOME/.config/bat
 ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/editorconfig $HOME/.editorconfig
 ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/gitconfig $HOME/.gitconfig
 ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/globalgitignore $HOME/.globalgitignore
@@ -76,6 +78,7 @@ ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/starship.toml $HOME/.
 ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/vimrc $HOME/.vimrc
 ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/zshenv $HOME/.zshenv
 ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/linux/zshrc $HOME/.zshrc
+ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/batconfig $HOME/.config/bat/config
 
 # reference: UbuntuにVSCodeをインストールする3つの方法 - https://qiita.com/yoshiyasu1111/items/e21a77ed68b52cb5f7c8
 echo ">>> Install VSCode"

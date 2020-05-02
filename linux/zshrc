@@ -1,14 +1,15 @@
-source $HOME/.zplug/init.zsh
+source /usr/local/opt/zplug/init.zsh
 
 zplug "zsh-users/zsh-completions", defer:0
 zplug "zsh-users/zsh-autosuggestions", defer:0
 zplug "zsh-users/zsh-history-substring-search", defer:1
 zplug "zdharma/fast-syntax-highlighting", defer:1
-zplug "voronkovich/gitignore.plugin.zsh", defer:1
-zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
-if ! zplug check; then
-  zplug install
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
 fi
 
 zplug load
@@ -77,7 +78,11 @@ zle -N fzf-switch-git-branch
 bindkey '^b' fzf-switch-git-branch
 
 alias cd-="cd -"
-alias cds="cd ~/workspace/sandbox"
+alias cdc="cd ~/workspace/cic"
+
+if builtin command -v bat > /dev/null; then
+  alias q="bat"
+fi
 
 if builtin command -v exa > /dev/null; then
   alias l="exa -F"
@@ -98,6 +103,7 @@ fi
 if builtin command -v code > /dev/null; then
   alias code.="code ."
   alias coder="code . --reuse-window"
+  alias codelist="code --list-extensions | xargs -L 1 echo code --install-extension"
 fi
 
 if builtin command -v git > /dev/null; then

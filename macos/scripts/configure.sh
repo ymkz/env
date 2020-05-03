@@ -33,6 +33,8 @@ defaults write com.apple.AppleMultitouchTrackpad com.apple.driver.AppleBluetooth
 
 defaults write com.apple.menuextra.clock IsAnalog -bool false
 
+defaults write .GlobalPreferences com.apple.mouse.scaling -1
+
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.Finder FXPreferredViewStyle -string "icnv"
 defaults write com.apple.finder ShowStatusBar -bool true

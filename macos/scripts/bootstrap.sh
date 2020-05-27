@@ -22,22 +22,22 @@ brew bundle
 rm Brewfile
 
 echo ">>> Fetch dotfiles"
-mkdir -p $HOME/workspace/ghq/github.com/ymkz
-git clone https://github.com/ymkz/dotfiles.git $HOME/workspace/ghq/github.com/ymkz/dotfiles
+mkdir -p "$HOME"/workspace/ghq/github.com/ymkz
+git clone https://github.com/ymkz/dotfiles.git "$HOME"/workspace/ghq/github.com/ymkz/dotfiles
 
 echo ">>> Link dotfiles"
-mkdir -p $HOME/.config/bat
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/editorconfig $HOME/.editorconfig
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/gitconfig $HOME/.gitconfig
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/globalgitignore $HOME/.globalgitignore
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/starship.toml $HOME/.config/starship.toml
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/vimrc $HOME/.vimrc
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/zshenv $HOME/.zshenv
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/zshrc $HOME/.zshrc
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/batconfig $HOME/.config/bat/config
+mkdir -p "$HOME"/.config/bat
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/macos/editorconfig "$HOME"/.editorconfig
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/macos/gitconfig "$HOME"/.gitconfig
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/macos/globalgitignore "$HOME"/.globalgitignore
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/macos/starship.toml "$HOME"/.config/starship.toml
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/macos/vimrc "$HOME"/.vimrc
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/macos/zshenv "$HOME"/.zshenv
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/macos/zshrc "$HOME"/.zshrc
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/macos/batconfig "$HOME"/.config/bat/config
 
 echo ">>> Configure macOS default settings"
-$HOME/workspace/ghq/github.com/ymkz/dotfiles/macos/scripts/configure.sh
+"$HOME"/workspace/ghq/github.com/ymkz/dotfiles/macos/scripts/configure.sh
 
 echo ">>> Instal VSCode Extensions"
 code --install-extension bierner.markdown-preview-github-styles
@@ -58,7 +58,7 @@ code --install-extension wmaurer.change-case
 code --install-extension yahya-gilany.vscode-clock
 
 echo ">>> Generate workspace"
-mkdir -p $HOME/workspace/cic
+mkdir -p "$HOME"/workspace/cic
 
 echo ">>> ---"
 echo ">>> Done!"

@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 defaults write com.apple.screencapture disable-shadow -boolean true
 defaults write com.apple.screencapture name "screenshot"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true

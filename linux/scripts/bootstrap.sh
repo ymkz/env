@@ -120,7 +120,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 echo ">>> Change default shell"
-sudo chsh "$USER" -s $(which zsh)
+sudo chsh "$USER" -s $(command -v zsh)
 
 echo ">>> ---"
 echo ">>> Done!"

@@ -7,13 +7,13 @@
   excludesfile = ~/.globalgitignore
   ignorecase = false
   quotepath = false
-  pager = delta --theme='OneHalfDark'
-  # pager = less -FRX
+  pager = less -FRX
 [push]
   default = current
 [status]
   showUntrackedFiles = all
 [diff]
+  algorithm = histogram
   renames = true
   compactionHeuristic = true
 [grep]
@@ -25,7 +25,8 @@
   status = always
   branch = always
   diff-highlight = always
-[interactive]
-  diffFilter = delta --color-only
+[pull]
+  rebase = true
+  prune = true
 [ghq]
   root = ~/workspace/ghq

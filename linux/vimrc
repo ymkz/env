@@ -54,7 +54,7 @@ set hidden
 set nobackup
 set noswapfile
 set nowritebackup
-set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus
 
 inoremap <silent> jj <Esc>
 

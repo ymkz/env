@@ -1,9 +1,5 @@
 [
   {
-    "key": "ctrl+l",
-    "command": "workbench.action.splitEditorRight"
-  },
-  {
     "key": "ctrl+x",
     "command": "editor.action.deleteLines"
   },

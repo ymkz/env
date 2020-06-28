@@ -37,12 +37,12 @@ git clone https://github.com/ymkz/dotfiles.git "$HOME"/workspace/ghq/github.com/
 
 echo ">>> Link dotfiles"
 mkdir -p "$HOME"/.config/bat
-ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/linux/editorconfig "$HOME"/.editorconfig
-ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/linux/gitconfig "$HOME"/.gitconfig
-ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/linux/globalgitignore "$HOME"/.globalgitignore
-ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/linux/starship.toml "$HOME"/.config/starship.toml
-ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/linux/vimrc "$HOME"/.vimrc
-ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/linux/zshrc "$HOME"/.zshrc
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/wsl/editorconfig "$HOME"/.editorconfig
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/wsl/gitconfig "$HOME"/.gitconfig
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/wsl/globalgitignore "$HOME"/.globalgitignore
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/wsl/starship.toml "$HOME"/.config/starship.toml
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/wsl/vimrc "$HOME"/.vimrc
+ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/wsl/zshrc "$HOME"/.zshrc
 ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/macos/batconfig "$HOME"/.config/bat/config
 
 # echo ">>> Install Docker CE"

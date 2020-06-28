@@ -147,7 +147,6 @@ if builtin command -v git > /dev/null; then
   alias grecm="git commit --amend -m"
 fi
 
-if builtin command -v xsel > /dev/null; then
-  alias pbcopy="xsel --clipboard --input"
-  alias pbpaste="xsel --clipboard --output"
+if builtin command -v clip.exe > /dev/null; then
+  alias pbcopy="clip.exe"
 fi

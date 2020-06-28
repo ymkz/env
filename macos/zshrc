@@ -109,7 +109,7 @@ fi
 if builtin command -v code > /dev/null; then
   alias code.="code ."
   alias coder="code . --reuse-window"
-  alias codelist="code --list-extensions | xargs -L 1 echo code --install-extension"
+  alias codelistext="code --list-extensions | xargs -L 1 echo code --install-extension"
 fi
 
 if builtin command -v git > /dev/null; then

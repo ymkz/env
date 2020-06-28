@@ -33,7 +33,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export VOLTA_HOME="$HOME/.volta"
 
 export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH="$(brew --prefix)/bin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 autoload -Uz compinit; compinit
 autoload -Uz colors; colors

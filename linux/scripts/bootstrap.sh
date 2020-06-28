@@ -76,7 +76,6 @@ ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/linux/gitconfig "$HOME"/.
 ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/linux/globalgitignore "$HOME"/.globalgitignore
 ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/linux/starship.toml "$HOME"/.config/starship.toml
 ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/linux/vimrc "$HOME"/.vimrc
-ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/linux/zshenv "$HOME"/.zshenv
 ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/linux/zshrc "$HOME"/.zshrc
 ln -nfs "$HOME"/workspace/ghq/github.com/ymkz/dotfiles/macos/batconfig "$HOME"/.config/bat/config
 

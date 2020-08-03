@@ -97,7 +97,7 @@ zle -N fzf-switch-git-branch
 bindkey '^b' fzf-switch-git-branch
 
 alias cd-="cd -"
-alias cdc="cd ~/workspace/cic"
+alias cds="cd ~/workspace/sandbox"
 
 if builtin command -v bat > /dev/null; then
   alias q="bat"

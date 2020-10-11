@@ -35,8 +35,9 @@ export VOLTA_HOME="$HOME/.volta"
 export GOPATH="/home/ymkz/.go"
 
 export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH="/home/ymkz/.go/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 export PATH="/home/ymkz/.cargo/bin:$PATH"
+export PATH="/home/ymkz/.bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 autoload -Uz compinit; compinit
@@ -70,6 +71,18 @@ setopt share_history
 
 unsetopt caseglob
 unsetopt promptcr
+
+function fzf-cd-under-current-dir() {
+  local dir
+  dir=$(find * -maxdepth 0 -type d -print 2> /dev/null | fzf +s +m --query="$LBUFFER" --prompt="dir > ")
+  if [ -n "$dir" ]; then
+    BUFFER="cd ${dir}"
+    zle accept-line
+  fi
+  zle reset-prompt
+}
+zle -N fzf-cd-under-current-dir
+bindkey '^f' fzf-cd-under-current-dir
 
 function fzf-put-history() {
   BUFFER=$(history -n -r 1 | fzf +s +m --query="$LBUFFER" --prompt="history > ")

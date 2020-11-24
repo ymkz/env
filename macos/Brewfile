@@ -4,48 +4,30 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 
-brew "bat"
 brew "curl"
 brew "exa"
 brew "fzf"
 brew "ghq"
 brew "git"
-brew "github/gh/gh"
+brew "gh"
 brew "jq"
-brew "loc"
 brew "mas"
-brew "nkf"
 brew "rargs"
 brew "ripgrep"
 brew "starship"
 brew "volta"
-brew "watchman"
 brew "wget"
 brew "zplug"
 
-cask "1password"
 cask "appcleaner"
-cask "authy"
-cask "bettertouchtool"
-cask "discord"
 cask "docker"
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "iterm2"
-cask "muzzle"
-cask "one-switch"
 cask "rectangle"
-cask "rocket"
-cask "simplenote"
-cask "slack"
-cask "spotify"
 cask "visual-studio-code"
-cask "workflowy"
 
-mas "Battery Indicator", id: 1206020918
 mas "Keynote", id: 409183694
-mas "LINE", id: 539883307
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Spark", id: 1176895641
 mas "Yoink", id: 457622435

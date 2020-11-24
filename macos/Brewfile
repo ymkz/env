@@ -1,7 +1,6 @@
 cask_args appdir: "/Applications"
 
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/core"
 
 brew "curl"
@@ -11,23 +10,9 @@ brew "ghq"
 brew "git"
 brew "gh"
 brew "jq"
-brew "mas"
 brew "rargs"
 brew "ripgrep"
 brew "starship"
 brew "volta"
 brew "wget"
 brew "zplug"
-
-cask "appcleaner"
-cask "docker"
-cask "google-chrome"
-cask "google-japanese-ime"
-cask "iterm2"
-cask "rectangle"
-cask "visual-studio-code"
-
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Yoink", id: 457622435

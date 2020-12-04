@@ -22,6 +22,8 @@ if builtin command -v starship > /dev/null; then
   eval "$(starship init zsh)"
 fi
 
+[ -s "/Users/ymkz/.jabba/jabba.sh" ] && source "/Users/ymkz/.jabba/jabba.sh"
+
 export LESS="-R"
 export LANG="ja_JP.UTF-8"
 export EDITOR="code --wait"
@@ -115,7 +117,7 @@ zle -N fzf-switch-git-branch
 bindkey '^b' fzf-switch-git-branch
 
 alias cd-="cd -"
-alias cdc="cd ~/workspace/cic"
+alias cds="cd ~/workspace/sandbox"
 
 if builtin command -v bat > /dev/null; then
   alias q="bat"

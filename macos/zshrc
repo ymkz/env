@@ -43,6 +43,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 export GOPATH="$HOME/.go"
 
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
 autoload -Uz compinit; compinit

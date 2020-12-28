@@ -24,6 +24,10 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   fi
 fi
 
+if [ -e "$HOME/.cargo" ]; then
+  source "$HOME/.cargo/env"
+fi
+
 if [ -e "$HOME/.sdkman" ]; then
   source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi

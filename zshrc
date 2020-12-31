@@ -128,10 +128,12 @@ bindkey '^b' fzf-switch-git-branch
 alias cd-="cd -"
 alias cds="cd ~/workspace/sandbox"
 
-alias nd="npm run dev"
-alias nb="npm run build"
-alias nf="npm run fmt"
-alias nl="npm run lint"
+if builtin command -v npm > /dev/null; then
+  alias nd="npm run dev"
+  alias nb="npm run build"
+  alias nf="npm run fmt"
+  alias nl="npm run lint"
+fi
 
 if builtin command -v exa > /dev/null; then
   alias l="exa -F"

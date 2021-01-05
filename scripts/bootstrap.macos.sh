@@ -12,7 +12,9 @@ mkdir -p $HOME/workspace/ghq/github.com/ymkz
 git clone https://github.com/ymkz/dotfiles.git $HOME/workspace/ghq/github.com/ymkz/dotfiles
 
 # install xcode
-sudo xcode-select --install
+if [ ! -e "/Library/Developer/CommandLineTools" ]; then
+  sudo xcode-select --install
+fi
 
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -33,6 +35,9 @@ brew bundle --file $HOME/workspace/ghq/github.com/ymkz/dotfiles/Brewfile
 
 # install nodejs
 volta install node@12
+
+# create my bin directory
+mkdir -p $HOME/workspace/bin
 
 # configure shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"

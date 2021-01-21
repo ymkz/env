@@ -147,6 +147,7 @@ if builtin command -v exa > /dev/null; then
   alias la="exa -Fa"
   alias lt="exa -T"
   alias ll="exa -bhlHF"
+  alias llt="exa -bhlHFT"
   alias lla="exa -bhlHFa"
   alias llg="exa -bhlHFa --sort=type"
 else

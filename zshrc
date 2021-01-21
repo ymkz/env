@@ -24,6 +24,10 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   fi
 fi
 
+if [ -e "$HOME/.iterm2_shell_integration.zsh" ]; then
+  source "$HOME/.iterm2_shell_integration.zsh"
+fi
+
 if [ -e "$HOME/.cargo" ]; then
   source "$HOME/.cargo/env"
 fi

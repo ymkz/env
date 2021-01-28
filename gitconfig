@@ -30,3 +30,5 @@
   prune = true
 [ghq]
   root = ~/workspace/ghq
+[init]
+  defaultBranch = main

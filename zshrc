@@ -131,10 +131,10 @@ if builtin command -v npm > /dev/null; then
   alias nd="npm run dev"
   alias nb="npm run build"
   alias ns="npm run start"
+  alias np="npm run preview"
   alias nf="npm run format"
   alias nl="npm run lint"
   alias nt="npm run test"
-  alias ntsc="npm run typecheck"
 fi
 
 if builtin command -v exa > /dev/null; then

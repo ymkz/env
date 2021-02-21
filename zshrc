@@ -161,6 +161,7 @@ if builtin command -v code > /dev/null; then
 fi
 
 if builtin command -v git > /dev/null; then
+  alias gp="git pull"
   alias gf="git fetch"
   alias gfp="git fetch --prune"
   alias gs="git status --short --branch"
@@ -172,7 +173,7 @@ if builtin command -v git > /dev/null; then
   alias gd="git diff"
   alias gdc="git diff --cached"
   alias gdw="git diff --color-words"
-  alias gds="git diff --color-words --word-diff-regex='\\\w+|[^[:space:]]"
+  alias gds="git diff --color-words --word-diff-regex='\\\w+|[^[:space:]]'"
   alias gnew="git switch --create"
   alias grs="git restore"
   alias grb="git rebase"

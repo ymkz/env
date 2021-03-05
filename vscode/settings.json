@@ -1,7 +1,7 @@
 {
   "clock.datetimeFormat": "YYYY/M/D HH:mm",
   "editor.copyWithSyntaxHighlighting": false,
-  "editor.fontFamily": "'', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontFamily": "'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.fontLigatures": true,
   "editor.fontSize": 18,
   "editor.highlightActiveIndentGuide": true,

@@ -1,5 +1,4 @@
 {
-  "clock.datetimeFormat": "YYYY/M/D HH:mm",
   "editor.copyWithSyntaxHighlighting": false,
   "editor.fontFamily": "'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.fontLigatures": true,
@@ -24,5 +23,6 @@
   "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.panel.defaultLocation": "right",
   "workbench.startupEditor": "newUntitledFile"
 }

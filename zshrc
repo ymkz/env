@@ -161,14 +161,13 @@ if builtin command -v code > /dev/null; then
 fi
 
 if builtin command -v git > /dev/null; then
-  alias gp="git pull"
+  alias gpl="git pull"
+  alias gps="git push"
   alias gf="git fetch"
-  alias gfp="git fetch --prune"
   alias gs="git status --short --branch"
   alias gl="git log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'"
   alias gb="git branch"
   alias gbl="git branch -a -vv"
-  alias gbd="git branch --merged | egrep -v '\*|develop|master' | xargs git branch -d"
   alias ga="git add"
   alias gd="git diff"
   alias gdc="git diff --cached"
@@ -177,10 +176,9 @@ if builtin command -v git > /dev/null; then
   alias gnew="git switch --create"
   alias grs="git restore"
   alias grb="git rebase"
-  alias gro="git rebase origin/master"
   alias gun="git reset HEAD"
   alias gcm="git commit --message"
-  alias gini="git commit --allow-empty -m 'chore(git): initialize'"
+  alias gini="git commit --allow-empty -m 'chore: initial empty commit'"
   alias gam="git commit --amend -C HEAD"
   alias grecm="git commit --amend -m"
 fi

@@ -1,4 +1,5 @@
 {
+  "debug.javascript.codelens.npmScripts": "never",
   "editor.copyWithSyntaxHighlighting": false,
   "editor.fontFamily": "'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.fontLigatures": true,

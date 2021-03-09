@@ -1,5 +1,9 @@
 [
   {
+    "key": "ctrl+r",
+    "command": "workbench.action.reloadWindow"
+  },
+  {
     "key": "ctrl+p",
     "command": "workbench.action.toggleSidebarVisibility"
   },

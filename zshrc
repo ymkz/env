@@ -147,11 +147,11 @@ if builtin command -v exa > /dev/null; then
   alias lla="exa -bhlHFa"
   alias llg="exa -bhlHFa --sort=type"
 else
-  alias l="ls -FG"
-  alias ls="ls -FG"
-  alias la="ls -A"
-  alias ll="ls -l"
-  alias lla="ls -AlF"
+  alias l="ls -hFG"
+  alias ls="ls -hFG"
+  alias la="ls -hA"
+  alias ll="ls -hl"
+  alias lla="ls -hAlF"
 fi
 
 if builtin command -v code > /dev/null; then

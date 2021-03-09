@@ -27,6 +27,8 @@
   diff-highlight = always
 [fetch]
   prune = true
+[merge]
+  ff = false
 [pull]
   ff = only
 [ghq]

@@ -127,6 +127,9 @@ bindkey '^b' fzf-switch-git-branch
 alias cd-="cd -"
 alias cds="cd ~/workspace/sandbox"
 
+# https://qiita.com/arcizan/items/9cf19cd982fa65f87546
+alias uniqline="awk '!a[\$0]++'"
+
 if builtin command -v npm > /dev/null; then
   alias nd="npm run dev"
   alias nb="npm run build"

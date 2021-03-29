@@ -34,7 +34,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 brew bundle --file $HOME/workspace/ghq/github.com/ymkz/dotfiles/Brewfile
 
 # install nodejs
-volta install node@12
+volta install node@14
 
 # create my bin directory
 mkdir -p $HOME/workspace/bin

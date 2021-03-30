@@ -9,5 +9,8 @@ ssh_only = true
 
 [kubernetes]
 disabled = false
-symbol = '⛵ '
-style = 'blue bold'
+symbol = "⛵ "
+style = "blue bold"
+
+[nodejs]
+symbol = "🐢 "

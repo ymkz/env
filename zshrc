@@ -77,7 +77,7 @@ export FZF_DEFAULT_OPTS="--height 40% --ansi --cycle --reverse --select-1 --exit
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export VOLTA_HOME="$HOME/.volta"
-export PATH="$HOME/workspace/bin:$HOME/.cargo/bin:$VOLTA_HOME/bin:$PATH"
+export PATH="$HOME/workspace/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$VOLTA_HOME/bin:$PATH"
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"

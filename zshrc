@@ -124,6 +124,10 @@ function fzf-switch-git-branch() {
 zle -N fzf-switch-git-branch
 bindkey '^b' fzf-switch-git-branch
 
+function curl_status() {
+  curl "$1" -o /dev/null -w '%{http_code}\n' -s
+}
+
 alias cd-="cd -"
 alias cds="cd ~/workspace/sandbox"
 

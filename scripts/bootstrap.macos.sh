@@ -23,18 +23,16 @@ fi
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# install volta for node.js toolchain
-curl https://get.volta.sh | bash
-
-# install sdkman for java/jvm toolchain
-curl -s "https://get.sdkman.io" | bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 # install homebrew formulae
 brew bundle --file $HOME/workspace/ghq/github.com/ymkz/dotfiles/Brewfile
 
 # install nodejs
 volta install node@14
+volta setup
+
+# install sdkman for java/jvm toolchain
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # create my bin directory
 mkdir -p $HOME/workspace/bin
@@ -42,8 +40,8 @@ mkdir -p $HOME/workspace/bin
 # configure shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 chsh $USER -s /usr/local/bin/zsh
-chmod 755 /usr/local/share/zsh/site-functions
 chmod 755 /usr/local/share/zsh
+chmod 755 /usr/local/share/zsh/site-functions
 
 # deploy dotfiles
 mkdir -p $HOME/.config

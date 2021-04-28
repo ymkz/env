@@ -78,7 +78,7 @@ export FZF_DEFAULT_OPTS="--height 40% --ansi --cycle --reverse --select-1 --exit
 export XDG_CONFIG_HOME="$HOME/.config"
 export VOLTA_HOME="$HOME/.volta"
 export GO_PATH="$HOME/.go"
-export PATH="$HOME/workspace/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$VOLTA_HOME/bin:$PATH"
+export PATH="$HOME/work/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$VOLTA_HOME/bin:$PATH"
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
@@ -130,7 +130,7 @@ function curl_status() {
 }
 
 alias cd-="cd -"
-alias cds="cd ~/workspace/sandbox"
+alias cds="cd ~/work/sandbox"
 
 # https://qiita.com/arcizan/items/9cf19cd982fa65f87546
 alias uniqline="awk '!a[\$0]++'"

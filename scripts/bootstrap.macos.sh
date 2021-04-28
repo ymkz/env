@@ -2,14 +2,14 @@
 
 set -eu
 
-if [ -e "$HOME/workspace/ghq/github.com/ymkz/dotfiles" ]; then
+if [ -e "$HOME/work/ghq/github.com/ymkz/dotfiles" ]; then
   echo >&2 "[ERROR] Exit bootstrapping because dotfiles already exist."
   exit 1
 fi
 
 # fetch dotfiles
-mkdir -p $HOME/workspace/ghq/github.com/ymkz
-git clone https://github.com/ymkz/dotfiles.git $HOME/workspace/ghq/github.com/ymkz/dotfiles
+mkdir -p $HOME/work/ghq/github.com/ymkz
+git clone https://github.com/ymkz/dotfiles.git $HOME/work/ghq/github.com/ymkz/dotfiles
 
 # install xcode
 if [ ! -e "/Library/Developer/CommandLineTools" ]; then
@@ -24,18 +24,18 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # install homebrew formulae
-brew bundle --file $HOME/workspace/ghq/github.com/ymkz/dotfiles/Brewfile
+brew bundle --file $HOME/work/ghq/github.com/ymkz/dotfiles/Brewfile
 
 # install nodejs
 volta install node@14
 volta setup
 
 # install sdkman for java/jvm toolchain
-curl -s "https://get.sdkman.io" | bash
+curl -s "https://get.sdkman.io?rcupdate=false" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # create my bin directory
-mkdir -p $HOME/workspace/bin
+mkdir -p $HOME/work/bin
 
 # configure shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
@@ -45,23 +45,23 @@ chmod 755 /usr/local/share/zsh/site-functions
 
 # deploy dotfiles
 mkdir -p $HOME/.config
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/editorconfig $HOME/.editorconfig
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/gitconfig $HOME/.gitconfig
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/globalgitignore $HOME/.globalgitignore
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/starship.toml $HOME/.config/starship.toml
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/vimrc $HOME/.vimrc
-ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/zshrc $HOME/.zshrc
+ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/editorconfig $HOME/.editorconfig
+ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/gitconfig $HOME/.gitconfig
+ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/globalgitignore $HOME/.globalgitignore
+ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/starship.toml $HOME/.config/starship.toml
+ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/vimrc $HOME/.vimrc
+ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/zshrc $HOME/.zshrc
 
 # configure finder
 sudo rm -f /Applications/.localized $HOME/Applications/.localized $HOME/Desktop/.localized $HOME/Documents/.localized $HOME/Downloads/.localized $HOME/Library/.localized $HOME/Movies/.localized $HOME/Music/.localized $HOME/Pictures/.localized $HOME/Public/.localized
 
 # configure system preferences on macos
-# $HOME/workspace/ghq/github.com/ymkz/dotfiles/scripts/configure.macos.sh
+$HOME/work/ghq/github.com/ymkz/dotfiles/scripts/configure.macos.sh
 
 echo ">>> ========================================"
 echo ">>> 1. reboot"
 echo ">>> 2. change dotfiles repository remote origin to ssh"
-echo ">>> 3. configure system preferences"
-echo ">>> 4. install GUI applications and setup"
+echo ">>> 3. install GUI applications and setup from application.md"
+echo ">>> 4. configure application preferences"
 echo ">>> 5. add ssh key for github"
 echo ">>> ========================================"

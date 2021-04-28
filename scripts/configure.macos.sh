@@ -160,6 +160,18 @@ Finder() {
   defaults write com.apple.finder ShowStatusBar -bool true
   # - Unchecked
   # defaults write com.apple.finder ShowStatusBar -bool false
+
+  # ========== Show Hidden Files ==========
+  defaults write com.apple.finder AppleShowAllFiles true
+
+  # ========== Show Directory Details ==========
+  defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+  # ========== Search current directory when exec search in Finder ==========
+  defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+  # ========== Disable Animation in Finder ==========
+  defaults write com.apple.finder DisableAllAnimations -bool true
 }
 
 Keyboard() {
@@ -174,51 +186,17 @@ Keyboard() {
 
 ExtraSettings() {
   # ========== Dock Applications ==========
-  defaults delete com.apple.dock persistent-apps
+  # defaults delete com.apple.dock persistent-apps
 
   # ========== Disable DS_STORE in Network and USB ==========
   defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
   defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-  # ========== Show Hidden Files ==========
-  defaults write com.apple.finder AppleShowAllFiles true
-
-  # ========== Show Directory Details ==========
-  defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
-
-  # ========== Search current directory when exec search in Finder ==========
-  defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
-
-  # ========== Disable System Preferences Red Bubble Notification ==========
-  defaults write com.apple.systempreferences AttentionPrefBundleIDs 0
-
   # ========== Crash Reporter to be in Notification but Popup Window ==========
   defaults write com.apple.CrashReporter UseUNC 1
 
-  # ========== Speed up Window Resize Animation ==========
-  defaults write -g NSWindowResizeTime -float 0.001
-
-  # ========== Disable Animation in Finder ==========
-  defaults write com.apple.finder DisableAllAnimations -bool true
-
-  # ========== Dock Start Appearance time ==========
-  # - default
-  # defaults delete com.apple.dock autohide-delay
-  # @int/float: seconds
-  defaults write com.apple.dock autohide-delay -float 1000
-
-  # ========== Dock Appearance Animation time ==========
-  # - default
-  # defaults delete com.apple.dock autohide-time-modifier
-  # @int/float: seconds
-  defaults write com.apple.dock autohide-time-modifier -float 0
-
   # ========== Disable Sound on Boot ==========
   sudo nvram SystemAudioVolume=" "
-
-  # ========== Start After ==========
-  # @int: seconds
-  defaults write com.apple.screensaver idleTime -int 0
 }
 
 ## ----------------------------------------

@@ -56,7 +56,7 @@ ln -nfs $HOME/workspace/ghq/github.com/ymkz/dotfiles/zshrc $HOME/.zshrc
 sudo rm -f /Applications/.localized $HOME/Applications/.localized $HOME/Desktop/.localized $HOME/Documents/.localized $HOME/Downloads/.localized $HOME/Library/.localized $HOME/Movies/.localized $HOME/Music/.localized $HOME/Pictures/.localized $HOME/Public/.localized
 
 # configure system preferences on macos
-$HOME/workspace/ghq/github.com/ymkz/dotfiles/scripts/configure.macos.sh
+# $HOME/workspace/ghq/github.com/ymkz/dotfiles/scripts/configure.macos.sh
 
 echo ">>> ========================================"
 echo ">>> 1. reboot"

@@ -5,54 +5,6 @@
 ## ----------------------------------------
 
 General() {
-  # ========== Apprerance ==========
-  # - Light
-  # defaults delete .GlobalPreferences AppleInterfaceStyleSwitchesAutomatically > /dev/null 2>&1
-  # defaults delete .GlobalPreferences AppleInterfaceStyle > /dev/null 2>&1
-  # - Dark
-  # defaults delete .GlobalPreferences AppleInterfaceStyleSwitchesAutomatically > /dev/null 2>&1
-  # defaults write .GlobalPreferences AppleInterfaceStyle -string "Dark"
-  # - Auto
-  # defaults write .GlobalPreferences AppleInterfaceStyleSwitchesAutomatically -bool true
-
-  # ========== Accent color ==========
-  # - Blue
-  # defaults delete .GlobalPreferences AppleAccentColor > /dev/null 2>&1
-  # - Purple
-  # defaults write .GlobalPreferences AppleAccentColor -int 5
-  # - Pink
-  # defaults write .GlobalPreferences AppleAccentColor -int 6
-  # - Red
-  # defaults write .GlobalPreferences AppleAccentColor -int 0
-  # - Orange
-  # defaults write .GlobalPreferences AppleAccentColor -int 1
-  # - Yellow
-  # defaults write .GlobalPreferences AppleAccentColor -int 2
-  # - Green
-  # defaults write .GlobalPreferences AppleAccentColor -int 3
-  # - Grphite
-  # defaults write .GlobalPreferences AppleAccentColor -string "-1"
-
-  # ========== Highlight color ==========
-  # - Blue
-  # defaults delete .GlobalPreferences AppleHighlightColor > /dev/null 2>&1
-  # - Purple
-  # defaults write .GlobalPreferences AppleHighlightColor -string "0.968627 0.831373 1.000000 Purple"
-  # - Pink
-  # defaults write .GlobalPreferences AppleHighlightColor -string "1.000000 0.749020 0.823529 Pink"
-  # - Red
-  # defaults write .GlobalPreferences AppleHighlightColor -string "1.000000 0.733333 0.721569 Red"
-  # - Orange
-  # defaults write .GlobalPreferences AppleHighlightColor -string "1.000000 0.874510 0.701961 Orange"
-  # - Yellow
-  # defaults write .GlobalPreferences AppleHighlightColor -string "1.000000 0.937255 0.690196 Yellow"
-  # - Green
-  # defaults write .GlobalPreferences AppleHighlightColor -string "0.752941 0.964706 0.678431 Green"
-  # - Grphite
-  # defaults write .GlobalPreferences AppleHighlightColor -string "0.847059 0.847059 0.862745 Graphite"
-  # - Other
-  # defaults write .GlobalPreferences AppleHighlightColor -string "Your NSColor"
-
   # ========== Sidebar icon size ==========
   # - Small
   defaults write .GlobalPreferences NSTableViewDefaultSizeMode -int 1
@@ -63,9 +15,9 @@ General() {
 
   # ========== Automatically hide and show the menu bar ==========
   # - Checked
-  defaults write .GlobalPreferences _HIHideMenuBar -bool true
+  # defaults write .GlobalPreferences _HIHideMenuBar -bool true
   # - Unchecked
-  # defaults write .GlobalPreferences _HIHideMenuBar -bool false
+  defaults write .GlobalPreferences _HIHideMenuBar -bool false
 
   # ========== Show scroll bars ==========
   # - Automatically based on mouse or trackpad
@@ -92,34 +44,6 @@ General() {
   # defaults write .GlobalPreferences NSQuitAlwaysKeepsWindows -bool false
   # - Unchecked
   defaults write .GlobalPreferences NSQuitAlwaysKeepsWindows -bool true
-
-  # ========== Recent items ==========
-  # - None
-  # - 5
-  # - 10
-  # - 15
-  # @string: choose preferred item.
-  # osascript -e "
-  #   tell application \"System Preferences\"
-  #     activate
-  #     set current pane to pane \"com.apple.preference.general\"
-  #   end tell
-  #   tell application \"System Events\"
-  #     tell application process \"System Preferences\"
-  #       repeat while not (window 1 exists)
-  #       end repeat
-  #       tell window 1
-  #         tell pop up button 4
-  #           delay 1
-  #           click
-  #           tell menu 1
-  #             click menu item \"None\"
-  #           end tell
-  #         end tell
-  #       end tell
-  #     end tell
-  #   end tell
-  # "
 
   # ========== Allow Handoff between this Mac and your iCloud devices ==========
   # - Checked
@@ -165,39 +89,39 @@ ScreenShot() {
 
   # ========== Remove timestamp ==========
   # - Remove
-  defaults write com.apple.screencapture include-date -bool false
+  # defaults write com.apple.screencapture include-date -bool false
   # - Default
-  # defaults write com.apple.screencapture include-date -bool true
+  defaults write com.apple.screencapture include-date -bool true
 }
 
 Dock() {
   # ========== Size ==========
   # @int: size
-  defaults write com.apple.dock tilesize -int 40
+  defaults write com.apple.dock tilesize -int 50
 
   # ========== Magnification ==========
   # - Checked
-  # defaults write com.apple.dock magnification -bool true
+  defaults write com.apple.dock magnification -bool true
   # - Unchecked
-  defaults delete com.apple.dock magnification
+  # defaults delete com.apple.dock magnification
 
   # ========== `Magnification` Bar ==========
   # @int: size
-  # defaults write com.apple.dock largesize -int 128
+  defaults write com.apple.dock largesize -int 100
 
   # ========== Position on screen ==========
   # - Left
   # defaults write com.apple.dock orientation -string "left"
   # - Bottom
-  # defaults delete com.apple.dock orientation
+  defaults delete com.apple.dock orientation
   # - Right
   # defaults write com.apple.dock orientation -string "right"
 
   # ========== Minimize windows using ==========
   # - Genie effect
-  # defaults write com.apple.dock mineffect -string "genie"
+  defaults write com.apple.dock mineffect -string "genie"
   # - Scale effect
-  defaults write com.apple.dock mineffect -string "scale"
+  # defaults write com.apple.dock mineffect -string "scale"
 
   # ========== Prefer tabs when opening documents ==========
   # - Always
@@ -211,11 +135,11 @@ Dock() {
   # - Checked
   # `Double-click a window's title bar to` pop up menu
   #  - minimize
-  defaults write .GlobalPreferences AppleActionOnDoubleClick -string "Minimize"
+  # defaults write .GlobalPreferences AppleActionOnDoubleClick -string "Minimize"
   #  - zoom
   # defaults write .GlobalPreferences AppleActionOnDoubleClick -string "Maximize"
   # - Unchecked
-  # defaults write .GlobalPreferences AppleActionOnDoubleClick -string "None"
+  defaults write .GlobalPreferences AppleActionOnDoubleClick -string "None"
 
   # ========== Minimize windows into application icon ==========
   # - Checked
@@ -246,9 +170,6 @@ Dock() {
   # defaults write com.apple.dock show-recents -bool true
   # - Unchecked
   defaults write com.apple.dock show-recents -bool false
-
-  # ========== Expose animation duration ==========
-  defaults write com.apple.dock expose-animation-duration -float 0
 }
 
 CrashReporter() {
@@ -392,14 +313,6 @@ Trackpad() {
 }
 
 EnergySaver() {
-  # ========== Show Battery status in menu bar ==========
-  # - Checked
-  # IS_BATTERY=$(defaults read com.apple.systemuiserver menuExtras | grep "Battery")
-  # [[ -z ${IS_BATTERY} ]] && /usr/libexec/PlistBuddy -c "Add menuExtras \"/System/Library/CoreServices/Menu Extras/Battery.menu\"" "${HOME}"/Library/Preferences/com.apple.systemuiserver.plist
-  # - Unchecked
-  # IS_BATTERY=$(defaults read com.apple.systemuiserver menuExtras | grep "Battery")
-  # [[ -n ${IS_BATTERY} ]] && /usr/libexec/PlistBuddy -c "Delete menuExtras:\"/System/Library/CoreServices/Menu Extras/Battery.menu\"" "${HOME}"/Library/Preferences/com.apple.systemuiserver.plist
-
   # ========== Show Battery percentage in menu bar ==========
   # - Show
   # defaults write com.apple.menuextra.battery ShowPercent -string "Yes"
@@ -445,14 +358,6 @@ DateTime() {
   # - Unchecked
   # sudo systemsetup -setusingnetworktime off > /dev/null
 
-  # ========== Show date and time in menu bar ==========
-  # - Checked
-  # IS_CLOCK=$(defaults read com.apple.systemuiserver menuExtras | grep "Clock")
-  # [[ -z ${IS_CLOCK} ]] && /usr/libexec/PlistBuddy -c "Add menuExtras \"/System/Library/CoreServices/Menu Extras/Clock.menu\"" "${HOME}"/Library/Preferences/com.apple.systemuiserver.plist
-  # - Unchecked
-  # IS_CLOCK=$(defaults read com.apple.systemuiserver menuExtras | grep "Clock")
-  # [[ -n ${IS_CLOCK} ]] && /usr/libexec/PlistBuddy -c "Delete menuExtras:\"/System/Library/CoreServices/Menu Extras/Clock.menu\"" "${HOME}"/Library/Preferences/com.apple.systemuiserver.plist
-
   # ========== Time options ==========
   # - Digital
   defaults write com.apple.menuextra.clock IsAnalog -bool false
@@ -491,9 +396,9 @@ DateTime() {
 
   # ========== Show date ==========
   # - Checked
-  # defaults write com.apple.menuextra.clock DateFormat -string "MMM d EEE HH:mm"
+  defaults write com.apple.menuextra.clock DateFormat -string "MMM d EEE HH:mm"
   # - Unchecked
-  defaults write com.apple.menuextra.clock DateFormat -string "HH:mm"
+  # defaults write com.apple.menuextra.clock DateFormat -string "HH:mm"
 }
 
 ExtraSettings() {
@@ -545,7 +450,7 @@ ExtraSettings() {
 
   # ========== Dock Icon Bouncing ==========
   # - default
-  # defaults delete com.apple.dock no-bouncing
+  defaults delete com.apple.dock no-bouncing
   # - No Bounce
   # defaults write com.apple.dock no-bouncing -bool TRUE
 
@@ -587,22 +492,6 @@ EnergySaver
 DateTime
 ExtraSettings
 
-killall cfprefsd
 killall Dock
 killall Finder
 killall SystemUIServer
-
-## ----------------------------------------
-##  Cache Clear
-## ----------------------------------------
-TESTMODE=$1
-if ! ${TESTMODE}; then
-  for app in \
-    "cfprefsd" \
-    "Activity Monitor" "Address Book" "Calendar" \
-    "Contacts" "Dock" "Finder" "Mail" "Messages" \
-    "SystemUIServer" "Terminal" "Transmission" "iCal"
-  do
-    killall "${app}"
-  done
-fi

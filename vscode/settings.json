@@ -1,5 +1,6 @@
 {
   "debug.javascript.codelens.npmScripts": "never",
+  "deno.enable": false,
   "editor.copyWithSyntaxHighlighting": false,
   "editor.fontFamily": "'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.fontLigatures": false,
@@ -13,15 +14,15 @@
   "editor.wordWrap": "on",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "material-icon-theme.activeIconPack": "react_redux",
   "search.smartCase": true,
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.restoreFullscreen": true,
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "GitHub Dark Dimmed",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.panel.defaultLocation": "right",
+  "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile"
 }

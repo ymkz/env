@@ -408,7 +408,7 @@ EnergySaver() {
 
   # ========== Turn display off after ==========
   # @int: minutes
-  sudo pmset -b displaysleep 3
+  sudo pmset -b displaysleep 30
 
   # ========== Put hard disks to sleep when possible ==========
   # - Checked
@@ -428,30 +428,14 @@ EnergySaver() {
   # - Unchecked
   sudo pmset -b powernap 0
 
-  # ========== Turn display off after ==========
-  # @int: minutes
-  sudo pmset -c displaysleep 3
-
   # ========== Prevent computer from sleeping automatically when the display is off ==========
   sudo pmset -c sleep 0
-
-  # ========== Put hard disks to sleep when possible ==========
-  # - Checked
-  # sudo pmset -c disksleep 1
-  # - Unchecked
-  sudo pmset -c disksleep 0
 
   # ========== Wake for Wi-Fi network access ==========
   # - Checked
   sudo pmset -c womp 1
   # - Unchecked
   # sudo pmset -c womp 0
-
-  # ========== Enable Power Nap while plugged into a power adapter ==========
-  # - Checked
-  # sudo pmset -c powernap 1
-  # - Unchecked
-  sudo pmset -c powernap 0
 }
 
 DateTime() {

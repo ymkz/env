@@ -2,6 +2,7 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 
 brew "curl"
+brew "deno"
 brew "exa"
 brew "fzf"
 brew "gh"

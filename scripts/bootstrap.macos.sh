@@ -45,10 +45,10 @@ chmod 755 /usr/local/share/zsh
 chmod 755 /usr/local/share/zsh/site-functions
 
 # deploy dotfiles
-mkdir -p $HOME/.config
+mkdir -p $HOME/.config/git
 ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/editorconfig $HOME/.editorconfig
 ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/gitconfig $HOME/.gitconfig
-ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/globalgitignore $HOME/.globalgitignore
+ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/gitignore $HOME/.config/git/ignore
 ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/starship.toml $HOME/.config/starship.toml
 ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/vimrc $HOME/.vimrc
 ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/zshrc $HOME/.zshrc

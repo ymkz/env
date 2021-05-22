@@ -4,7 +4,6 @@
 [core]
   editor = code --wait
   precomposeunicode = true
-  excludesfile = ~/.globalgitignore
   ignorecase = false
   quotepath = false
   pager = less -FRX

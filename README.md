@@ -18,4 +18,3 @@ sudo curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/main/scripts/boo
 - [Notion](https://www.notion.so/desktop)
 - [Tweetbot](https://apps.apple.com/jp/app/tweetbot-3-for-twitter/id1384080005)
 - [Keynote](https://apps.apple.com/jp/app/keynote/id409183694)
-- [Responsively](https://responsively.app/)

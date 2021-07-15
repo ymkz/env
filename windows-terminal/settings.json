@@ -29,7 +29,8 @@
       "source": "Windows.Terminal.Wsl",
       "fontFace": "JetBrains Mono",
       "fontSize": 16,
-      "colorScheme": "MaterialDarker"
+      "colorScheme": "MaterialDarker",
+      "startingDirectory": "//wsl$/Ubuntu-20.04/home/ymkz"
     },
     "list": [
       {

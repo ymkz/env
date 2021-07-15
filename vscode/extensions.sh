@@ -1,11 +1,6 @@
 code --install-extension bierner.markdown-preview-github-styles
-code --install-extension denoland.vscode-deno
 code --install-extension esbenp.prettier-vscode
-code --install-extension formulahendry.auto-rename-tag
-code --install-extension GitHub.github-vscode-theme
-code --install-extension golang.go
 code --install-extension PKief.material-icon-theme
-code --install-extension rust-lang.rust
 code --install-extension tamasfe.even-better-toml
 code --install-extension VisualStudioExptTeam.vscodeintellicode
 code --install-extension wmaurer.change-case

@@ -22,6 +22,9 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   if builtin command -v starship > /dev/null; then
     eval $(/home/linuxbrew/.linuxbrew/bin/starship init zsh)
   fi
+  if builtin command -v fnm > /dev/null; then
+    eval "$(fnm env)"
+  fi
 fi
 
 if [ -e "$HOME/.cargo" ]; then
@@ -76,12 +79,13 @@ export SAVEHIST=100000
 export FZF_DEFAULT_OPTS="--height 40% --ansi --cycle --reverse --select-1 --exit-0 --bind=tab:down --bind=btab:up"
 
 export XDG_CONFIG_HOME="$HOME/.config"
-export VOLTA_HOME="$HOME/.volta"
-export GO_PATH="$HOME/.go"
-export PATH="$HOME/work/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$VOLTA_HOME/bin:$PATH"
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export VOLTA_HOME="$HOME/.volta"
+  export GO_PATH="$HOME/.go"
+  export PATH="$HOME/work/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$VOLTA_HOME/bin:$PATH"
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  export PATH="$HOME/work/bin:$HOME/.cargo/bin:/home/linuxbrew/.linuxbrew/bin:$PATH"
 fi
 
 function fzf-cd-under-current-dir() {
@@ -173,7 +177,8 @@ if builtin command -v git > /dev/null; then
   alias gps="git push"
   alias gf="git fetch"
   alias gs="git status --short --branch"
-  alias gl="git log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'"
+  alias gl="git log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s' | head"
+  alias gll="git log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'"
   alias gb="git branch"
   alias gbl="git branch -a -vv"
   alias ga="git add"

@@ -19,3 +19,6 @@ node_modules/
 *.swp
 *.bak
 *~
+
+# IntelliJ
+.idea/

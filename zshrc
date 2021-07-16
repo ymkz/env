@@ -80,12 +80,14 @@ export FZF_DEFAULT_OPTS="--height 40% --ansi --cycle --reverse --select-1 --exit
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
+export GO_PATH="$HOME/.go"
+
+export PATH="$HOME/work/bin:$PATH"
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  export VOLTA_HOME="$HOME/.volta"
-  export GO_PATH="$HOME/.go"
-  export PATH="$HOME/work/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$VOLTA_HOME/bin:$PATH"
+ # export PATH for MacOS only needed
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  export PATH="$HOME/work/bin:$HOME/.cargo/bin:/home/linuxbrew/.linuxbrew/bin:$PATH"
+  export PATH="$HOME/.cargo/bin:/home/linuxbrew/.linuxbrew/bin:$PATH"
 fi
 
 function fzf-cd-under-current-dir() {

@@ -22,6 +22,23 @@
   "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
   "initialCols": 180,
   "initialRows": 60,
+  "keybindings": [
+    { "command": "newTab", "keys": "ctrl+t" },
+    { "command": "closePane", "keys": "ctrl+w" },
+    { "command": { "action": "switchToTab", "index": 0 }, "keys": "ctrl+1" },
+    { "command": { "action": "switchToTab", "index": 1 }, "keys": "ctrl+2" },
+    { "command": { "action": "switchToTab", "index": 2 }, "keys": "ctrl+3" },
+    { "command": { "action": "switchToTab", "index": 3 }, "keys": "ctrl+4" },
+    { "command": { "action": "switchToTab", "index": 4 }, "keys": "ctrl+5" },
+    { "command": { "action": "switchToTab", "index": 5 }, "keys": "ctrl+6" },
+    { "command": { "action": "switchToTab", "index": 6 }, "keys": "ctrl+7" },
+    { "command": { "action": "switchToTab", "index": 7 }, "keys": "ctrl+8" },
+    { "command": { "action": "switchToTab", "index": 8 }, "keys": "ctrl+9" },
+    {
+      "command": { "action": "splitPane", "split": "vertical" },
+      "keys": "ctrl+d"
+    }
+  ],
   "profiles": {
     "defaults": {
       "hidden": false,

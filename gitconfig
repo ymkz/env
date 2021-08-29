@@ -6,7 +6,7 @@
   precomposeunicode = true
   ignorecase = false
   quotepath = false
-  pager = less -FRX
+  pager = LESSCHARSET=utf-8 less
 [push]
   default = current
 [status]

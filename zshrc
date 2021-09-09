@@ -22,9 +22,6 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   if builtin command -v starship > /dev/null; then
     eval $(/home/linuxbrew/.linuxbrew/bin/starship init zsh)
   fi
-  if builtin command -v fnm > /dev/null; then
-    eval "$(fnm env)"
-  fi
 fi
 
 if [ -e "$HOME/.cargo" ]; then
@@ -82,7 +79,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 export GO_PATH="$HOME/.go"
 
-export PATH="$HOME/work/bin:$PATH"
+export VOLTA_HOME="$HOME/.volta"
+
+export PATH="$HOME/work/bin:$VOLTA_HOME/bin:$PATH"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
  # export PATH for MacOS only needed
@@ -138,15 +137,12 @@ function curl_status() {
 alias cd-="cd -"
 alias cds="cd ~/work/sandbox"
 
-# https://qiita.com/arcizan/items/9cf19cd982fa65f87546
-alias uniqline="awk '!a[\$0]++'"
-
 if builtin command -v npm > /dev/null; then
   alias nd="npm run dev"
   alias nb="npm run build"
   alias ns="npm run start"
   alias np="npm run preview"
-  alias nf="npm run format"
+  alias nf="npm run fmt"
   alias nl="npm run lint"
   alias nt="npm run test"
 fi

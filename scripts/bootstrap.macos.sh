@@ -27,7 +27,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 brew bundle --file $HOME/work/ghq/github.com/ymkz/dotfiles/Brewfile
 
 # install nodejs
-n latest
+volta install node@latest
 
 # install sdkman for java/jvm toolchain
 curl -s "https://get.sdkman.io?rcupdate=false" | bash

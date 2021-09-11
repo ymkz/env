@@ -50,6 +50,7 @@ ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/gitignore $HOME/.config/git/igno
 ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/starship.toml $HOME/.config/starship.toml
 ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/vimrc $HOME/.vimrc
 ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/zshrc $HOME/.zshrc
+ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/npmrc $HOME/.npmrc
 
 # configure finder
 sudo rm -f /Applications/.localized $HOME/Applications/.localized $HOME/Desktop/.localized $HOME/Documents/.localized $HOME/Downloads/.localized $HOME/Library/.localized $HOME/Movies/.localized $HOME/Music/.localized $HOME/Pictures/.localized $HOME/Public/.localized

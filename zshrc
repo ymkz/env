@@ -81,7 +81,7 @@ export GO_PATH="$HOME/.go"
 
 export VOLTA_HOME="$HOME/.volta"
 
-export PATH="$HOME/work/bin:$VOLTA_HOME/bin:$PATH"
+export PATH="$HOME/work/bin:$HOME/.deno/bin:$VOLTA_HOME/bin:$PATH"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
  # export PATH for MacOS only needed

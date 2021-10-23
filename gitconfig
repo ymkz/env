@@ -8,7 +8,7 @@
   precomposeunicode = true
   ignorecase = false
   quotepath = false
-  pager = LESSCHARSET=utf-8 less
+  pager = LESSCHARSET=utf-8 less -FRX
 [push]
   default = current
 [status]

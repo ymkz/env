@@ -9,8 +9,14 @@
   ignorecase = false
   quotepath = false
   pager = LESSCHARSET=utf-8 less -FRX
+[fetch]
+  prune = true
 [push]
   default = current
+[merge]
+  ff = false
+[pull]
+  ff = only
 [status]
   showUntrackedFiles = all
 [diff]
@@ -21,16 +27,10 @@
   lineNumber = true
 [color]
   ui = true
-  grep = always
-  diff = always
   status = always
   branch = always
+  grep = always
+  diff = always
   diff-highlight = always
-[fetch]
-  prune = true
-[merge]
-  ff = false
-[pull]
-  ff = only
 [ghq]
   root = ~/work/ghq

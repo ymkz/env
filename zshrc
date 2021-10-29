@@ -132,6 +132,7 @@ if type npm > /dev/null; then
   alias nf="npm run fmt"
   alias nl="npm run lint"
   alias nt="npm run test"
+  alias ng="npm ls -g --depth=0"
 fi
 
 if type exa > /dev/null; then

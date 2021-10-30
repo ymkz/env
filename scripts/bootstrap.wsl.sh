@@ -54,7 +54,7 @@ function install_homebrew() {
 
 function install_homebrew_formulae() {
   if [[ ! -e "/home/linuxbrew/.linuxbrew/bin/starship" ]]; then
-    brew install curl exa fzf ghq git jq nkf starship zsh
+    brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/Brewfile"
   fi
 }
 
@@ -100,5 +100,5 @@ echo ">>> 3. cat $HOME/.ssh/id_ed25519.pub | pbcopy && open https://github.com/s
 echo ">>> 4. git remote set-url origin git@github.com:ymkz/dotfiles.git"
 echo ">>> 5. sdk install java"
 echo ">>> 6. fnm install --lts"
-echo ">>> 9. Configure VSCode"
+echo ">>> 9. Configure Applications"
 echo ">>> ========================================"

@@ -1,67 +1,133 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -eu
 
-if [ -e "$HOME/work/ghq/github.com/ymkz/dotfiles" ]; then
-  echo >&2 "[ERROR] Exit bootstrapping because dotfiles already exist."
-  exit 1
-fi
+function fetch_dotfiles() {
+  if [[ ! -e "$HOME/work/ghq/github.com/ymkz/dotfiles" ]]; then
+    git clone https://github.com/ymkz/dotfiles.git "$HOME/work/ghq/github.com/ymkz/dotfiles"
+  fi
+}
 
-# fetch dotfiles
-mkdir -p $HOME/work/ghq/github.com/ymkz
-git clone https://github.com/ymkz/dotfiles.git $HOME/work/ghq/github.com/ymkz/dotfiles
+function install_xcode_cli() {
+  if [[ ! -e "/Library/Developer/CommandLineTools" ]]; then
+    sudo xcode-select --install
+  fi
+}
 
-# install xcode
-if [ ! -e "/Library/Developer/CommandLineTools" ]; then
-  sudo xcode-select --install
-fi
+function install_rust() {
+  # https://www.rust-lang.org/
+  if [[ ! -e "$HOME/.rustup" ]]; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+  fi
+}
 
-# install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+function install_sdkman() {
+  # https://sdkman.io/
+  if [[ ! -e "$HOME/.sdkman" ]]; then
+    curl -s "https://get.sdkman.io?rcupdate=false" | bash
+  fi
+}
 
-# install rust for rust/cargo toolchain
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-export PATH="$HOME/.cargo/bin:$PATH"
+function install_nodejs() {
+  # https://github.com/Schniz/fnm
+  if [[ ! -e "$HOME/.fnm" ]]; then
+    curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
+  fi
+}
 
-# install homebrew formulae
-brew bundle --file $HOME/work/ghq/github.com/ymkz/dotfiles/Brewfile
+function install_deno() {
+  # https://deno.land/
+  if [[ ! -e "$HOME/.deno" ]]; then
+    curl -fsSL https://deno.land/x/install/install.sh | sh
+  fi
+}
 
-# install nodejs
-volta install node@latest
+function install_homebrew() {
+  # https://brew.sh/
+  if [[ ! -e "/usr/local/bin/brew" ]]; then
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+}
 
-# install sdkman for java/jvm toolchain
-curl -s "https://get.sdkman.io?rcupdate=false" | bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
+function install_homebrew_formulae() {
+  if [[ ! -e "/usr/local/bin/starship" ]]; then
+    brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/Brewfile"
+  fi
+}
 
-# create my bin directory
-mkdir -p $HOME/work/bin
+function setup_fonts() {
+  # https://www.jetbrains.com/ja-jp/lp/mono/
+  if [[ -e "$HOME/Library/Fonts/JetBrainsMono" ]]; then
+    curl -sSOL https://download.jetbrains.com/fonts/JetBrainsMono-2.242.zip
+    unzip -j JetBrainsMono-2.242.zip -d "$HOME/Library/Fonts" "*.ttf"
+    rm -f JetBrainsMono-2.242.zip
+  fi
+}
 
-# configure shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-chsh $USER -s /usr/local/bin/zsh
-chmod 755 /usr/local/share/zsh
-chmod 755 /usr/local/share/zsh/site-functions
+function setup_zinit() {
+  # https://github.com/zdharma/zinit
+  if [[ ! -e "$HOME/.zinit" ]]; then
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/HEAD/doc/install.sh)"
+    chsh "$USER" -s /usr/local/bin/zsh
+    chmod 755 /usr/local/share/zsh
+    chmod 755 /usr/local/share/zsh/site-functions
+  fi
+}
 
-# deploy dotfiles
-mkdir -p $HOME/.config/git
-ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/editorconfig $HOME/.editorconfig
-ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/gitconfig $HOME/.gitconfig
-ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/gitignore $HOME/.config/git/ignore
-ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/starship.toml $HOME/.config/starship.toml
-ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/vimrc $HOME/.vimrc
-ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/zshrc $HOME/.zshrc
-ln -nfs $HOME/work/ghq/github.com/ymkz/dotfiles/npmrc $HOME/.npmrc
+function deploy_dotfiles() {
+  mkdir -p "$HOME/.config/git"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/editorconfig" "$HOME/.editorconfig"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/gitconfig" "$HOME/.gitconfig"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/gitignore" "$HOME/.config/git/ignore"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/npmrc" "$HOME/.npmrc"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/starship.toml" "$HOME/.config/starship.toml"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/vimrc" "$HOME/.vimrc"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zshrc" "$HOME/.zshrc"
+}
 
-# configure finder
-sudo rm -f /Applications/.localized $HOME/Applications/.localized $HOME/Desktop/.localized $HOME/Documents/.localized $HOME/Downloads/.localized $HOME/Library/.localized $HOME/Movies/.localized $HOME/Music/.localized $HOME/Pictures/.localized $HOME/Public/.localized
+function remove_garbages() {
+  rm -f "$HOME/Applications/.localized"
+  rm -f "$HOME/Desktop/.localized"
+  rm -f "$HOME/Documents/.localized"
+  rm -f "$HOME/Downloads/.localized"
+  rm -f "$HOME/Library/.localized"
+  rm -f "$HOME/Movies/.localized"
+  rm -f "$HOME/Music/.localized"
+  rm -f "$HOME/Pictures/.localized"
+  rm -f "$HOME/Public/.localized"
+}
 
-# configure system preferences on macos
-$HOME/work/ghq/github.com/ymkz/dotfiles/scripts/configure.macos.sh
+function configure_system_preferences() {
+  if [[ ! -e "$HOME/work/ghq/github.com/ymkz/dotfiles" ]]; then
+    bash "$HOME/work/ghq/github.com/ymkz/dotfiles/scripts/configure.macos.sh"
+  fi
+}
 
-echo ">>> ========================================"
+fetch_dotfiles
+
+install_xcode_cli
+install_rust
+install_sdkman
+install_nodejs
+install_deno
+install_homebrew
+install_homebrew_formulae
+
+setup_fonts
+setup_zinit
+
+deploy_dotfiles
+remove_garbages
+
+configure_system_preferences
+
+echo ">>> =========================================================="
 echo ">>> 1. reboot"
-echo ">>> 2. change dotfiles repository remote origin to ssh"
-echo ">>> 3. install GUI applications and setup from application.md"
-echo ">>> 4. configure application preferences"
-echo ">>> 5. add ssh key for github"
-echo ">>> ========================================"
+echo ">>> 2. ssh-keygen -t ed25519"
+echo ">>> 3. cat $HOME/.ssh/id_ed25519.pub | pbcopy && open https://github.com/settings/keys"
+echo ">>> 4. git remote set-url origin git@github.com:ymkz/dotfiles.git"
+echo ">>> 5. sdk install java"
+echo ">>> 6. fnm install --lts"
+echo ">>> 7. Configure system preferences"
+echo ">>> 8. Configure Applications"
+echo ">>> =========================================================="

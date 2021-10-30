@@ -1,20 +1,33 @@
 # dotfiles
 
-> My dotfiles and setup scripts
+## Installation
 
-## macOS installation
+### macOS
 
 ```sh
-sudo curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/main/scripts/bootstrap.macos.sh | sh
+curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/HEAD/scripts/bootstrap.macos.sh | bash
 ```
 
-## Manual install GUI Applications list
+### WSL
+
+```sh
+curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/HEAD/scripts/bootstrap.wsl.sh | bash
+```
+
+## Applications
+
+### macOS
 
 - [Google Chrome](https://www.google.com/intl/ja_jp/chrome/)
+- [Google Japanese IME](https://www.google.co.jp/ime/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [iTerm2](https://iterm2.com/)
 - [AppCleaner](https://freemacsoft.net/appcleaner/)
 - [Rectangle](https://rectangleapp.com/)
-- [Notion](https://www.notion.so/desktop)
-- [Tweetbot](https://apps.apple.com/jp/app/tweetbot-3-for-twitter/id1384080005)
-- [Keynote](https://apps.apple.com/jp/app/keynote/id409183694)
+
+### WSL
+
+- [Google Chrome](https://www.google.com/intl/ja_jp/chrome/)
+- [Google Japanese IME](https://www.google.co.jp/ime/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Windows Terminal](https://www.microsoft.com/ja-jp/p/windows-terminal/9n0dx20hk701/)

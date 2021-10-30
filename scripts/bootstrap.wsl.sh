@@ -58,11 +58,14 @@ function install_homebrew_formulae() {
   fi
 }
 
-function setup_zinit() {
-  # https://github.com/zdharma/zinit
-  if [[ ! -e "$HOME/.zinit" ]]; then
+function deploy_zsh_plugins() {
+  if [[ ! -e "$HOME/.zsh_plugins" ]]; then
+    mkdir -p "$HOME/.zsh_plugins"
+    git clone https://github.com/zsh-users/zsh-completions $HOME/.zsh_plugins/zsh-completions
+    git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh_plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.zsh_plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-history-substring-search $HOME/.zsh_plugins/zsh-history-substring-search
     which zsh | sudo tee -a /etc/shells
-    bash -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/HEAD/doc/install.sh)"
     sudo chsh "$USER" -s "$(which zsh)"
   fi
 }
@@ -89,8 +92,7 @@ install_deno
 install_homebrew
 install_homebrew_formulae
 
-setup_zinit
-
+deploy_zsh_plugins
 deploy_dotfiles
 
 echo ">>> ========================================"

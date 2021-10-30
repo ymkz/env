@@ -1,14 +1,9 @@
 #!/usr/bin/env zsh
 
-source "$HOME/.zinit/bin/zinit.zsh"
-
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-zinit light "zsh-users/zsh-completions"
-zinit light "zsh-users/zsh-autosuggestions"
-zinit light "zsh-users/zsh-history-substring-search"
-zinit light "zdharma/fast-syntax-highlighting"
+source $HOME/.zsh_plugins/zsh-completions/zsh-completions.plugin.zsh
+source $HOME/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $HOME/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source $HOME/.zsh_plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 
 autoload -Uz compinit; compinit
 autoload -Uz colors; colors
@@ -57,7 +52,7 @@ export FZF_DEFAULT_OPTS="--height 40% --ansi --cycle --reverse --select-1 --exit
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-export PATH="$HOME/work/bin:$HOME/.deno/bin:$HOME/.fnm:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.deno/bin:$HOME/.fnm:$PATH"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   eval "$(/usr/local/bin/brew shellenv)"

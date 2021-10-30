@@ -176,3 +176,7 @@ fi
 if type clip.exe > /dev/null 2>&1; then
   alias pbcopy="clip.exe"
 fi
+
+if type powershell.exe > /dev/null 2>&1; then
+  alias pbpaste="powershell.exe -command 'Get-Clipboard'"
+fi

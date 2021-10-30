@@ -1,5 +1,44 @@
 {
   "$schema": "https://aka.ms/terminal-profiles-schema",
+  "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+  "copyFormatting": "none",
+  "multiLinePasteWarning": false,
+  "copyOnSelect": false,
+  "initialCols": 180,
+  "initialRows": 60,
+  "profiles": {
+    "defaults": {
+      "fontFace": "JetBrains Mono",
+      "fontSize": 16,
+      "colorScheme": "MaterialDarker"
+    },
+    "list": [
+      {
+        "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+        "hidden": false,
+        "name": "Ubuntu",
+        "source": "Windows.Terminal.Wsl",
+        "commandline": "wsl.exe ~ -d Ubuntu-20.04"
+      }
+    ]
+  },
+  "keybindings": [
+    { "command": "newTab", "keys": "alt+t" },
+    { "command": "closePane", "keys": "alt+w" },
+    { "command": { "action": "switchToTab", "index": 0 }, "keys": "alt+1" },
+    { "command": { "action": "switchToTab", "index": 1 }, "keys": "alt+2" },
+    { "command": { "action": "switchToTab", "index": 2 }, "keys": "alt+3" },
+    { "command": { "action": "switchToTab", "index": 3 }, "keys": "alt+4" },
+    { "command": { "action": "switchToTab", "index": 4 }, "keys": "alt+5" },
+    { "command": { "action": "switchToTab", "index": 5 }, "keys": "alt+6" },
+    { "command": { "action": "switchToTab", "index": 6 }, "keys": "alt+7" },
+    { "command": { "action": "switchToTab", "index": 7 }, "keys": "alt+8" },
+    { "command": { "action": "switchToTab", "index": 8 }, "keys": "alt+9" },
+    {
+      "command": { "action": "splitPane", "split": "vertical" },
+      "keys": "alt+d"
+    }
+  ],
   "actions": [
     {
       "command": {
@@ -17,71 +56,6 @@
       "keys": "ctrl+shift+f"
     }
   ],
-  "copyFormatting": "none",
-  "copyOnSelect": false,
-  "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-  "initialCols": 180,
-  "initialRows": 60,
-  "keybindings": [
-    { "command": "newTab", "keys": "ctrl+t" },
-    { "command": "closePane", "keys": "ctrl+w" },
-    { "command": { "action": "switchToTab", "index": 0 }, "keys": "ctrl+1" },
-    { "command": { "action": "switchToTab", "index": 1 }, "keys": "ctrl+2" },
-    { "command": { "action": "switchToTab", "index": 2 }, "keys": "ctrl+3" },
-    { "command": { "action": "switchToTab", "index": 3 }, "keys": "ctrl+4" },
-    { "command": { "action": "switchToTab", "index": 4 }, "keys": "ctrl+5" },
-    { "command": { "action": "switchToTab", "index": 5 }, "keys": "ctrl+6" },
-    { "command": { "action": "switchToTab", "index": 6 }, "keys": "ctrl+7" },
-    { "command": { "action": "switchToTab", "index": 7 }, "keys": "ctrl+8" },
-    { "command": { "action": "switchToTab", "index": 8 }, "keys": "ctrl+9" },
-    {
-      "command": { "action": "splitPane", "split": "vertical" },
-      "keys": "ctrl+d"
-    }
-  ],
-  "profiles": {
-    "defaults": {
-      "hidden": false,
-      "name": "Ubuntu-20.04",
-      "source": "Windows.Terminal.Wsl",
-      "fontFace": "JetBrains Mono",
-      "fontSize": 16,
-      "colorScheme": "MaterialDarker",
-      "startingDirectory": "//wsl$/Ubuntu-20.04/home/ymkz"
-    },
-    "list": [
-      {
-        "commandline": "powershell.exe",
-        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-        "hidden": false,
-        "name": "Windows PowerShell"
-      },
-      {
-        "commandline": "cmd.exe",
-        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-        "hidden": false,
-        "name": "\u30b3\u30de\u30f3\u30c9 \u30d7\u30ed\u30f3\u30d7\u30c8"
-      },
-      {
-        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-        "hidden": false,
-        "name": "Azure Cloud Shell",
-        "source": "Windows.Terminal.Azure"
-      },
-      {
-        "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-        "hidden": false,
-        "name": "Ubuntu-20.04",
-        "source": "Windows.Terminal.Wsl"
-      },
-      {
-        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-        "hidden": false,
-        "name": "Ubuntu-20.04",
-        "source": "Windows.Terminal.Wsl"
-      }
-    ]
-  },
   "schemes": [
     {
       "name": "MaterialDarker",

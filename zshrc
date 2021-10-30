@@ -76,7 +76,7 @@ if type starship > /dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
 
-function fzf-cd-under-current-dir() {
+function fzf_cd() {
   local dir
   dir=$(find * -maxdepth 0 -type d -print 2> /dev/null | fzf +s +m --query="$LBUFFER" --prompt="dir > ")
   if [ -n "$dir" ]; then
@@ -85,16 +85,16 @@ function fzf-cd-under-current-dir() {
   fi
   zle reset-prompt
 }
-zle -N fzf-cd-under-current-dir
-bindkey '^f' fzf-cd-under-current-dir
+zle -N fzf_cd
+bindkey '^f' fzf_cd
 
-function fzf-put-history() {
+function fzf_history() {
   BUFFER=$(history -n -r 1 | fzf +s +m --query="$LBUFFER" --prompt="history > ")
   CURSOR=$#BUFFER
   zle reset-prompt
 }
-zle -N fzf-put-history
-bindkey '^h' fzf-put-history
+zle -N fzf_history
+bindkey '^h' fzf_history
 
 function fzf_ghq() {
   local repository=$(ghq list | fzf +m --query="$LBUFFER" --prompt="repository > ")

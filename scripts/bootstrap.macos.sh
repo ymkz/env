@@ -64,10 +64,13 @@ function setup_fonts() {
   fi
 }
 
-function setup_zinit() {
-  # https://github.com/zdharma/zinit
-  if [[ ! -e "$HOME/.zinit" ]]; then
-    bash -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/HEAD/doc/install.sh)"
+function setup_zsh() {
+  if [[ ! -e "$HOME/.config/zsh" ]]; then
+    mkdir -p "$HOME/.config/zsh"
+    git clone https://github.com/zsh-users/zsh-completions $HOME/.config/zsh/zsh-completions
+    git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.config/zsh/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-history-substring-search $HOME/.config/zsh/zsh-history-substring-search
     chsh "$USER" -s /usr/local/bin/zsh
     chmod 755 /usr/local/share/zsh
     chmod 755 /usr/local/share/zsh/site-functions
@@ -104,7 +107,6 @@ function configure_system_preferences() {
 }
 
 fetch_dotfiles
-
 install_xcode_cli
 install_rust
 install_sdkman
@@ -112,13 +114,10 @@ install_nodejs
 install_deno
 install_homebrew
 install_homebrew_formulae
-
 setup_fonts
-setup_zinit
-
+setup_zsh
 deploy_dotfiles
 remove_garbages
-
 configure_system_preferences
 
 echo ">>> =========================================================="

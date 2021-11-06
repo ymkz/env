@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
-source $HOME/.zsh_plugins/zsh-completions/zsh-completions.plugin.zsh
-source $HOME/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source $HOME/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source $HOME/.zsh_plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+source $HOME/.config/zsh/zsh-completions/zsh-completions.plugin.zsh
+source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source $HOME/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 
 autoload -Uz compinit; compinit
 autoload -Uz colors; colors

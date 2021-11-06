@@ -58,13 +58,13 @@ function install_homebrew_formulae() {
   fi
 }
 
-function deploy_zsh_plugins() {
-  if [[ ! -e "$HOME/.zsh_plugins" ]]; then
-    mkdir -p "$HOME/.zsh_plugins"
-    git clone https://github.com/zsh-users/zsh-completions $HOME/.zsh_plugins/zsh-completions
-    git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh_plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.zsh_plugins/zsh-syntax-highlighting
-    git clone https://github.com/zsh-users/zsh-history-substring-search $HOME/.zsh_plugins/zsh-history-substring-search
+function setup_zsh() {
+  if [[ ! -e "$HOME/.config/zsh" ]]; then
+    mkdir -p "$HOME/.config/zsh"
+    git clone https://github.com/zsh-users/zsh-completions $HOME/.config/zsh/zsh-completions
+    git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.config/zsh/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-history-substring-search $HOME/.config/zsh/zsh-history-substring-search
     which zsh | sudo tee -a /etc/shells
     sudo chsh "$USER" -s "$(which zsh)"
   fi
@@ -82,17 +82,14 @@ function deploy_dotfiles() {
 }
 
 pre_setup
-
 fetch_dotfiles
-
 install_rust
 install_sdkman
 install_nodejs
 install_deno
 install_homebrew
 install_homebrew_formulae
-
-deploy_zsh_plugins
+setup_zsh
 deploy_dotfiles
 
 echo ">>> ========================================"

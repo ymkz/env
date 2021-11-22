@@ -118,7 +118,7 @@ bindkey '^b' fzf_switch
 
 function fzf_cdr() {
   local directory=$(cdr -l | sed 's/^[0-9]\+ \+//' | fzf +s +m --query "$LBUFFER" --prompt="cdr > ")
-  if [ -n "$directory" ]; then
+  if [[ -n "$directory" ]]; then
     BUFFER="cd ${directory}"
     zle accept-line
   fi
@@ -126,6 +126,22 @@ function fzf_cdr() {
 }
 zle -N fzf_cdr
 bindkey '^e' fzf_cdr
+
+function dev() {
+  if [[ -e "pnpm-lock.yaml" ]]; then
+    pnpm run dev
+  elif [[ -e "package-lock.json" ]]; then
+    npm run dev
+  fi
+}
+
+function build() {
+  if [[ -e "pnpm-lock.yaml" ]]; then
+    pnpm run build
+  elif [[ -e "package-lock.json" ]]; then
+    npm run build
+  fi
+}
 
 alias cd-="cd -"
 alias cds="cd ~/work/sandbox"

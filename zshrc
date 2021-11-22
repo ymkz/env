@@ -29,6 +29,7 @@ setopt nonomatch
 
 setopt share_history
 setopt extended_history
+setopt inc_append_history
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
@@ -46,7 +47,7 @@ export FCEDIT="code --wait"
 
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=100000
-export SAVEHIST=100000
+export SAVEHIST=1000000
 
 export FZF_DEFAULT_OPTS="--height 40% --ansi --cycle --reverse --select-1 --exit-0 --bind=tab:down --bind=btab:up"
 
@@ -76,17 +77,14 @@ if type starship > /dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
 
-function fzf_cd() {
-  local dir
-  dir=$(find * -maxdepth 0 -type d -print 2> /dev/null | fzf +s +m --query="$LBUFFER" --prompt="dir > ")
-  if [ -n "$dir" ]; then
-    BUFFER="cd ${dir}"
-    zle accept-line
-  fi
-  zle reset-prompt
-}
-zle -N fzf_cd
-bindkey '^f' fzf_cd
+if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
+  autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+  add-zsh-hook chpwd chpwd_recent_dirs
+  zstyle ':completion:*' recent-dirs-insert both
+  zstyle ':chpwd:*' recent-dirs-default true
+  zstyle ':chpwd:*' recent-dirs-max 1000
+  zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/chpwd-recent-dirs"
+fi
 
 function fzf_history() {
   BUFFER=$(history -n -r 1 | fzf +s +m --query="$LBUFFER" --prompt="history > ")
@@ -94,11 +92,11 @@ function fzf_history() {
   zle reset-prompt
 }
 zle -N fzf_history
-bindkey '^h' fzf_history
+bindkey '^r' fzf_history
 
 function fzf_ghq() {
   local repository=$(ghq list | fzf +m --query="$LBUFFER" --prompt="repository > ")
-  if [ -n "$repository" ]; then
+  if [[ -n "$repository" ]]; then
     BUFFER="cd $(ghq root)/${repository}"
     zle accept-line
   fi
@@ -108,14 +106,26 @@ zle -N fzf_ghq
 bindkey '^g' fzf_ghq
 
 function fzf_switch() {
-  local branch=$(git branch --all | grep -v HEAD | fzf +m --prompt="branch > ")
-  if [ -n "$branch" ]; then
-    git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+  local branch=$(git branch -a --sort=-authordate | grep -v -e '->' -e '*' | sed 's/^[[:space:]]*//' | sed 's/remotes\/origin\///' | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" | awk '!a[$0]++' | fzf +m --query="$LBUFFER" --prompt="branch > ")
+  if [[ -n "$branch" ]]; then
+    BUFFER="git switch ${branch}"
+    zle accept-line
   fi
-  zle accept-line
+  zle reset-prompt
 }
 zle -N fzf_switch
 bindkey '^b' fzf_switch
+
+function fzf_cdr() {
+  local directory=$(cdr -l | sed 's/^[0-9]\+ \+//' | fzf +s +m --query "$LBUFFER" --prompt="cdr > ")
+  if [ -n "$directory" ]; then
+    BUFFER="cd ${directory}"
+    zle accept-line
+  fi
+  zle reset-prompt
+}
+zle -N fzf_cdr
+bindkey '^e' fzf_cdr
 
 alias cd-="cd -"
 alias cds="cd ~/work/sandbox"

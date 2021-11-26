@@ -16,6 +16,14 @@ function fetch_dotfiles() {
   fi
 }
 
+function install_go() {
+  # https://go.dev/
+  if [[ ! -e "/usr/local/go" ]]; then
+    wget https://go.dev/dl/go1.17.3.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go1.17.3.linux-amd64.tar.gz
+  fi
+}
+
 function install_rust() {
   # https://www.rust-lang.org/
   if [[ ! -e "$HOME/.rustup" ]]; then
@@ -83,6 +91,7 @@ function deploy_dotfiles() {
 
 pre_setup
 fetch_dotfiles
+install_go
 install_rust
 install_sdkman
 install_nodejs

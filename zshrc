@@ -125,7 +125,7 @@ function fzf_cdr() {
   zle reset-prompt
 }
 zle -N fzf_cdr
-bindkey '^e' fzf_cdr
+bindkey '^f' fzf_cdr
 
 function dev() {
   if [[ -e "pnpm-lock.yaml" ]]; then

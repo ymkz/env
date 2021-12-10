@@ -28,3 +28,6 @@ colors:
     magenta: "#AB9DF2"
     cyan: "#78DCE8"
     white: "#FCFCFA"
+key_bindings:
+  - { key: V, mods: Control, action: Paste }
+  - { key: C, mods: Control, action: Copy }

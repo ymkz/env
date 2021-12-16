@@ -89,7 +89,7 @@ if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]
 fi
 
 function fzf_history() {
-  BUFFER=$(history -n -r 1 | fzf +s +m --query="$LBUFFER" --prompt="history > ")
+  BUFFER=$(history -n -r 1 | fzf -e +s +m --query="$LBUFFER" --prompt="history > ")
   CURSOR=$#BUFFER
   zle reset-prompt
 }
@@ -97,7 +97,7 @@ zle -N fzf_history
 bindkey '^r' fzf_history
 
 function fzf_ghq() {
-  local repository=$(ghq list | fzf +m --query="$LBUFFER" --prompt="repository > ")
+  local repository=$(ghq list | fzf -e +m --query="$LBUFFER" --prompt="repository > ")
   if [[ -n "$repository" ]]; then
     BUFFER="cd $(ghq root)/${repository}"
     zle accept-line
@@ -108,7 +108,7 @@ zle -N fzf_ghq
 bindkey '^g' fzf_ghq
 
 function fzf_switch() {
-  local branch=$(git branch -a | grep -v -e '->' -e '*' | sed 's/^[[:space:]]*//' | sed 's/remotes\/origin\///' | fzf +m --query="$LBUFFER" --prompt="branch > ")
+  local branch=$(git branch -a | grep -v -e '->' -e '*' | sed -E 's/^[[:space:]]*//' | sed 's/remotes\/origin\///' | fzf -e +m --query="$LBUFFER" --prompt="branch > ")
   if [[ -n "$branch" ]]; then
     BUFFER="git switch ${branch}"
     zle accept-line
@@ -119,7 +119,7 @@ zle -N fzf_switch
 bindkey '^b' fzf_switch
 
 function fzf_cdr() {
-  local directory=$(cdr -l | sed 's/^[0-9]\+ \+//' | fzf +s +m --query "$LBUFFER" --prompt="cdr > ")
+  local directory=$(cdr -l | sed 's/^[0-9]\+ \+//' | fzf -e +s +m --query "$LBUFFER" --prompt="cdr > ")
   if [[ -n "$directory" ]]; then
     BUFFER="cd ${directory}"
     zle accept-line

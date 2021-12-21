@@ -99,7 +99,7 @@ zle -N fzf_ghq
 bindkey '^g' fzf_ghq
 
 function fzf_switch() {
-  local branch=$(git branch -a | grep -v -e '->' -e '*' | sed -E 's/^[[:space:]]*//' | sed 's/remotes\/origin\///' | fzf +m --query="$LBUFFER" --prompt="branch > ")
+  local branch=$(git for-each-ref --format='%(refname:short)' refs/heads refs/remotes | sed 's/origin\///' | awk '!a[$1]++' | grep -v 'HEAD' | grep -v $(git symbolic-ref --short HEAD) | fzf +m --query="$LBUFFER" --prompt="branch > ")
   if [[ -n "$branch" ]]; then
     BUFFER="git switch ${branch}"
     zle accept-line

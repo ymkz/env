@@ -23,6 +23,7 @@
   "search.smartCase": true,
   "security.workspace.trust.untrustedFiles": "open",
   "telemetry.telemetryLevel": "off",
+  "terminal.integrated.fontFamily": "'JetBrains Mono'",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.rightClickBehavior": "default",
   "update.showReleaseNotes": false,

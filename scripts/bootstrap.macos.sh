@@ -14,6 +14,19 @@ function install_xcode_cli() {
   fi
 }
 
+function install_homebrew() {
+  # https://brew.sh/
+  if [[ ! -e "/usr/local/bin/brew" ]]; then
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+}
+
+function install_homebrew_formulae() {
+  if [[ ! -e "/usr/local/bin/starship" ]]; then
+    brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/Brewfile"
+  fi
+}
+
 function install_rust() {
   # https://www.rust-lang.org/
   if [[ ! -e "$HOME/.rustup" ]]; then
@@ -35,26 +48,6 @@ function install_nodejs() {
   fi
 }
 
-function install_deno() {
-  # https://deno.land/
-  if [[ ! -e "$HOME/.deno" ]]; then
-    curl -fsSL https://deno.land/x/install/install.sh | sh
-  fi
-}
-
-function install_homebrew() {
-  # https://brew.sh/
-  if [[ ! -e "/usr/local/bin/brew" ]]; then
-    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  fi
-}
-
-function install_homebrew_formulae() {
-  if [[ ! -e "/usr/local/bin/starship" ]]; then
-    brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/Brewfile"
-  fi
-}
-
 function setup_fonts() {
   # https://www.jetbrains.com/ja-jp/lp/mono/
   if [[ -e "$HOME/Library/Fonts/JetBrainsMono" ]]; then
@@ -71,7 +64,7 @@ function setup_zsh() {
     git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.config/zsh/zsh-syntax-highlighting
     git clone https://github.com/zsh-users/zsh-history-substring-search $HOME/.config/zsh/zsh-history-substring-search
-    chsh "$USER" -s /usr/local/bin/zsh
+    chsh -s /usr/local/bin/zsh
     chmod 755 /usr/local/share/zsh
     chmod 755 /usr/local/share/zsh/site-functions
   fi
@@ -108,12 +101,11 @@ function configure_system_preferences() {
 
 fetch_dotfiles
 install_xcode_cli
+install_homebrew
+install_homebrew_formulae
 install_rust
 install_sdkman
 install_nodejs
-install_deno
-install_homebrew
-install_homebrew_formulae
 setup_fonts
 setup_zsh
 deploy_dotfiles

@@ -41,13 +41,6 @@ function install_sdkman() {
   fi
 }
 
-function install_nodejs() {
-  # https://github.com/Schniz/fnm
-  if [[ ! -e "$HOME/.fnm" ]]; then
-    curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
-  fi
-}
-
 function setup_fonts() {
   # https://www.jetbrains.com/ja-jp/lp/mono/
   if [[ -e "$HOME/Library/Fonts/JetBrainsMono" ]]; then
@@ -105,7 +98,6 @@ install_homebrew
 install_homebrew_formulae
 install_rust
 install_sdkman
-install_nodejs
 setup_fonts
 setup_zsh
 deploy_dotfiles

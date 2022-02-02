@@ -19,7 +19,6 @@ curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/HEAD/scripts/bootstra
 ### macOS
 
 - [Google Chrome](https://www.google.com/intl/ja_jp/chrome/)
-- [Google Japanese IME](https://www.google.co.jp/ime/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [iTerm2](https://iterm2.com/)
 - [AppCleaner](https://freemacsoft.net/appcleaner/)
@@ -30,4 +29,3 @@ curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/HEAD/scripts/bootstra
 - [Google Chrome](https://www.google.com/intl/ja_jp/chrome/)
 - [Google Japanese IME](https://www.google.co.jp/ime/)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Windows Terminal](https://www.microsoft.com/ja-jp/p/windows-terminal/9n0dx20hk701/)

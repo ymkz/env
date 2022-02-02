@@ -16,6 +16,20 @@ function fetch_dotfiles() {
   fi
 }
 
+function install_homebrew() {
+  # https://brew.sh/
+  if [[ ! -e "/home/linuxbrew/.linuxbrew" ]]; then
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  fi
+}
+
+function install_homebrew_formulae() {
+  if [[ ! -e "/home/linuxbrew/.linuxbrew/bin/starship" ]]; then
+    brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/Brewfile"
+  fi
+}
+
 function install_go() {
   # https://go.dev/
   if [[ ! -e "/usr/local/go" ]]; then
@@ -35,34 +49,6 @@ function install_sdkman() {
   # https://sdkman.io/
   if [[ ! -e "$HOME/.sdkman" ]]; then
     curl -s "https://get.sdkman.io?rcupdate=false" | bash
-  fi
-}
-
-function install_nodejs() {
-  # https://github.com/Schniz/fnm
-  if [[ ! -e "$HOME/.fnm" ]]; then
-    curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
-  fi
-}
-
-function install_deno() {
-  # https://deno.land/
-  if [[ ! -e "$HOME/.deno" ]]; then
-    curl -fsSL https://deno.land/x/install/install.sh | sh
-  fi
-}
-
-function install_homebrew() {
-  # https://brew.sh/
-  if [[ ! -e "/home/linuxbrew/.linuxbrew" ]]; then
-    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  fi
-}
-
-function install_homebrew_formulae() {
-  if [[ ! -e "/home/linuxbrew/.linuxbrew/bin/starship" ]]; then
-    brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/Brewfile"
   fi
 }
 
@@ -91,13 +77,11 @@ function deploy_dotfiles() {
 
 pre_setup
 fetch_dotfiles
+install_homebrew
+install_homebrew_formulae
 install_go
 install_rust
 install_sdkman
-install_nodejs
-install_deno
-install_homebrew
-install_homebrew_formulae
 setup_zsh
 deploy_dotfiles
 

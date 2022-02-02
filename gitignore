@@ -12,3 +12,6 @@ Thumbs.db
 
 # Node.js
 node_modules
+
+# Project local workspace
+.work

@@ -3,6 +3,7 @@ tap "homebrew/core"
 
 brew "curl"
 brew "exa"
+brew "fnm"
 brew "fzf"
 brew "ghq"
 brew "git"

@@ -55,7 +55,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 export GOPATH="$HOME/.go"
 
-export PATH="/usr/local/go/bin:$HOME/.deno/bin:$HOME/.fnm:$HOME/.local/bin:$PATH"
+export PATH="/usr/local/go/bin:$HOME/.fnm:$HOME/.local/bin:$PATH"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   eval "$(/usr/local/bin/brew shellenv)"

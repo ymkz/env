@@ -6,7 +6,7 @@ function pre_setup() {
   if [[ ! -e "$HOME/work/ghq/github.com/ymkz/dotfiles" ]]; then
     sudo apt update -y
     sudo apt upgrade -y
-    sudo apt install -y build-essential procps pkg-config libssl-dev zip unzip
+    sudo apt install -y build-essential procps
   fi
 }
 

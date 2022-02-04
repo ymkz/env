@@ -5,13 +5,13 @@
 ### macOS
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/HEAD/scripts/bootstrap.macos.sh | bash
+curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/HEAD/script/bootstrap.macos.sh | bash
 ```
 
 ### WSL
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/HEAD/scripts/bootstrap.wsl.sh | bash
+curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/HEAD/script/bootstrap.wsl.sh | bash
 ```
 
 ## Applications

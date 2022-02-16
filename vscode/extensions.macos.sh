@@ -1,9 +1,10 @@
-code --install-extension bierner.markdown-preview-github-styles
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension denoland.vscode-deno
+code --install-extension arcticicestudio.nord-visual-studio-code
+code --install-extension eamodio.gitlens
 code --install-extension esbenp.prettier-vscode
-code --install-extension monokai.theme-monokai-pro-vscode
+code --install-extension mikestead.dotenv
+code --install-extension ms-azuretools.vscode-docker
 code --install-extension MS-CEINTL.vscode-language-pack-ja
+code --install-extension ms-vscode-remote.remote-containers
 code --install-extension PKief.material-icon-theme
 code --install-extension qezhu.gitlink
 code --install-extension tamasfe.even-better-toml

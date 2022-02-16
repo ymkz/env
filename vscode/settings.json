@@ -18,6 +18,7 @@
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "explorer.sortOrder": "type",
   "gitlens.advanced.messages": {
     "suppressGitMissingWarning": true
   },

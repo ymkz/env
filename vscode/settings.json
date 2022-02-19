@@ -23,6 +23,7 @@
     "suppressGitMissingWarning": true
   },
   "javascript.inlayHints.parameterNames.enabled": "all",
+  "redhat.telemetry.enabled": false,
   "typescript.inlayHints.parameterNames.enabled": "all",
   "search.smartCase": true,
   "security.workspace.trust.untrustedFiles": "open",

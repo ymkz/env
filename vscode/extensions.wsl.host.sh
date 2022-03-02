@@ -1,9 +1,0 @@
-code --install-extension esbenp.prettier-vscode
-code --install-extension monokai.theme-monokai-pro-vscode
-code --install-extension MS-CEINTL.vscode-language-pack-ja
-code --install-extension ms-vscode-remote.remote-containers
-code --install-extension ms-vscode-remote.remote-wsl
-code --install-extension PKief.material-icon-theme
-code --install-extension tamasfe.even-better-toml
-code --install-extension VisualStudioExptTeam.vscodeintellicode
-code --install-extension wmaurer.change-case

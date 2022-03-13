@@ -13,7 +13,7 @@ function screenshot() {
   defaults write com.apple.screencapture location -string "$HOME/Downloads"
   defaults write com.apple.screencapture type -string "png"
   defaults write com.apple.screencapture disable-shadow -bool true
-  defaults write com.apple.screencapture name -string "ss"
+  defaults write com.apple.screencapture name -string ""
   defaults write com.apple.screencapture include-date -bool true
 }
 

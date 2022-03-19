@@ -22,6 +22,8 @@
   "gitlens.advanced.messages": {
     "suppressGitMissingWarning": true
   },
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
   "javascript.inlayHints.parameterNames.enabled": "all",
   "redhat.telemetry.enabled": false,
   "typescript.inlayHints.parameterNames.enabled": "all",

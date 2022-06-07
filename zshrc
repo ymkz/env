@@ -144,8 +144,8 @@ if type exa > /dev/null; then
   alias l="exa -F"
   alias ls="exa -F"
   alias la="exa -Fa"
-  alias ll="exa -bhlHF --sort=type --time-style=long-iso"
-  alias lla="exa -bhlHFa --sort=type --time-style=long-iso"
+  alias ll="exa -bghlHF --sort=type --time-style=long-iso --octal-permissions"
+  alias lla="exa -bghlHFa --sort=type --time-style=long-iso --octal-permissions"
 else
   alias l="ls -hFG"
   alias ls="ls -hFG"

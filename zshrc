@@ -181,6 +181,7 @@ if type git > /dev/null; then
   alias gini="git commit --allow-empty -m 'chore: initial empty commit'"
   alias gam="git commit --amend -C HEAD"
   alias grecm="git commit --amend -m"
+  alias gg="git fetch --all --prune; git branch -vv | awk '/: gone]/{print \$1}' | xargs git branch -D"
 fi
 
 if type clip.exe > /dev/null 2>&1; then

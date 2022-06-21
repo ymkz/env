@@ -26,11 +26,11 @@
 [grep]
   lineNumber = true
 [color]
-  ui = true
-  status = always
-  branch = always
-  grep = always
-  diff = always
-  diff-highlight = always
+  ui = auto
+  status = auto
+  branch = auto
+  grep = auto
+  diff = auto
+  diff-highlight = auto
 [ghq]
   root = ~/work/ghq

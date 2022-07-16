@@ -131,12 +131,6 @@ alias cds="cd ~/work/sandbox"
 alias docker="nerdctl"
 
 if type npm > /dev/null; then
-  alias nd="npm run dev"
-  alias nb="npm run build"
-  alias ns="npm run start"
-  alias nf="npm run fmt"
-  alias nl="npm run lint"
-  alias nt="npm run test"
   alias ng="npm ls --location=global --depth=0"
 fi
 

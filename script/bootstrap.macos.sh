@@ -68,6 +68,7 @@ function deploy_dotfiles() {
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/editorconfig" "$HOME/.editorconfig"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/gitconfig" "$HOME/.gitconfig"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/gitignore" "$HOME/.config/git/ignore"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/gitattributes" "$HOME/.config/git/attributes"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/npmrc" "$HOME/.npmrc"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/starship.toml" "$HOME/.config/starship.toml"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/vimrc" "$HOME/.vimrc"

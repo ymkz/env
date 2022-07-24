@@ -40,6 +40,7 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.tabSizing": "shrink",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.layoutControl.enabled": false,
   "workbench.panel.defaultLocation": "right",
   "workbench.startupEditor": "none"
 }

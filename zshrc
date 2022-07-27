@@ -109,22 +109,6 @@ function fzf_switch() {
 zle -N fzf_switch
 bindkey '^b' fzf_switch
 
-function dev() {
-  if [[ -e "pnpm-lock.yaml" ]]; then
-    pnpm run dev
-  elif [[ -e "package-lock.json" ]]; then
-    npm run dev
-  fi
-}
-
-function build() {
-  if [[ -e "pnpm-lock.yaml" ]]; then
-    pnpm run build
-  elif [[ -e "package-lock.json" ]]; then
-    npm run build
-  fi
-}
-
 alias cd-="cd -"
 alias cds="cd ~/work/sandbox"
 

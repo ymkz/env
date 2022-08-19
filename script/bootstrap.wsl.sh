@@ -10,6 +10,12 @@ function pre_setup() {
   fi
 }
 
+function pre_setup_nameserver() {
+  sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
+  sudo rm -f /etc/resolv.conf
+  sudo sh -c "echo 'nameserver 8.8.8.8' > /etc/resolv.conf"
+}
+
 function fetch_dotfiles() {
   if [[ ! -e "$HOME/work/ghq/github.com/ymkz/dotfiles" ]]; then
     git clone https://github.com/ymkz/dotfiles.git "$HOME/work/ghq/github.com/ymkz/dotfiles"
@@ -74,11 +80,10 @@ function deploy_dotfiles() {
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/starship.toml" "$HOME/.config/starship.toml"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/vimrc" "$HOME/.vimrc"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zshrc" "$HOME/.zshrc"
-  sudo ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
-  sudo ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/resolv.conf" "/etc/resolv.conf"
 }
 
 pre_setup
+pre_setup_nameserver
 fetch_dotfiles
 install_homebrew
 install_homebrew_formulae

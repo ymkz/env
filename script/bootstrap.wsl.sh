@@ -10,16 +10,16 @@ function pre_setup() {
   fi
 }
 
-function pre_setup_nameserver() {
-  sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
-  sudo rm -f /etc/resolv.conf
-  sudo sh -c "echo 'nameserver 8.8.8.8' > /etc/resolv.conf"
-}
-
 function fetch_dotfiles() {
   if [[ ! -e "$HOME/work/ghq/github.com/ymkz/dotfiles" ]]; then
     git clone https://github.com/ymkz/dotfiles.git "$HOME/work/ghq/github.com/ymkz/dotfiles"
   fi
+}
+
+function update_nameserver() {
+  sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
+  sudo rm -f /etc/resolv.conf
+  sudo sh -c "echo 'nameserver 8.8.8.8' > /etc/resolv.conf"
 }
 
 function install_homebrew() {
@@ -83,8 +83,8 @@ function deploy_dotfiles() {
 }
 
 pre_setup
-pre_setup_nameserver
 fetch_dotfiles
+update_nameserver
 install_homebrew
 install_homebrew_formulae
 install_go

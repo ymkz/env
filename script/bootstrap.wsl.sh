@@ -17,9 +17,9 @@ function fetch_dotfiles() {
 }
 
 function update_nameserver() {
-  sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
   sudo rm -f /etc/resolv.conf
-  sudo sh -c "echo 'nameserver 8.8.8.8' > /etc/resolv.conf"
+  sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
+  sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/resolv.conf" "/etc/resolv.conf"
 }
 
 function install_homebrew() {

@@ -49,6 +49,8 @@ export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=100000
 export SAVEHIST=1000000
 
+export GIT_EXTERNAL_DIFF=difft
+
 export FZF_DEFAULT_OPTS="--height 40% --ansi --cycle --reverse --select-1 --exit-0 --bind=tab:down --bind=btab:up"
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -111,8 +113,6 @@ bindkey '^b' fzf_switch
 
 alias cd-="cd -"
 alias cds="cd ~/work/sandbox"
-
-alias docker="nerdctl"
 
 if type npm > /dev/null; then
   alias ng="npm ls --location=global --depth=0"

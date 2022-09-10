@@ -2,6 +2,7 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 
 brew "curl"
+brew "difftastic"
 brew "exa"
 brew "fnm"
 brew "fzf"

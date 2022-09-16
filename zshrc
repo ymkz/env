@@ -51,7 +51,7 @@ export SAVEHIST=1000000
 
 export GIT_EXTERNAL_DIFF=difft
 
-export FZF_DEFAULT_OPTS="--height 40% --ansi --cycle --reverse --select-1 --exit-0 --bind=tab:down --bind=btab:up"
+export FZF_DEFAULT_OPTS="--exact --height 40% --ansi --cycle --reverse --select-1 --exit-0 --bind=tab:down --bind=btab:up"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 

@@ -1,3 +1,5 @@
+format = '$time$all'
+
 [directory]
 truncate_to_repo = true
 
@@ -9,7 +11,15 @@ ssh_only = true
 
 [kubernetes]
 disabled = false
-style = "blue bold"
+format = '[⛵ $context( \($namespace\))]($style) in '
+style = 'blue bold'
 
 [nodejs]
-symbol = "⬢ "
+symbol = '⬢ '
+
+[cmd_duration]
+show_milliseconds = true
+
+[time]
+disabled = false
+format = '[$time]($style) '

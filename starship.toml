@@ -11,7 +11,7 @@ ssh_only = true
 
 [kubernetes]
 disabled = false
-format = '[⛵ $context( \($namespace\))]($style) in '
+format = '[⎈ $context( \($namespace\))]($style) in '
 style = 'blue bold'
 
 [nodejs]

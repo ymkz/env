@@ -1,46 +1,18 @@
 {
+  "$help": "https://aka.ms/terminal-documentation",
   "$schema": "https://aka.ms/terminal-profiles-schema",
-  "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-  "copyFormatting": "none",
-  "launchMode": "maximized",
-  "multiLinePasteWarning": false,
-  "copyOnSelect": false,
-  "initialCols": 180,
-  "initialRows": 60,
-  "profiles": {
-    "defaults": {
-      "fontFace": "MonoLisa",
-      "fontSize": 16,
-      "colorScheme": "Nord"
-    },
-    "list": [
-      {
-        "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-        "hidden": false,
-        "name": "Ubuntu",
-        "source": "Windows.Terminal.Wsl",
-        "commandline": "wsl.exe ~ -d Ubuntu-20.04"
-      }
-    ]
-  },
-  "keybindings": [
-    { "command": "newTab", "keys": "alt+t" },
-    { "command": "closePane", "keys": "alt+w" },
-    { "command": { "action": "switchToTab", "index": 0 }, "keys": "alt+1" },
-    { "command": { "action": "switchToTab", "index": 1 }, "keys": "alt+2" },
-    { "command": { "action": "switchToTab", "index": 2 }, "keys": "alt+3" },
-    { "command": { "action": "switchToTab", "index": 3 }, "keys": "alt+4" },
-    { "command": { "action": "switchToTab", "index": 4 }, "keys": "alt+5" },
-    { "command": { "action": "switchToTab", "index": 5 }, "keys": "alt+6" },
-    { "command": { "action": "switchToTab", "index": 6 }, "keys": "alt+7" },
-    { "command": { "action": "switchToTab", "index": 7 }, "keys": "alt+8" },
-    { "command": { "action": "switchToTab", "index": 8 }, "keys": "alt+9" },
-    {
-      "command": { "action": "splitPane", "split": "vertical" },
-      "keys": "alt+d"
-    }
-  ],
   "actions": [
+    {
+      "command": "find",
+      "keys": "ctrl+shift+f"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "right"
+      },
+      "keys": "alt+d"
+    },
     {
       "command": {
         "action": "copy",
@@ -53,31 +25,115 @@
       "keys": "ctrl+v"
     },
     {
-      "command": "find",
-      "keys": "ctrl+shift+f"
+      "command": {
+        "action": "newTab"
+      },
+      "keys": "alt+t"
+    },
+    {
+      "command": "closePane",
+      "keys": "alt+w"
+    },
+    {
+      "command": {
+        "action": "switchToTab",
+        "index": 0
+      },
+      "keys": "alt+1"
+    },
+    {
+      "command": {
+        "action": "switchToTab",
+        "index": 1
+      },
+      "keys": "alt+2"
+    },
+    {
+      "command": {
+        "action": "switchToTab",
+        "index": 2
+      },
+      "keys": "alt+3"
+    },
+    {
+      "command": {
+        "action": "switchToTab",
+        "index": 3
+      },
+      "keys": "alt+4"
     }
   ],
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+  "disableAnimations": true,
+  "initialCols": 180,
+  "initialRows": 60,
+  "launchMode": "maximized",
+  "multiLinePasteWarning": false,
+  "profiles": {
+    "defaults": {
+      "colorScheme": "Catppuccin Macchiato",
+      "font": {
+        "face": "MonoLisa",
+        "size": 16
+      }
+    },
+    "list": [
+      {
+        "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+        "hidden": false,
+        "name": "Ubuntu",
+        "source": "Windows.Terminal.Wsl"
+      }
+    ]
+  },
   "schemes": [
     {
-      "name": "Nord",
-      "foreground": "#D8DEE9",
+      "background": "#24273A",
+      "black": "#494D64",
+      "blue": "#8AADF4",
+      "brightBlack": "#5B6078",
+      "brightBlue": "#8AADF4",
+      "brightCyan": "#8BD5CA",
+      "brightGreen": "#A6DA95",
+      "brightPurple": "#F5BDE6",
+      "brightRed": "#ED8796",
+      "brightWhite": "#A5ADCB",
+      "brightYellow": "#EED49F",
+      "cursorColor": "#F4DBD6",
+      "cyan": "#8BD5CA",
+      "foreground": "#CAD3F5",
+      "green": "#A6DA95",
+      "name": "Catppuccin Macchiato",
+      "purple": "#F5BDE6",
+      "red": "#ED8796",
+      "selectionBackground": "#5B6078",
+      "white": "#B8C0E0",
+      "yellow": "#EED49F"
+    },
+    {
       "background": "#2E3440",
       "black": "#3B4252",
-      "red": "#BF616A",
-      "green": "#A3BE8C",
-      "yellow": "#EBCB8B",
       "blue": "#81A1C1",
-      "purple": "#B48EAD",
-      "cyan": "#88C0D0",
-      "white": "#E5E9F0",
       "brightBlack": "#4C566A",
-      "brightRed": "#BF616A",
-      "brightGreen": "#A3BE8C",
-      "brightYellow": "#EBCB8B",
       "brightBlue": "#81A1C1",
-      "brightPurple": "#B48EAD",
       "brightCyan": "#88C0D0",
-      "brightWhite": "#E5E9F0"
+      "brightGreen": "#A3BE8C",
+      "brightPurple": "#B48EAD",
+      "brightRed": "#BF616A",
+      "brightWhite": "#E5E9F0",
+      "brightYellow": "#EBCB8B",
+      "cursorColor": "#FFFFFF",
+      "cyan": "#88C0D0",
+      "foreground": "#D8DEE9",
+      "green": "#A3BE8C",
+      "name": "Nord",
+      "purple": "#B48EAD",
+      "red": "#BF616A",
+      "selectionBackground": "#FFFFFF",
+      "white": "#E5E9F0",
+      "yellow": "#EBCB8B"
     }
   ]
 }

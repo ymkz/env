@@ -1,14 +1,18 @@
 # Backup
-*.swp
-*.bak
-*~
+
+_.swp
+_.bak
+\*~
 
 # macOS
+
 .DS_Store
 Thumbs.db
 
 # Node.js
+
 node_modules
 
 # Project local working space
-.working
+
+.work

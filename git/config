@@ -8,7 +8,7 @@
   precomposeunicode = true
   ignorecase = false
   quotepath = false
-  pager = LESSCHARSET=utf-8 less -FRX
+  pager = less -FRX
 [fetch]
   prune = true
 [push]

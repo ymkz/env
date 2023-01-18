@@ -21,12 +21,6 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.sortOrder": "default",
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
-  },
   "git.mergeEditor": true,
   "gitlens.advanced.messages": {
     "suppressGitMissingWarning": true

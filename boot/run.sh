@@ -60,6 +60,8 @@ function deploy_config_files() {
   mkdir -p "$HOME/.config/git"
   mkdir -p "$HOME/.config/zsh"
 
+  mkdir -p "$HOME/.local/state/zsh"
+
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zsh/.zshenv" "$HOME/.zshenv"
 
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/vim/vimrc" "$HOME/.vimrc"

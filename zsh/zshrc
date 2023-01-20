@@ -31,6 +31,10 @@ setopt hist_reduce_blanks
 unsetopt caseglob
 unsetopt promptcr
 
+HISTFILE=$XDG_STATE_HOME/zsh/history
+HISTSIZE=100000
+SAVEHIST=1000000
+
 typeset -U path PATH
 
 export PATH="/usr/local/go/bin:$HOME/.fnm:$HOME/.local/bin:$PATH"
@@ -42,7 +46,6 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
 --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
 --height 40% --ansi --cycle --reverse --select-1 --exit-0 --bind=tab:down --bind=btab:up"
-
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(fnm env --use-on-cd)"

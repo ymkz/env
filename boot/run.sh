@@ -56,7 +56,7 @@ function deploy_zsh_plugin() {
   fi
 }
 
-function deploy_dotfiles() {
+function deploy_config_files() {
   mkdir -p "$HOME/.config/git"
   mkdir -p "$HOME/.config/zsh"
 
@@ -68,6 +68,8 @@ function deploy_dotfiles() {
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/starship/starship.toml" "$HOME/.config/starship.toml"
 
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zsh/zshrc" "$HOME/.config/zsh/.zshrc"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zsh/alias.zsh" "$HOME/.config/zsh/alias.zsh"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zsh/function.zsh" "$HOME/.config/zsh/function.zsh"
 
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/git/config" "$HOME/.config/git/config"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/git/ignore" "$HOME/.config/git/ignore"
@@ -101,6 +103,6 @@ install_rust
 install_sdkman
 restore_homebrew_formulae
 deploy_zsh_plugin
-deploy_dotfiles
+deploy_config_files
 use_zsh
 after_all

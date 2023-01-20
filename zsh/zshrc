@@ -31,128 +31,39 @@ setopt hist_reduce_blanks
 unsetopt caseglob
 unsetopt promptcr
 
+typeset -U path PATH
+
+export PATH="/usr/local/go/bin:$HOME/.fnm:$HOME/.local/bin:$PATH"
+
+export GOPATH="$HOME/.go"
+
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
 --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
 --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
 --height 40% --ansi --cycle --reverse --select-1 --exit-0 --bind=tab:down --bind=btab:up"
 
-export GOPATH="$HOME/.go"
 
-export PATH="/usr/local/go/bin:$HOME/.fnm:$HOME/.local/bin:$PATH"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(fnm env --use-on-cd)"
+eval "$(starship init zsh)"
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  eval "$(/usr/local/bin/brew shellenv)"
-elif  [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
-
-if [[ -e "$HOME/.cargo/env" ]]; then
-  source "$HOME/.cargo/env"
-fi
-
-if [[ -e "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
-  source "$HOME/.sdkman/bin/sdkman-init.sh"
-fi
-
-if type fnm > /dev/null 2>&1; then
-  eval "$(fnm env --use-on-cd)"
-fi
-
-if type starship > /dev/null 2>&1; then
-  eval "$(starship init zsh)"
-fi
+source "$HOME/.cargo/env"
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 source $XDG_CONFIG_HOME/zsh/plugin/zsh-completions/zsh-completions.plugin.zsh
 source $XDG_CONFIG_HOME/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $XDG_CONFIG_HOME/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $XDG_CONFIG_HOME/zsh/plugin/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 
-function fzf_history() {
-  BUFFER=$(history -n -r 1 | fzf -e +s +m --query="$LBUFFER" --prompt="history > ")
-  CURSOR=$#BUFFER
-  zle reset-prompt
-}
+source $XDG_CONFIG_HOME/zsh/alias.zsh
+source $XDG_CONFIG_HOME/zsh/function.zsh
+
 zle -N fzf_history
 bindkey '^r' fzf_history
 
-function fzf_ghq() {
-  local repository=$(ghq list | fzf +m --query="$LBUFFER" --prompt="repository > ")
-  if [[ -n "$repository" ]]; then
-    BUFFER="cd $(ghq root)/${repository}"
-    zle accept-line
-  fi
-  zle reset-prompt
-}
 zle -N fzf_ghq
 bindkey '^g' fzf_ghq
 
-function fzf_switch() {
-  local branch=$(git for-each-ref --format='%(refname:short)' refs/heads refs/remotes | sed 's/origin\///' | awk '!a[$1]++' | grep -x -v 'HEAD' | grep -x -v $(git symbolic-ref --short HEAD) | fzf +m --query="$LBUFFER" --prompt="branch > ")
-  if [[ -n "$branch" ]]; then
-    BUFFER="git switch '${branch}'"
-    zle accept-line
-  fi
-  zle reset-prompt
-}
 zle -N fzf_switch
 bindkey '^b' fzf_switch
-
-alias cd-="cd -"
-alias cds="cd ~/work/sandbox"
-
-if type npm > /dev/null; then
-  alias ng="npm ls --location=global --depth=0"
-fi
-
-if type exa > /dev/null; then
-  alias l="exa -F"
-  alias ls="exa -F"
-  alias la="exa -Fa"
-  alias ll="exa -bghlHF --sort=type --time-style=long-iso --octal-permissions"
-  alias lla="exa -bghlHFa --sort=type --time-style=long-iso --octal-permissions"
-else
-  alias l="ls -hFG"
-  alias ls="ls -hFG"
-  alias la="ls -hA"
-  alias ll="ls -hl"
-  alias lla="ls -hAlF"
-fi
-
-if type code > /dev/null; then
-  alias code.="code ."
-  alias coder="code . --reuse-window"
-  alias codeextensions="code --list-extensions | xargs -L 1 echo code --install-extension"
-fi
-
-if type git > /dev/null; then
-  alias gpl="git pull"
-  alias gps="git push"
-  alias gf="git fetch"
-  alias gs="git status --short --branch"
-  alias gl="git log -n 10 --date=short --pretty=format:'%C(yellow)%h %C(green)%cd %C(blue)%cn %C(reset)%s'"
-  alias gll="git log --date=short --pretty=format:'%C(yellow)%h %C(green)%cd %C(blue)%cn %C(reset)%s'"
-  alias gb="git branch"
-  alias gbl="git branch -a -vv"
-  alias ga="git add"
-  alias gd="git diff"
-  alias gdc="git diff --cached"
-  alias gdw="git diff --color-words"
-  alias gds="git diff --color-words --word-diff-regex='\\\w+|[^[:space:]]'"
-  alias gnew="git switch --create"
-  alias grs="git restore"
-  alias gun="git reset HEAD"
-  alias gcm="git commit --message"
-  alias gini="git commit --allow-empty -m 'chore: initial empty commit'"
-  alias gam="git commit --amend -C HEAD"
-  alias grecm="git commit --amend -m"
-  alias gg="git fetch --all --prune; git branch -vv | awk '/: gone]/{print \$1}' | xargs git branch -D"
-fi
-
-if type clip.exe > /dev/null 2>&1; then
-  alias pbcopy="clip.exe"
-fi
-
-if type powershell.exe > /dev/null 2>&1; then
-  alias pbpaste="powershell.exe -command 'Get-Clipboard'"
-fi

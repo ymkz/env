@@ -63,8 +63,8 @@ function deploy_dotfiles() {
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zsh/.zshenv" "$HOME/.zshenv"
 
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/vim/vimrc" "$HOME/.vimrc"
-  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/npm/npmrc" "$HOME/.npmrc"
-  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/editorconfig" "$HOME/.editorconfig"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/node/npmrc" "$HOME/.npmrc"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/misc/editorconfig" "$HOME/.editorconfig"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/starship/starship.toml" "$HOME/.config/starship.toml"
 
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zsh/zshrc" "$HOME/.config/zsh/.zshrc"

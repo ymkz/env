@@ -1,7 +1,8 @@
 format = '$time$all'
 
 [directory]
-truncate_to_repo = true
+truncation_length = 2
+truncate_to_repo = false
 
 [package]
 disabled = true
@@ -11,13 +12,17 @@ ssh_only = true
 
 [kubernetes]
 disabled = false
-format = '[⎈ $context( \($namespace\))]($style) in '
+format = '[⎈ $cluster( \($namespace\))]($style) in '
 style = 'blue bold'
 
 [nodejs]
 symbol = '⬢ '
 
+[ruby]
+disabled = true
+
 [cmd_duration]
+min_time = 0
 show_milliseconds = true
 
 [time]

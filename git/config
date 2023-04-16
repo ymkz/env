@@ -12,7 +12,8 @@
 [fetch]
   prune = true
 [push]
-  default = current
+  default = simple
+  autoSetupRemote = true
 [merge]
   ff = false
 [pull]

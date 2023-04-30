@@ -37,9 +37,11 @@ SAVEHIST=1000000
 
 typeset -U path PATH
 
-export PATH="/usr/local/go/bin:$HOME/.fnm:$HOME/.local/bin:$PATH"
+export DENO_INSTALL="/home/ymkz/.deno"
 
 export GOPATH="$HOME/.go"
+
+export PATH="/usr/local/go/bin:$HOME/.fnm:$DENO_INSTALL/bin:$HOME/.local/bin:$PATH"
 
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \

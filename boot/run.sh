@@ -28,6 +28,13 @@ function install_homebrew() {
   fi
 }
 
+function install_deno() {
+  # https://deno.com/manual/getting_started/installation
+  if [[ ! -e "$HOME/.deno" ]]; then
+    curl -fsSL https://deno.land/x/install/install.sh | sh
+  fi
+}
+
 function install_rust() {
   # https://www.rust-lang.org/
   if [[ ! -e "$HOME/.rustup" ]]; then
@@ -101,6 +108,7 @@ before_all
 fetch_dotfiles
 update_nameserver
 install_homebrew
+install_deno
 install_rust
 install_sdkman
 restore_homebrew_formulae

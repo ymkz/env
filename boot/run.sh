@@ -14,46 +14,11 @@ function fetch_dotfiles() {
   fi
 }
 
-# function update_nameserver() {
-#   sudo rm -f /etc/resolv.conf
-#   sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
-#   sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/resolv.conf" "/etc/resolv.conf"
-# }
-
-function install_homebrew() {
-  # https://brew.sh/
-  if [[ ! -e "/home/linuxbrew/.linuxbrew" ]]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  fi
-}
-
-function restore_homebrew_formulae() {
-  brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/brew/Brewfile"
-}
-
-function install_sdkman() {
-  # https://sdkman.io/
-  if [[ ! -e "$HOME/.sdkman" ]]; then
-    curl -s "https://get.sdkman.io?rcupdate=false" | bash
-  fi
-}
-
 function make_xdg_directories() {
   mkdir -p $HOME/.config
   mkdir -p $HOME/.cache
   mkdir -p $HOME/.local/share
   mkdir -p $HOME/.local/bin
-}
-
-function deploy_zsh_plugin() {
-  if [[ ! -e "$HOME/.config/zsh/plugin" ]]; then
-    mkdir -p "$HOME/.config/zsh/plugin"
-    git clone https://github.com/zsh-users/zsh-completions $HOME/.config/zsh/plugin/zsh-completions
-    git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh/plugin/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.config/zsh/plugin/zsh-syntax-highlighting
-    git clone https://github.com/zsh-users/zsh-history-substring-search $HOME/.config/zsh/plugin/zsh-history-substring-search
-  fi
 }
 
 function deploy_config_files() {
@@ -77,6 +42,50 @@ function deploy_config_files() {
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/starship/starship.toml" "$HOME/.config/starship.toml"
 }
 
+function update_nameserver() {
+  sudo unlink /etc/resolv.conf
+  sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
+  sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/resolv.conf" "/etc/resolv.conf"
+}
+
+function install_homebrew() {
+  # https://brew.sh/
+  if [[ ! -e "/home/linuxbrew/.linuxbrew" ]]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  fi
+}
+
+function restore_homebrew_formulae() {
+  brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/brew/Brewfile"
+}
+
+function install_aqua() {
+  # https://aquaproj.github.io/docs/products/aqua-installer
+  curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer | bash
+}
+
+function install_aqua_tools() {
+  aqua --config "$HOME/.config/aquaproj-aqua/aqua.yaml" install
+}
+
+function install_sdkman() {
+  # https://sdkman.io/
+  if [[ ! -e "$HOME/.sdkman" ]]; then
+    curl -s "https://get.sdkman.io?rcupdate=false" | bash
+  fi
+}
+
+function deploy_zsh_plugin() {
+  if [[ ! -e "$HOME/.config/zsh/plugin" ]]; then
+    mkdir -p "$HOME/.config/zsh/plugin"
+    git clone https://github.com/zsh-users/zsh-completions $HOME/.config/zsh/plugin/zsh-completions
+    git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh/plugin/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.config/zsh/plugin/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-history-substring-search $HOME/.config/zsh/plugin/zsh-history-substring-search
+  fi
+}
+
 function use_zsh() {
   which zsh | sudo tee -a /etc/shells
   sudo chsh "$USER" -s "$(which zsh)"
@@ -85,7 +94,7 @@ function use_zsh() {
 function after_all() {
   echo ">>> ========================================"
   echo ">>> 1. ssh-keygen -t ed25519"
-  echo ">>> 2. cat $HOME/.ssh/id_ed25519.pub | pbcopy"
+  echo ">>> 2. cat $HOME/.ssh/id_ed25519.pub"
   echo ">>> 3. open https://github.com/settings/keys"
   echo ">>> 4. git remote set-url origin git@github.com:ymkz/dotfiles.git"
   echo ">>> 5. reboot"
@@ -98,12 +107,14 @@ function after_all() {
 
 before_all
 fetch_dotfiles
-# update_nameserver
-install_homebrew
-restore_homebrew_formulae
-install_sdkman
 make_xdg_directories
 deploy_config_files
+update_nameserver
+install_homebrew
+restore_homebrew_formulae
+install_aqua
+install_aqua_tools
+install_sdkman
 deploy_zsh_plugin
 use_zsh
 after_all

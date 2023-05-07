@@ -1,7 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
 
-brew "aquaproj/aqua/aqua"
 brew "curl"
 brew "git"
 brew "httpie"

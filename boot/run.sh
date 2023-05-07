@@ -14,11 +14,11 @@ function fetch_dotfiles() {
   fi
 }
 
-function update_nameserver() {
-  sudo rm -f /etc/resolv.conf
-  sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
-  sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/resolv.conf" "/etc/resolv.conf"
-}
+# function update_nameserver() {
+#   sudo rm -f /etc/resolv.conf
+#   sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
+#   sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/resolv.conf" "/etc/resolv.conf"
+# }
 
 function install_homebrew() {
   # https://brew.sh/
@@ -28,15 +28,15 @@ function install_homebrew() {
   fi
 }
 
+function restore_homebrew_formulae() {
+  brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/brew/Brewfile"
+}
+
 function install_sdkman() {
   # https://sdkman.io/
   if [[ ! -e "$HOME/.sdkman" ]]; then
     curl -s "https://get.sdkman.io?rcupdate=false" | bash
   fi
-}
-
-function restore_homebrew_formulae() {
-  brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/brew/Brewfile"
 }
 
 function make_xdg_directories() {
@@ -100,8 +100,8 @@ before_all
 fetch_dotfiles
 # update_nameserver
 install_homebrew
-install_sdkman
 restore_homebrew_formulae
+install_sdkman
 make_xdg_directories
 deploy_config_files
 deploy_zsh_plugin

@@ -14,11 +14,14 @@ function fetch_dotfiles() {
   fi
 }
 
-function make_xdg_directories() {
+function make_base_directories() {
   mkdir -p $HOME/.config
   mkdir -p $HOME/.cache
   mkdir -p $HOME/.local/share
+ 
   mkdir -p $HOME/.local/bin
+ 
+  mkdir -p $HOME/work/sandbox
 }
 
 function deploy_config_files() {
@@ -56,7 +59,7 @@ function install_homebrew() {
   fi
 }
 
-function restore_homebrew_formulae() {
+function restore_homebrew_pkgs() {
   brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/brew/Brewfile"
 }
 
@@ -65,7 +68,7 @@ function install_aqua() {
   curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer | bash
 }
 
-function install_aqua_tools() {
+function restore_aqua_pkgs() {
   $HOME/.local/share/aquaproj-aqua/bin/aqua --config "$HOME/.config/aquaproj-aqua/aqua.yaml" install
 }
 
@@ -107,13 +110,13 @@ function after_all() {
 
 before_all
 fetch_dotfiles
-make_xdg_directories
+make_base_directories
 deploy_config_files
 update_nameserver
 install_homebrew
-restore_homebrew_formulae
+restore_homebrew_pkgs
 install_aqua
-install_aqua_tools
+restore_aqua_pkgs
 install_sdkman
 deploy_zsh_plugin
 use_zsh

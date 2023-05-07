@@ -12,7 +12,7 @@
   "platformAutomerge": true,
   "packageRules": [
     {
-      "matchPackageNames":["aquaproj/aqua-registry"],
+      "matchPackageNames": ["aquaproj/aqua-registry"],
       "automerge": true
     }
   ]

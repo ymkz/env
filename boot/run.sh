@@ -98,7 +98,7 @@ function after_all() {
 
 before_all
 fetch_dotfiles
-update_nameserver
+# update_nameserver
 install_homebrew
 install_sdkman
 restore_homebrew_formulae

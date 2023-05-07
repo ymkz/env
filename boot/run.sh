@@ -23,22 +23,8 @@ function update_nameserver() {
 function install_homebrew() {
   # https://brew.sh/
   if [[ ! -e "/home/linuxbrew/.linuxbrew" ]]; then
-    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  fi
-}
-
-function install_deno() {
-  # https://deno.com/manual/getting_started/installation
-  if [[ ! -e "$HOME/.deno" ]]; then
-    curl -fsSL https://deno.land/x/install/install.sh | sh
-  fi
-}
-
-function install_rust() {
-  # https://www.rust-lang.org/
-  if [[ ! -e "$HOME/.rustup" ]]; then
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
   fi
 }
 
@@ -53,6 +39,13 @@ function restore_homebrew_formulae() {
   brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/brew/Brewfile"
 }
 
+function make_xdg_directories() {
+  mkdir -p $HOME/.config
+  mkdir -p $HOME/.cache
+  mkdir -p $HOME/.local/share
+  mkdir -p $HOME/.local/bin
+}
+
 function deploy_zsh_plugin() {
   if [[ ! -e "$HOME/.config/zsh/plugin" ]]; then
     mkdir -p "$HOME/.config/zsh/plugin"
@@ -64,25 +57,24 @@ function deploy_zsh_plugin() {
 }
 
 function deploy_config_files() {
-  mkdir -p "$HOME/.config/git"
-  mkdir -p "$HOME/.config/zsh"
-
-  mkdir -p "$HOME/.local/state/zsh"
-
-  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zsh/.zshenv" "$HOME/.zshenv"
-
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zsh/zshrc" "$HOME/.zshrc"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/vim/vimrc" "$HOME/.vimrc"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/node/npmrc" "$HOME/.npmrc"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/misc/editorconfig" "$HOME/.editorconfig"
-  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/starship/starship.toml" "$HOME/.config/starship.toml"
 
-  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zsh/zshrc" "$HOME/.config/zsh/.zshrc"
-  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zsh/alias.zsh" "$HOME/.config/zsh/alias.zsh"
-  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zsh/function.zsh" "$HOME/.config/zsh/function.zsh"
+  mkdir -p $HOME/.config/aquaproj-aqua
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/aqua/aqua.yaml" "$HOME/.config/aquaproj-aqua/aqua.yaml"
 
+  mkdir -p "$HOME/.config/zsh/user"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zsh/user/alias.zsh" "$HOME/.config/zsh/user/alias.zsh"
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/zsh/user/function.zsh" "$HOME/.config/zsh/user/function.zsh"
+
+  mkdir -p "$HOME/.config/git"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/git/config" "$HOME/.config/git/config"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/git/ignore" "$HOME/.config/git/ignore"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/git/attributes" "$HOME/.config/git/attributes"
+
+  ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/starship/starship.toml" "$HOME/.config/starship.toml"
 }
 
 function use_zsh() {
@@ -108,11 +100,10 @@ before_all
 fetch_dotfiles
 update_nameserver
 install_homebrew
-install_deno
-install_rust
 install_sdkman
 restore_homebrew_formulae
-deploy_zsh_plugin
+make_xdg_directories
 deploy_config_files
+deploy_zsh_plugin
 use_zsh
 after_all

@@ -4,7 +4,7 @@ autoload -Uz compinit; compinit
 autoload -Uz colors; colors
 
 zstyle ':completion::complete:*' use-cache true
-zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 
@@ -31,17 +31,22 @@ setopt hist_reduce_blanks
 unsetopt caseglob
 unsetopt promptcr
 
-HISTFILE=$XDG_STATE_HOME/zsh/history
-HISTSIZE=100000
-SAVEHIST=1000000
+export TZ="Asia/Tokyo"
+export LESS="-R"
+export LANG="ja_JP.UTF-8"
+export EDITOR="code --wait"
+export FCEDIT="code --wait"
 
-typeset -U path PATH
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
+export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
+export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
+export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 
-export DENO_INSTALL="/home/ymkz/.deno"
+export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
 
-export GOPATH="$HOME/.go"
-
-export PATH="/usr/local/go/bin:$HOME/.fnm:$DENO_INSTALL/bin:$HOME/.local/bin:$PATH"
+export HISTFILE=$HOME/.zsh_history
+export HISTSIZE=100000
+export SAVEHIST=1000000
 
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
@@ -49,20 +54,24 @@ export FZF_DEFAULT_OPTS=" \
 --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
 --height 40% --ansi --cycle --reverse --select-1 --exit-0 --bind=tab:down --bind=btab:up"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+
+typeset -U path PATH
+
+eval "$($(brew --prefix)/bin/brew shellenv)"
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
 
-source "$HOME/.cargo/env"
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-source $XDG_CONFIG_HOME/zsh/plugin/zsh-completions/zsh-completions.plugin.zsh
-source $XDG_CONFIG_HOME/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source $XDG_CONFIG_HOME/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source $XDG_CONFIG_HOME/zsh/plugin/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+source "$XDG_CONFIG_HOME/zsh/user/alias.zsh"
+source "$XDG_CONFIG_HOME/zsh/user/function.zsh"
 
-source $XDG_CONFIG_HOME/zsh/alias.zsh
-source $XDG_CONFIG_HOME/zsh/function.zsh
+source "$XDG_CONFIG_HOME/zsh/plugin/zsh-completions/zsh-completions.plugin.zsh"
+source "$XDG_CONFIG_HOME/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+source "$XDG_CONFIG_HOME/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+source "$XDG_CONFIG_HOME/zsh/plugin/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"
 
 zle -N fzf_history
 bindkey '^r' fzf_history

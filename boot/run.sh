@@ -66,7 +66,7 @@ function install_aqua() {
 }
 
 function install_aqua_tools() {
-  aqua --config "$HOME/.config/aquaproj-aqua/aqua.yaml" install
+  $HOME/.local/share/aquaproj-aqua}/bin/aqua --config "$HOME/.config/aquaproj-aqua/aqua.yaml" install
 }
 
 function install_sdkman() {

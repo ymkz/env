@@ -3,6 +3,12 @@
 set -eu
 
 function before_all() {
+  echo ">>> ========================================"
+  echo ">>> SETUP START"
+  echo ">>> ========================================"
+}
+
+function update_apt() {
   sudo apt update -y
   sudo apt upgrade -y
   sudo apt install -y build-essential procps
@@ -59,7 +65,7 @@ function install_homebrew() {
   fi
 }
 
-function restore_homebrew_pkgs() {
+function restore_homebrew_packages() {
   brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/brew/Brewfile"
 }
 
@@ -68,7 +74,7 @@ function install_aqua() {
   curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer | bash
 }
 
-function restore_aqua_pkgs() {
+function restore_aqua_packages() {
   $HOME/.local/share/aquaproj-aqua/bin/aqua --config "$HOME/.config/aquaproj-aqua/aqua.yaml" install
 }
 
@@ -79,7 +85,7 @@ function install_sdkman() {
   fi
 }
 
-function deploy_zsh_plugin() {
+function fetch_zsh_plugins() {
   if [[ ! -e "$HOME/.config/zsh/plugin" ]]; then
     mkdir -p "$HOME/.config/zsh/plugin"
     git clone https://github.com/zsh-users/zsh-completions $HOME/.config/zsh/plugin/zsh-completions
@@ -96,28 +102,30 @@ function use_zsh() {
 
 function after_all() {
   echo ">>> ========================================"
-  echo ">>> 1. ssh-keygen -t ed25519"
-  echo ">>> 2. cat $HOME/.ssh/id_ed25519.pub"
-  echo ">>> 3. open https://github.com/settings/keys"
-  echo ">>> 4. git remote set-url origin git@github.com:ymkz/dotfiles.git"
-  echo ">>> 5. reboot"
-  echo ">>> 6. sdk install java"
-  echo ">>> 7. fnm install --lts"
-  echo ">>> 8. npm install --location=global npm-check-updates @antfu/ni"
-  echo ">>> 9. Configure Applications"
+  echo ">>> SETUP COMPLETE"
+  echo ">>> - ssh-keygen -t ed25519"
+  echo ">>> - cat $HOME/.ssh/id_ed25519.pub"
+  echo ">>> - open https://github.com/settings/keys"
+  echo ">>> - git remote set-url origin git@github.com:ymkz/dotfiles.git"
+  echo ">>> - reboot"
+  echo ">>> - sdk install java"
+  echo ">>> - fnm install --lts"
+  echo ">>> - npm install --location=global npm-check-updates @antfu/ni"
+  echo ">>> - Configure Applications"
   echo ">>> ========================================"
 }
 
 before_all
+update_apt
 fetch_dotfiles
 make_base_directories
 deploy_config_files
 update_nameserver
 install_homebrew
-restore_homebrew_pkgs
+restore_homebrew_packages
 install_aqua
-restore_aqua_pkgs
+restore_aqua_packages
 install_sdkman
-deploy_zsh_plugin
+fetch_zsh_plugins
 use_zsh
 after_all

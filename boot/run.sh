@@ -21,13 +21,13 @@ function fetch_dotfiles() {
 }
 
 function make_base_directories() {
-  mkdir -p $HOME/.config
-  mkdir -p $HOME/.cache
-  mkdir -p $HOME/.local/share
+  mkdir -p "$HOME/.config"
+  mkdir -p "$HOME/.cache"
+  mkdir -p "$HOME/.local/share"
  
-  mkdir -p $HOME/.local/bin
+  mkdir -p "$HOME/.local/bin"
  
-  mkdir -p $HOME/work/sandbox
+  mkdir -p "$HOME/work/sandbox"
 }
 
 function deploy_config_files() {
@@ -36,7 +36,7 @@ function deploy_config_files() {
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/node/npmrc" "$HOME/.npmrc"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/misc/editorconfig" "$HOME/.editorconfig"
 
-  mkdir -p $HOME/.config/aquaproj-aqua
+  mkdir -p "$HOME/.config/aquaproj-aqua"
   ln -nfs "$HOME/work/ghq/github.com/ymkz/dotfiles/aqua/aqua.yaml" "$HOME/.config/aquaproj-aqua/aqua.yaml"
 
   mkdir -p "$HOME/.config/zsh/user"
@@ -88,10 +88,10 @@ function install_sdkman() {
 function fetch_zsh_plugins() {
   if [[ ! -e "$HOME/.config/zsh/plugin" ]]; then
     mkdir -p "$HOME/.config/zsh/plugin"
-    git clone https://github.com/zsh-users/zsh-completions $HOME/.config/zsh/plugin/zsh-completions
-    git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh/plugin/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.config/zsh/plugin/zsh-syntax-highlighting
-    git clone https://github.com/zsh-users/zsh-history-substring-search $HOME/.config/zsh/plugin/zsh-history-substring-search
+    git clone https://github.com/zsh-users/zsh-completions "$HOME/.config/zsh/plugin/zsh-completions"
+    git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.config/zsh/plugin/zsh-autosuggestions"
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting "$HOME/.config/zsh/plugin/zsh-syntax-highlighting"
+    git clone https://github.com/zsh-users/zsh-history-substring-search "$HOME/.config/zsh/plugin/zsh-history-substring-search"
   fi
 }
 

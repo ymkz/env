@@ -11,7 +11,7 @@ function before_all() {
 function update_apt() {
   sudo apt update -y
   sudo apt upgrade -y
-  sudo apt install -y build-essential procps
+  sudo apt install -y build-essential procps curl wget git zip unzip zsh
 }
 
 function fetch_dotfiles() {
@@ -55,18 +55,6 @@ function update_nameserver() {
   sudo unlink /etc/resolv.conf
   sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
   sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/resolv.conf" "/etc/resolv.conf"
-}
-
-function install_homebrew() {
-  # https://brew.sh/
-  if [[ ! -e "/home/linuxbrew/.linuxbrew" ]]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  fi
-}
-
-function restore_homebrew_packages() {
-  brew bundle --file "$HOME/work/ghq/github.com/ymkz/dotfiles/brew/Brewfile"
 }
 
 function install_aqua() {
@@ -121,8 +109,6 @@ fetch_dotfiles
 make_base_directories
 deploy_config_files
 update_nameserver
-install_homebrew
-restore_homebrew_packages
 install_aqua
 restore_aqua_packages
 install_sdkman

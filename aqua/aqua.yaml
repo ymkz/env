@@ -17,3 +17,5 @@ packages:
   - name: ahmetb/kubectx@v0.9.4
   - name: ahmetb/kubectx/kubens@v0.9.4
   - name: stern/stern@v1.25.0
+  - name: ellie/atuin@v14.0.1
+  - name: kubernetes/minikube@v1.30.1

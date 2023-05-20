@@ -1,9 +1,0 @@
-tap "homebrew/bundle"
-
-brew "curl"
-brew "git"
-brew "httpie"
-brew "unzip"
-brew "wget"
-brew "zip"
-brew "zsh"

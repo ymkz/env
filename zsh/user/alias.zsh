@@ -1,6 +1,11 @@
 alias cd-="cd -"
 alias cds="cd ~/work/sandbox"
 
+if type minikube > /dev/null; then
+  alias kubectl="minikube kubectl --"
+  alias k="minikube kubectl --"
+fi
+
 if type npm > /dev/null; then
   alias ng="npm ls --location=global --depth=0"
 fi

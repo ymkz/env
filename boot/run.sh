@@ -12,7 +12,7 @@ function update_apt() {
   sudo add-apt-repository -y ppa:git-core/ppa
   sudo apt update -y
   sudo apt upgrade -y
-  sudo apt install -y build-essential procps curl wget git zip unzip zsh
+  sudo apt install -y build-essential procps curl wget git zip unzip zsh sqlite3
 }
 
 function fetch_dotfiles() {

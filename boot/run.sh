@@ -9,7 +9,7 @@ function before_all() {
 }
 
 function update_apt() {
-  sudo add-apt-repository ppa:git-core/ppa
+  sudo add-apt-repository -y ppa:git-core/ppa
   sudo apt update -y
   sudo apt upgrade -y
   sudo apt install -y build-essential procps curl wget git zip unzip zsh

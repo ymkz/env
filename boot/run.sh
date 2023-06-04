@@ -56,6 +56,7 @@ function update_nameserver() {
   sudo unlink /etc/resolv.conf
   sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
   sudo cp "$HOME/work/ghq/github.com/ymkz/dotfiles/wsl/resolv.conf" "/etc/resolv.conf"
+  sudo chattr +i /etc/resolv.conf
 }
 
 function install_aqua() {

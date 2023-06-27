@@ -7,7 +7,7 @@ registries:
     ref: v4.21.1 # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: x-motemen/ghq@v1.4.2
-  - name: junegunn/fzf@0.41.1
+  - name: junegunn/fzf@0.42.0
   - name: BurntSushi/ripgrep@13.0.0
   - name: Schniz/fnm@v1.33.1
   - name: stedolan/jq@jq-1.6

@@ -10,10 +10,10 @@
     "github>aquaproj/aqua-renovate-config#1.6.0"
   ],
   "platformAutomerge": true,
+  "automerge": true,
   "packageRules": [
     {
-      "matchPackageNames": ["aquaproj/aqua-registry"],
-      "automerge": true
+      "matchPackageNames": ["aquaproj/aqua-registry"]
     }
   ]
 }

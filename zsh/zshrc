@@ -59,14 +59,11 @@ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua
 
 typeset -U path PATH
 
-eval "$(fnm env --use-on-cd)"
+eval "$(rtx activate zsh)"
 eval "$(starship init zsh)"
 
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-source "$XDG_CONFIG_HOME/zsh/user/alias.zsh"
-source "$XDG_CONFIG_HOME/zsh/user/function.zsh"
-
+source "$XDG_CONFIG_HOME/zsh/alias.zsh"
+source "$XDG_CONFIG_HOME/zsh/function.zsh"
 source "$XDG_CONFIG_HOME/zsh/plugin/zsh-completions/zsh-completions.plugin.zsh"
 source "$XDG_CONFIG_HOME/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 source "$XDG_CONFIG_HOME/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"

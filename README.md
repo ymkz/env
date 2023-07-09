@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/HEAD/boot/run.sh | bash
+curl -sSfL https://raw.githubusercontent.com/ymkz/dotfiles/HEAD/setup.sh | bash
 ```
 
 ## Reset WSL

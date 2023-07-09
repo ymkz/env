@@ -35,6 +35,8 @@ if [[ -e "${HOME}/work/ghq/github.com/ymkz/dotfiles" ]]; then
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/node/npmrc" "${HOME}/.npmrc"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/vim/vimrc" "${HOME}/.vimrc"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/zsh/zshrc" "${HOME}/.zshrc"
+  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/zsh/alias.zsh" "${HOME}/.config/zsh/alias.zsh"
+  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/zsh/function.zsh" "${HOME}/.config/zsh/function.zsh"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/git/config" "${HOME}/.config/git/config"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/git/ignore" "${HOME}/.config/git/ignore"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/git/attributes" "${HOME}/.config/git/attributes"

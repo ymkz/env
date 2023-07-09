@@ -8,6 +8,7 @@
   "editor.fontFamily": "'UDEV Gothic NF', 'JetBrains Mono', '0xProto', 'Fira Code', 'MonoLisa'",
   "editor.fontLigatures": true,
   "editor.fontSize": 18,
+  "editor.letterSpacing": 1,
   "editor.guides.bracketPairs": true,
   "editor.hover.delay": 750,
   "editor.minimap.enabled": false,

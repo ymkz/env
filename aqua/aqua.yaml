@@ -9,7 +9,6 @@ packages:
   - name: x-motemen/ghq@v1.4.2
   - name: junegunn/fzf@0.42.0
   - name: BurntSushi/ripgrep@13.0.0
-  - name: Schniz/fnm@v1.34.0
   - name: stedolan/jq@jq-1.6
   - name: starship/starship@v1.15.0
   - name: ogham/exa@v0.10.1

@@ -18,4 +18,4 @@ packages:
   - name: ahmetb/kubectx/kubens@v0.9.4
   - name: stern/stern@v1.25.0
   - name: ducaale/xh@v0.18.0
-  - name: jdxcode/rtx@v1.33.0
+  - name: jdxcode/rtx@v1.34.0

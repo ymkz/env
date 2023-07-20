@@ -33,7 +33,7 @@ unsetopt promptcr
 
 export TZ="Asia/Tokyo"
 export LESS="-R"
-export LANG="ja_JP.UTF-8"
+export LANG="ja_JP.utf8"
 export EDITOR="code --wait"
 export FCEDIT="code --wait"
 

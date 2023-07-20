@@ -1,9 +1,3 @@
-function fzf_history() {
-  BUFFER=$(history -n -r 1 | fzf -e +s +m --query="$LBUFFER" --prompt="history > ")
-  CURSOR=$#BUFFER
-  zle reset-prompt
-}
-
 function fzf_ghq() {
   local repository=$(ghq list | fzf +m --query="$LBUFFER" --prompt="repository > ")
   if [[ -n "$repository" ]]; then

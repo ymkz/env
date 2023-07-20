@@ -19,3 +19,4 @@ packages:
   - name: stern/stern@v1.25.0
   - name: ducaale/xh@v0.18.0
   - name: jdxcode/rtx@v1.34.0
+  - name: ellie/atuin@v15.0.0

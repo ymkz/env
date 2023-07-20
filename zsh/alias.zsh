@@ -14,7 +14,7 @@ if type exa > /dev/null; then
   alias l="exa -F"
   alias ls="exa -F"
   alias la="exa -Fa"
-  alias lt="ls --tree"
+  alias lt="ls --tree --level 1"
   alias ll="exa -bghlHF --sort=type --time-style=long-iso --octal-permissions"
   alias lla="exa -bghlHFa --sort=type --time-style=long-iso --octal-permissions"
 else

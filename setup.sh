@@ -60,6 +60,17 @@ if ! type aqua > /dev/null 2>&1; then
   aqua --config "${HOME}/.config/aquaproj-aqua/aqua.yaml" install
 fi
 
+# install docker (https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script)
+# setup docker (https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
+if ! type docker > /dev/null 2>&1; then
+  curl -fsSL https://get.docker.com -o get-docker.sh
+  sudo sh get-docker.sh
+  sudo groupadd docker
+  sudo usermod -aG docker $USER
+  newgrp docker
+  rm get-docker.sh
+fi
+
 # install node and java
 if type rtx > /dev/null 2>&1; then
   rtx install node@latest

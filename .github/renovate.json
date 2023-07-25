@@ -11,6 +11,7 @@
   ],
   "platformAutomerge": true,
   "automerge": true,
+  "automergeSchedule": ["after 2am and before 6am"],
   "packageRules": [
     {
       "matchPackageNames": ["aquaproj/aqua-registry"]

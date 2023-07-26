@@ -1,8 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    "schedule:weekly",
+    "config:recommended",
     ":dependencyDashboard",
     ":timezone(Asia/Tokyo)",
     ":labels(dependencies, renovate)",
@@ -10,11 +9,8 @@
     "github>aquaproj/aqua-renovate-config#1.6.0"
   ],
   "platformAutomerge": true,
+  "schedule": ["after 0am and before 3am every weekday"],
   "automerge": true,
-  "automergeSchedule": ["after 2am and before 6am"],
-  "packageRules": [
-    {
-      "matchPackageNames": ["aquaproj/aqua-registry"]
-    }
-  ]
+  "automergeSchedule": ["after 3am and before 6am every weekday"],
+  "packageRules": [{ "matchPackageNames": ["aquaproj/aqua-registry"] }]
 }

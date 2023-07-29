@@ -9,7 +9,9 @@
     ":enableVulnerabilityAlertsWithLabel(vulnerabilities)",
     "github>aquaproj/aqua-renovate-config#1.6.0"
   ],
-  "schedule": ["after 1am and before 3am every weekday"],
-  "automergeSchedule": ["after 4am and before 6am every weekday"],
-  "packageRules": [{ "matchPackageNames": ["aquaproj/aqua-registry"] }]
+  "packageRules": [
+    {
+      "matchPackageNames": ["aquaproj/aqua-registry"]
+    }
+  ]
 }

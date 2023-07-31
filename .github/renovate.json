@@ -9,6 +9,7 @@
     ":enableVulnerabilityAlertsWithLabel(vulnerabilities)",
     "github>aquaproj/aqua-renovate-config#1.7.0"
   ],
+  "minimumReleaseAge": "3 days",
   "packageRules": [
     {
       "matchPackageNames": ["aquaproj/aqua-registry"]

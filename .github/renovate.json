@@ -7,7 +7,7 @@
     ":timezone(Asia/Tokyo)",
     ":labels(dependencies, renovate)",
     ":enableVulnerabilityAlertsWithLabel(vulnerabilities)",
-    "github>aquaproj/aqua-renovate-config#1.7.0"
+    "github>aquaproj/aqua-renovate-config#1.8.0"
   ],
   "minimumReleaseAge": "3 days",
   "packageRules": [

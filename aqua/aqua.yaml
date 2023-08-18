@@ -18,6 +18,6 @@ packages:
   - name: ahmetb/kubectx/kubens@v0.9.5
   - name: stern/stern@v1.25.0
   - name: ducaale/xh@v0.18.0
-  - name: jdxcode/rtx@v1.35.8
+  - name: jdxcode/rtx@v2023.8.0
   - name: ellie/atuin@v16.0.0
   - name: oven-sh/bun@bun-v0.7.3

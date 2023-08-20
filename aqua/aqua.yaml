@@ -13,7 +13,7 @@ packages:
   - name: starship/starship@v1.16.0
   - name: ogham/exa@v0.10.1
   - name: kubernetes/kubectl@v1.28.0
-  - name: kubernetes/minikube@v1.31.1
+  - name: kubernetes/minikube@v1.31.2
   - name: ahmetb/kubectx@v0.9.5
   - name: ahmetb/kubectx/kubens@v0.9.5
   - name: stern/stern@v1.25.0

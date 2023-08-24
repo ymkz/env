@@ -21,3 +21,4 @@ packages:
   - name: jdxcode/rtx@v2023.8.2
   - name: ellie/atuin@v16.0.0
   - name: oven-sh/bun@bun-v0.7.3
+  - name: sqlc-dev/sqlc@v1.20.0

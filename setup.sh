@@ -58,7 +58,7 @@ fi
 # install aqua (https://aquaproj.github.io/docs/products/aqua-installer)
 if ! type aqua > /dev/null 2>&1; then
   curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer | bash
-  aqua --config "${HOME}/.config/aquaproj-aqua/aqua.yaml" install
+  "${HOME}/.local/share/aquaproj-aqua/bin/aqua" --config "${HOME}/.config/aquaproj-aqua/aqua.yaml" install
 fi
 
 # install docker (https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script)

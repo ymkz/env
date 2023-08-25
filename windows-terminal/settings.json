@@ -75,7 +75,7 @@
     "defaults": {
       "colorScheme": "Catppuccin Macchiato",
       "font": {
-        "face": "UDEV Gothic NF",
+        "face": "UDEV Gothic 35NF",
         "size": 16
       }
     },

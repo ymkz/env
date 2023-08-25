@@ -30,6 +30,7 @@ fi
 if [[ -e "${HOME}/work/ghq/github.com/ymkz/dotfiles" ]]; then
   mkdir -p "${HOME}/.config/git"
   mkdir -p "${HOME}/.config/zsh"
+  mkdir -p "${HOME}/.config/atuin"
   mkdir -p "${HOME}/.config/aquaproj-aqua"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/misc/editorconfig" "${HOME}/.editorconfig"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/node/npmrc" "${HOME}/.npmrc"

@@ -20,5 +20,5 @@ packages:
   - name: ducaale/xh@v0.18.0
   - name: jdxcode/rtx@v2023.9.2
   - name: ellie/atuin@v16.0.0
-  - name: oven-sh/bun@bun-v1.0.3
+  - name: oven-sh/bun@bun-v1.0.4
   - name: sqlc-dev/sqlc@v1.22.0

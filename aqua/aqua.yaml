@@ -18,7 +18,7 @@ packages:
   - name: ahmetb/kubectx/kubens@v0.9.5
   - name: stern/stern@v1.26.0
   - name: ducaale/xh@v0.18.0
-  - name: jdxcode/rtx@v2023.9.2
+  - name: jdxcode/rtx@v2023.10.1
   - name: ellie/atuin@v16.0.0
   - name: oven-sh/bun@bun-v1.0.5
   - name: sqlc-dev/sqlc@v1.22.0

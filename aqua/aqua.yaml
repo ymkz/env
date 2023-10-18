@@ -11,7 +11,6 @@ packages:
   - name: BurntSushi/ripgrep@13.0.0
   - name: stedolan/jq@jq-1.6
   - name: starship/starship@v1.16.0
-  - name: ogham/exa@v0.10.1
   - name: kubernetes/kubectl@v1.28.2
   - name: kubernetes/minikube@v1.31.2
   - name: ahmetb/kubectx@v0.9.5
@@ -22,3 +21,4 @@ packages:
   - name: ellie/atuin@v16.0.0
   - name: oven-sh/bun@bun-v1.0.5
   - name: sqlc-dev/sqlc@v1.22.0
+  - name: eza-community/eza@v0.14.2

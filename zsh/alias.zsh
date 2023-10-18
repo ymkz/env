@@ -10,13 +10,13 @@ if type npm > /dev/null; then
   alias ng="npm ls --location=global --depth=0"
 fi
 
-if type exa > /dev/null; then
-  alias l="exa -F"
-  alias ls="exa -F"
-  alias la="exa -Fa"
-  alias lt="exa --tree --level 1"
-  alias ll="exa -bghlHF --sort=type --time-style=long-iso --octal-permissions"
-  alias lla="exa -bghlHFa --sort=type --time-style=long-iso --octal-permissions"
+if type eza > /dev/null; then
+  alias l="eza -F"
+  alias ls="eza -F"
+  alias la="eza -Fa"
+  alias lt="eza --tree --level 1"
+  alias ll="eza -bghlHF --sort=type --time-style=long-iso --octal-permissions"
+  alias lla="eza -bghlHFa --sort=type --time-style=long-iso --octal-permissions"
 else
   alias l="ls -hFG"
   alias ls="ls -hFG"

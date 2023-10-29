@@ -20,5 +20,5 @@ packages:
   - name: jdxcode/rtx@v2023.10.2
   - name: ellie/atuin@v16.0.0
   - name: oven-sh/bun@bun-v1.0.7
-  - name: sqlc-dev/sqlc@v1.22.0
+  - name: sqlc-dev/sqlc@v1.23.0
   - name: eza-community/eza@v0.15.0

@@ -1,6 +1,9 @@
 alias cd-="cd -"
 alias cds="cd ~/work/sandbox"
 
+alias deps="cat package.json | jq -r '.dependencies | keys[]' | tr '\n' ' '"
+alias devdeps="cat package.json | jq -r '.devDependencies | keys[]' | tr '\n' ' '"
+
 if type minikube > /dev/null; then
   alias kubectl="minikube kubectl --"
   alias k="minikube kubectl --"

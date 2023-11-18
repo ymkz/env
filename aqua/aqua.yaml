@@ -17,7 +17,7 @@ packages:
   - name: ahmetb/kubectx/kubens@v0.9.5
   - name: stern/stern@v1.26.0
   - name: ducaale/xh@v0.19.4
-  - name: jdxcode/rtx@v2023.11.1
+  - name: jdxcode/rtx@v2023.11.4
   - name: ellie/atuin@v17.0.1
   - name: oven-sh/bun@bun-v1.0.11
   - name: denoland/deno@v1.38.1

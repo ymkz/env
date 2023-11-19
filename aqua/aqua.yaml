@@ -12,7 +12,7 @@ packages:
   - name: stedolan/jq@jq-1.6
   - name: starship/starship@v1.16.0
   - name: kubernetes/kubectl@v1.28.3
-  - name: kubernetes/minikube@v1.31.2
+  - name: kubernetes/minikube@v1.32.0
   - name: ahmetb/kubectx@v0.9.5
   - name: ahmetb/kubectx/kubens@v0.9.5
   - name: stern/stern@v1.26.0

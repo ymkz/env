@@ -22,4 +22,4 @@ packages:
   - name: oven-sh/bun@bun-v1.0.13
   - name: denoland/deno@v1.38.2
   - name: sqlc-dev/sqlc@v1.23.0
-  - name: eza-community/eza@v0.15.3
+  - name: eza-community/eza@v0.16.1

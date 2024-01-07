@@ -10,7 +10,7 @@ packages:
   - name: junegunn/fzf@0.45.0
   - name: BurntSushi/ripgrep@14.0.3
   - name: stedolan/jq@jq-1.6
-  - name: starship/starship@v1.16.0
+  - name: starship/starship@v1.17.1
   - name: kubernetes/kubectl@v1.29.0
   - name: kubernetes/minikube@v1.32.0
   - name: ahmetb/kubectx@v0.9.5

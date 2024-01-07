@@ -59,7 +59,7 @@ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua
 
 typeset -U path PATH
 
-eval "$(rtx activate zsh)"
+eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
 

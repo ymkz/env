@@ -4,7 +4,7 @@
 # https://github.com/aquaproj/aqua-registry/tree/main/pkgs
 registries:
   - type: standard
-    ref: v4.112.0 # renovate: depName=aquaproj/aqua-registry
+    ref: v4.113.0 # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: x-motemen/ghq@v1.4.2
   - name: junegunn/fzf@0.45.0
@@ -17,8 +17,8 @@ packages:
   - name: ahmetb/kubectx/kubens@v0.9.5
   - name: stern/stern@v1.27.0
   - name: ducaale/xh@v0.20.1
-  - name: jdxcode/rtx@v2024.1.4
-  - name: ellie/atuin@v17.1.0
+  - name: jdx/mise@v2024.1.10
+  - name: atuinsh/atuin@v17.2.1
   - name: oven-sh/bun@bun-v1.0.21
   - name: denoland/deno@v1.39.1
   - name: sqlc-dev/sqlc@v1.24.0

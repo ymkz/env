@@ -19,10 +19,10 @@ ssh-keygen -t ed25519
 cat ${HOME}/.ssh/id_ed25519.pub
 
 # install node and java
-rtx install node@18
-rtx install java@17
-rtx use -g node@18
-rtx use -g java@17
+mise install node@20
+mise install java@21
+mise use -g node@20
+mise use -g java@21
 
 # install global packages
 npm install --location=global @antfu/ni tiged taze

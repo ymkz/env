@@ -33,6 +33,7 @@ if [[ -e "${HOME}/work/ghq/github.com/ymkz/dotfiles" ]]; then
   mkdir -p "${HOME}/.config/atuin"
   mkdir -p "${HOME}/.config/aquaproj-aqua"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/misc/editorconfig" "${HOME}/.editorconfig"
+  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/node/default-npm-packages" "${HOME}/.default-npm-packages"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/node/npmrc" "${HOME}/.npmrc"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/vim/vimrc" "${HOME}/.vimrc"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/zsh/zshrc" "${HOME}/.zshrc"

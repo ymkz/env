@@ -8,7 +8,7 @@
     "command": "editor.action.rename"
   },
   {
-    "key": "ctrl+p",
+    "key": "ctrl+b",
     "command": "workbench.action.toggleSidebarVisibility"
   },
   {

@@ -30,6 +30,7 @@ fi
 if [[ -e "${HOME}/work/ghq/github.com/ymkz/dotfiles" ]]; then
   mkdir -p "${HOME}/.config/git"
   mkdir -p "${HOME}/.config/zsh"
+  mkdir -p "${HOME}/.config/lsd"
   mkdir -p "${HOME}/.config/atuin"
   mkdir -p "${HOME}/.config/aquaproj-aqua"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/misc/editorconfig" "${HOME}/.editorconfig"
@@ -42,6 +43,7 @@ if [[ -e "${HOME}/work/ghq/github.com/ymkz/dotfiles" ]]; then
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/git/config" "${HOME}/.config/git/config"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/git/ignore" "${HOME}/.config/git/ignore"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/git/attributes" "${HOME}/.config/git/attributes"
+  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/lsd/config.yaml" "${HOME}/.config/lsd/config.yaml"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/starship/starship.toml" "${HOME}/.config/starship.toml"
   ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/aqua/aqua.yaml" "${HOME}/.config/aquaproj-aqua/aqua.yaml"

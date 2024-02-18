@@ -9,6 +9,7 @@
   ignorecase = false
   quotepath = false
   pager = less -FRX
+  sshCommand = ssh.exe
 [fetch]
   prune = true
 [push]

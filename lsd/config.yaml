@@ -1,0 +1,53 @@
+# @see https://github.com/lsd-rs/lsd/blob/master/README.md#config-file-content
+# @see https://github.com/lsd-rs/lsd/blob/master/doc/lsd.md
+
+classic: false
+
+blocks:
+  # - permission
+  # - user
+  # - group
+  - size
+  - date
+  - name
+  - git
+
+color:
+  when: auto
+  theme: default
+
+date: "+%Y-%m-%dT%H:%M:%S"
+
+dereference: false
+
+icons:
+  when: auto
+  theme: unicode
+  separator: " "
+
+indicators: false
+
+layout: grid
+
+recursion:
+  enabled: false
+  depth: 1
+
+size: default
+
+permission: rwx
+
+sorting:
+  column: name
+  reverse: false
+  dir-grouping: none
+
+no-symlink: false
+
+total-size: false
+
+hyperlink: never
+
+symlink-arrow: ⇒
+
+header: false

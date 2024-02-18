@@ -23,7 +23,7 @@ if type lsd > /dev/null; then
   alias la="lsd -A"
   alias lt="lsd --tree"
   alias ll="lsd -l"
-  alias lla="lsd -lAh"
+  alias lla="lsd -lA"
 else
   alias l="ls -hFG"
   alias ls="ls -hFG"

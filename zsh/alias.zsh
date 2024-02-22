@@ -17,13 +17,13 @@ if type npm > /dev/null; then
   alias ng="npm ls --location=global --depth=0"
 fi
 
-if type lsd > /dev/null; then
-  alias l="lsd"
-  alias ls="lsd"
-  alias la="lsd -A"
-  alias lt="lsd --tree"
-  alias ll="lsd -l"
-  alias lla="lsd -lA"
+if type eza > /dev/null; then
+  alias l="eza"
+  alias ls="eza"
+  alias la="eza -A"
+  alias lt="eza --tree --level 1"
+  alias ll="eza -Hlo --no-user --sort=type --time-style=long-iso"
+  alias lla="eza -HAlo --no-user --sort=type --time-style=long-iso"
 else
   alias l="ls -hFG"
   alias ls="ls -hFG"

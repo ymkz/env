@@ -21,5 +21,5 @@ packages:
   - name: atuinsh/atuin@v18.0.2
   - name: oven-sh/bun@bun-v1.0.28
   - name: denoland/deno@v1.40.5
-  - name: eza-community/eza@v0.18.4
+  - name: eza-community/eza@v0.18.6
   - name: koki-develop/gat@v0.15.1

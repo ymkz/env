@@ -10,8 +10,8 @@
     "github>aquaproj/aqua-renovate-config#2.2.1",
     "github>aquaproj/aqua-renovate-config:installer-script#2.2.1(setup.sh)"
   ],
-  "schedule": ["on saturday"],
-  "automergeSchedule": ["on sunday"],
+  "schedule": ["on monday"],
+  "automergeSchedule": ["on thursday"],
   "minimumReleaseAge": "3 days",
   "packageRules": [
     {

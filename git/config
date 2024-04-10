@@ -19,6 +19,8 @@
   ff = false
 [pull]
   ff = only
+  rebase = true
+  autostash = true
 [status]
   showUntrackedFiles = all
 [diff]
@@ -27,6 +29,8 @@
   compactionHeuristic = true
 [grep]
   lineNumber = true
+[rerere]
+  enabled = true
 [color]
   ui = auto
   status = auto

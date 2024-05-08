@@ -15,7 +15,7 @@ packages:
   - name: kubernetes/minikube@v1.33.0
   - name: ahmetb/kubectx@v0.9.5
   - name: ahmetb/kubectx/kubens@v0.9.5
-  - name: stern/stern@v1.28.0
+  - name: stern/stern@v1.29.0
   - name: ducaale/xh@v0.22.0
   - name: jdx/mise@v2024.4.8
   - name: atuinsh/atuin@v18.2.0

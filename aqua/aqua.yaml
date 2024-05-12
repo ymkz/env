@@ -25,4 +25,3 @@ packages:
   - name: koki-develop/gat@v0.17.0
   - name: go-task/task@v3.36.0
   - name: k1LoW/runn@v0.107.0
-  - name: jetify-com/devbox@0.10.6

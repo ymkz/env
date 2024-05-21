@@ -19,13 +19,14 @@ ssh-keygen -t ed25519
 cat ${HOME}/.ssh/id_ed25519.pub
 
 # install node and java
-mise install node@20
+mise install node@22
 mise install java@21
-mise use -g node@20
+mise install deno
+mise install bun
+mise use -g node@22
 mise use -g java@21
-
-# install global packages
-npm install --location=global @antfu/ni tiged taze
+mise use -g deno
+mise use -g bun
 
 # install docker (https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script)
 # setup docker (https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)

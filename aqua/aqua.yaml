@@ -25,3 +25,4 @@ packages:
   - name: koki-develop/gat@v0.17.0
   - name: go-task/task@v3.37.2
   - name: k1LoW/runn@v0.107.1
+  - name: sqlc-dev/sqlc@v1.26.0

@@ -73,10 +73,10 @@
   "multiLinePasteWarning": false,
   "profiles": {
     "defaults": {
-      "colorScheme": "Catppuccin Macchiato",
+      "colorScheme": "Tokyo Night Storm",
       "font": {
-        "face": "UDEV Gothic 35NF",
-        "size": 16
+        "face": "Cascadia Code NF",
+        "size": 18.0
       }
     },
     "list": [
@@ -90,6 +90,7 @@
   },
   "schemes": [
     {
+      "name": "Catppuccin Macchiato",
       "background": "#24273A",
       "black": "#494D64",
       "blue": "#8AADF4",
@@ -105,7 +106,6 @@
       "cyan": "#8BD5CA",
       "foreground": "#CAD3F5",
       "green": "#A6DA95",
-      "name": "Catppuccin Macchiato",
       "purple": "#F5BDE6",
       "red": "#ED8796",
       "selectionBackground": "#5B6078",
@@ -113,6 +113,7 @@
       "yellow": "#EED49F"
     },
     {
+      "name": "Nord",
       "background": "#2E3440",
       "black": "#3B4252",
       "blue": "#81A1C1",
@@ -128,12 +129,34 @@
       "cyan": "#88C0D0",
       "foreground": "#D8DEE9",
       "green": "#A3BE8C",
-      "name": "Nord",
       "purple": "#B48EAD",
       "red": "#BF616A",
       "selectionBackground": "#FFFFFF",
       "white": "#E5E9F0",
       "yellow": "#EBCB8B"
+    },
+    {
+      "name": "Tokyo Night Storm",
+      "foreground": "#a9b1dc",
+      "background": "#24283b",
+      "cursorColor": "#c0caf5",
+      "selectionBackground": "#28344a",
+      "black": "#414868",
+      "red": "#f7768e",
+      "green": "#73daca",
+      "yellow": "#e0af68",
+      "blue": "#7aa2f7",
+      "purple": "#bb9af7",
+      "cyan": "#7dcfff",
+      "white": "#c0caf5",
+      "brightBlack": "#414868",
+      "brightRed": "#f7768e",
+      "brightGreen": "#73daca",
+      "brightYellow": "#e0af68",
+      "brightBlue": "#7aa2f7",
+      "brightPurple": "#bb9af7",
+      "brightCyan": "#7dcfff",
+      "brightWhite": "#c0caf5"
     }
   ]
 }

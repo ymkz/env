@@ -37,14 +37,12 @@ export LANG="ja_JP.utf8"
 export EDITOR="code --wait"
 export FCEDIT="code --wait"
 
-export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
-export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
-export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
-export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="${HOME}/.config"}
+export XDG_CACHE_HOME=${XDG_CACHE_HOME:="${HOME}/.cache"}
+export XDG_DATA_HOME=${XDG_DATA_HOME:="${HOME}/.local/share"}
+export XDG_STATE_HOME=${XDG_STATE_HOME:="${HOME}/.local/state"}
 
-export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
-
-export HISTFILE=$HOME/.zsh_history
+export HISTFILE="${HOME}/.zsh_history"
 export HISTSIZE=100000
 export SAVEHIST=1000000
 
@@ -54,8 +52,10 @@ export FZF_DEFAULT_OPTS=" \
 --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
 --height 40% --ansi --cycle --reverse --select-1 --exit-0 --bind=tab:down --bind=btab:up"
 
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
+
+export PATH="$(aqua root-dir)/bin:${PATH}"
+export PATH="${HOME}/.local/bin:${PATH}"
 
 typeset -U path PATH
 
@@ -63,12 +63,12 @@ eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
 
-source "$XDG_CONFIG_HOME/zsh/alias.zsh"
-source "$XDG_CONFIG_HOME/zsh/function.zsh"
-source "$XDG_CONFIG_HOME/zsh/plugin/zsh-completions/zsh-completions.plugin.zsh"
-source "$XDG_CONFIG_HOME/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
-source "$XDG_CONFIG_HOME/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
-source "$XDG_CONFIG_HOME/zsh/plugin/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"
+source "${XDG_CONFIG_HOME}/zsh/alias.zsh"
+source "${XDG_CONFIG_HOME}/zsh/function.zsh"
+source "${XDG_CONFIG_HOME}/zsh/plugin/zsh-completions/zsh-completions.plugin.zsh"
+source "${XDG_CONFIG_HOME}/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+source "${XDG_CONFIG_HOME}/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+source "${XDG_CONFIG_HOME}/zsh/plugin/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"
 
 zle -N fzf_ghq
 bindkey '^g' fzf_ghq

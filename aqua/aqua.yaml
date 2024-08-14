@@ -23,5 +23,5 @@ packages:
   - name: go-task/task@v3.38.0
   - name: k1LoW/runn@v0.115.2
   - name: k1LoW/tbls@v1.77.0
-  - name: sqlc-dev/sqlc@v1.26.0
+  - name: sqlc-dev/sqlc@v1.27.0
   - name: joerdav/xc@v0.8.0

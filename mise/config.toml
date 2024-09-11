@@ -1,0 +1,10 @@
+[tools]
+node = "20"
+java = "21"
+
+"npm:pnpm" = "latest"
+"npm:@antfu/ni" = "latest"
+"npm:npm-check-updates" = "latest"
+
+[settings]
+experimental = true

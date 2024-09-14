@@ -61,7 +61,11 @@ fi
 if ! type aqua > /dev/null 2>&1; then
   curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer | bash
   "${HOME}/.local/share/aquaproj-aqua/bin/aqua" --config "${HOME}/.config/aquaproj-aqua/aqua.yaml" install
+  
 fi
+
+AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
+PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:${PATH}"
 
 # install runtime by mise
 if ! type mise > /dev/null 2>&1; then

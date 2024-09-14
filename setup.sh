@@ -57,15 +57,14 @@ if [[ ! -e "${HOME}/.config/zsh/plugin" ]]; then
   git clone https://github.com/zsh-users/zsh-history-substring-search "${HOME}/.config/zsh/plugin/zsh-history-substring-search"
 fi
 
+export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
+export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:${PATH}"
+
 # install aqua (https://aquaproj.github.io/docs/products/aqua-installer)
 if ! type aqua > /dev/null 2>&1; then
   curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer | bash
-  "${HOME}/.local/share/aquaproj-aqua/bin/aqua" --config "${HOME}/.config/aquaproj-aqua/aqua.yaml" install --all
-  
+  aqua install --all
 fi
-
-AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
-PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:${PATH}"
 
 # install runtime by mise
 if ! type mise > /dev/null 2>&1; then

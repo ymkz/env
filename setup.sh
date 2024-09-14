@@ -7,11 +7,12 @@ mkdir -p "${HOME}/.config"
 mkdir -p "${HOME}/.cache"
 mkdir -p "${HOME}/.local/share"
 mkdir -p "${HOME}/.local/bin"
-mkdir -p "${HOME}/work/sandbox"
+mkdir -p "${HOME}/work"
+mkdir -p "${HOME}/sandbox"
 
 # fetch dotfiles
-if [[ ! -e "${HOME}/work/ghq/github.com/ymkz/dotfiles" ]]; then
-  git clone https://github.com/ymkz/dotfiles.git "${HOME}/work/ghq/github.com/ymkz/dotfiles"
+if [[ ! -e "${HOME}/work/github.com/ymkz/dotfiles" ]]; then
+  git clone https://github.com/ymkz/dotfiles.git "${HOME}/work/github.com/ymkz/dotfiles"
 fi
 
 # setup linux on wsl
@@ -21,32 +22,30 @@ if [[ "${OSTYPE}" == linux* ]]; then
   sudo apt upgrade -y
   sudo apt install -y build-essential language-pack-ja procps curl wget git zip unzip zsh sqlite3
   sudo unlink /etc/resolv.conf
-  sudo cp "${HOME}/work/ghq/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
-  sudo cp "${HOME}/work/ghq/github.com/ymkz/dotfiles/wsl/resolv.conf" "/etc/resolv.conf"
+  sudo cp "${HOME}/work/github.com/ymkz/dotfiles/wsl/wsl.conf" "/etc/wsl.conf"
+  sudo cp "${HOME}/work/github.com/ymkz/dotfiles/wsl/resolv.conf" "/etc/resolv.conf"
   sudo chattr +i /etc/resolv.conf
 fi
 
 # deploy dotfiles
-if [[ -e "${HOME}/work/ghq/github.com/ymkz/dotfiles" ]]; then
+if [[ -e "${HOME}/work/github.com/ymkz/dotfiles" ]]; then
   mkdir -p "${HOME}/.config/git"
   mkdir -p "${HOME}/.config/zsh"
   mkdir -p "${HOME}/.config/mise"
   mkdir -p "${HOME}/.config/atuin"
   mkdir -p "${HOME}/.config/aquaproj-aqua"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/misc/editorconfig" "${HOME}/.editorconfig"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/node/default-npm-packages" "${HOME}/.default-npm-packages"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/node/npmrc" "${HOME}/.npmrc"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/vim/vimrc" "${HOME}/.vimrc"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/zsh/zshrc" "${HOME}/.zshrc"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/zsh/alias.zsh" "${HOME}/.config/zsh/alias.zsh"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/zsh/function.zsh" "${HOME}/.config/zsh/function.zsh"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/git/config" "${HOME}/.config/git/config"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/git/ignore" "${HOME}/.config/git/ignore"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/git/attributes" "${HOME}/.config/git/attributes"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/mise/config.toml" "${HOME}/.config/mise/config.toml"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/starship/starship.toml" "${HOME}/.config/starship.toml"
-  ln -nfs "${HOME}/work/ghq/github.com/ymkz/dotfiles/aqua/aqua.yaml" "${HOME}/.config/aquaproj-aqua/aqua.yaml"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/misc/editorconfig" "${HOME}/.editorconfig"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/node/npmrc" "${HOME}/.npmrc"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/vim/vimrc" "${HOME}/.vimrc"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/zsh/zshrc" "${HOME}/.zshrc"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/zsh/alias.zsh" "${HOME}/.config/zsh/alias.zsh"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/zsh/function.zsh" "${HOME}/.config/zsh/function.zsh"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/git/config" "${HOME}/.config/git/config"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/git/ignore" "${HOME}/.config/git/ignore"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/mise/config.toml" "${HOME}/.config/mise/config.toml"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/starship/starship.toml" "${HOME}/.config/starship.toml"
+  ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/aqua/aqua.yaml" "${HOME}/.config/aquaproj-aqua/aqua.yaml"
 fi
 
 # fetch zsh plugins

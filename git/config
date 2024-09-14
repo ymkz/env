@@ -38,4 +38,4 @@
   diff = auto
   diff-highlight = auto
 [ghq]
-  root = ~/work/ghq
+  root = ~/work

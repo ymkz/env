@@ -1,5 +1,6 @@
 alias cd-="cd -"
-alias cds="cd ~/work/sandbox"
+alias cds="cd ~/work"
+alias cds="cd ~/sandbox"
 
 alias deps="cat package.json | gojq -r '.dependencies | keys[]' | tr '\n' ' '"
 alias devdeps="cat package.json | gojq -r '.devDependencies | keys[]' | tr '\n' ' '"

@@ -63,6 +63,11 @@ if ! type aqua > /dev/null 2>&1; then
   "${HOME}/.local/share/aquaproj-aqua/bin/aqua" --config "${HOME}/.config/aquaproj-aqua/aqua.yaml" install
 fi
 
+# install runtime by mise
+if ! type mise > /dev/null 2>&1; then
+  mise install
+fi
+
 # change default shell
 if type zsh > /dev/null 2>&1; then
   which zsh | sudo tee -a /etc/shells

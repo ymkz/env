@@ -65,7 +65,7 @@ fi
 
 # install runtime by mise
 if ! type mise > /dev/null 2>&1; then
-  mise install
+  "${HOME}/.local/share/aquaproj-aqua/bin/mise" install
 fi
 
 # change default shell

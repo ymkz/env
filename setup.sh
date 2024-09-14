@@ -60,7 +60,7 @@ fi
 # install aqua (https://aquaproj.github.io/docs/products/aqua-installer)
 if ! type aqua > /dev/null 2>&1; then
   curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.0.1/aqua-installer | bash
-  "${HOME}/.local/share/aquaproj-aqua/bin/aqua" --config "${HOME}/.config/aquaproj-aqua/aqua.yaml" install
+  "${HOME}/.local/share/aquaproj-aqua/bin/aqua" --config "${HOME}/.config/aquaproj-aqua/aqua.yaml" install --all
   
 fi
 

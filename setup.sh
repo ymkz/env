@@ -69,8 +69,6 @@ fi
 # install runtime by mise
 if type mise > /dev/null 2>&1; then
   mise install
-else
-  echo "mise command not found"
 fi
 
 # change default shell

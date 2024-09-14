@@ -27,6 +27,15 @@ if [[ "${OSTYPE}" == linux* ]]; then
   sudo chattr +i /etc/resolv.conf
 fi
 
+# fetch zsh plugins
+if [[ ! -e "${HOME}/.config/zsh/plugin" ]]; then
+  mkdir -p "${HOME}/.config/zsh/plugin"
+  git clone https://github.com/zsh-users/zsh-completions "${HOME}/.config/zsh/plugin/zsh-completions"
+  git clone https://github.com/zsh-users/zsh-autosuggestions "${HOME}/.config/zsh/plugin/zsh-autosuggestions"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting "${HOME}/.config/zsh/plugin/zsh-syntax-highlighting"
+  git clone https://github.com/zsh-users/zsh-history-substring-search "${HOME}/.config/zsh/plugin/zsh-history-substring-search"
+fi
+
 # deploy dotfiles
 if [[ -e "${HOME}/work/github.com/ymkz/dotfiles" ]]; then
   mkdir -p "${HOME}/.config/git"
@@ -48,15 +57,6 @@ if [[ -e "${HOME}/work/github.com/ymkz/dotfiles" ]]; then
   ln -nfs "${HOME}/work/github.com/ymkz/dotfiles/aqua/aqua.yaml" "${HOME}/.config/aquaproj-aqua/aqua.yaml"
 fi
 
-# fetch zsh plugins
-if [[ ! -e "${HOME}/.config/zsh/plugin" ]]; then
-  mkdir -p "${HOME}/.config/zsh/plugin"
-  git clone https://github.com/zsh-users/zsh-completions "${HOME}/.config/zsh/plugin/zsh-completions"
-  git clone https://github.com/zsh-users/zsh-autosuggestions "${HOME}/.config/zsh/plugin/zsh-autosuggestions"
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting "${HOME}/.config/zsh/plugin/zsh-syntax-highlighting"
-  git clone https://github.com/zsh-users/zsh-history-substring-search "${HOME}/.config/zsh/plugin/zsh-history-substring-search"
-fi
-
 export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
 export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:${PATH}"
 
@@ -67,8 +67,10 @@ if ! type aqua > /dev/null 2>&1; then
 fi
 
 # install runtime by mise
-if ! type mise > /dev/null 2>&1; then
-  "${HOME}/.local/share/aquaproj-aqua/bin/mise" install
+if type mise > /dev/null 2>&1; then
+  mise install
+else
+  echo "mise command not found"
 fi
 
 # change default shell

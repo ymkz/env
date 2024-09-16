@@ -11,7 +11,7 @@ packages:
   - name: BurntSushi/ripgrep@14.1.0
   - name: itchyny/gojq@v0.12.16
   - name: starship/starship@v1.20.1
-  - name: kubernetes/kubectl@v1.31.0
+  - name: kubernetes/kubectl@v1.31.1
   - name: kubernetes/minikube@v1.33.1
   - name: ahmetb/kubectx@v0.9.5
   - name: ahmetb/kubectx/kubens@v0.9.5

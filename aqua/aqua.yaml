@@ -16,7 +16,7 @@ packages:
   - name: BurntSushi/ripgrep@14.1.1
   - name: itchyny/gojq@v0.12.16
   - name: joerdav/xc@v0.8.0
-  - name: go-task/task@v3.39.0
+  - name: go-task/task@v3.39.2
   - name: sqlc-dev/sqlc@v1.27.0
   - name: kubernetes/kubectl@v1.31.1
   - name: kubernetes/minikube@v1.34.0

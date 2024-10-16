@@ -12,7 +12,7 @@ packages:
   - name: x-motemen/ghq@v1.6.2
   - name: junegunn/fzf@v0.55.0
   - name: eza-community/eza@v0.20.2
-  - name: koki-develop/gat@v0.18.0
+  - name: koki-develop/gat@v0.19.1
   - name: BurntSushi/ripgrep@14.1.1
   - name: itchyny/gojq@v0.12.16
   - name: joerdav/xc@v0.8.0

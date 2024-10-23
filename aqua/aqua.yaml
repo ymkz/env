@@ -24,4 +24,4 @@ packages:
   - name: ahmetb/kubectx/kubens@v0.9.5
   - name: stern/stern@v1.31.0
   # - name: k1LoW/runn@v0.120.0
-  # - name: k1LoW/tbls@v1.78.0
+  # - name: k1LoW/tbls@v1.78.1

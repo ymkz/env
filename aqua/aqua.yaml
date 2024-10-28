@@ -20,7 +20,7 @@ packages:
   - name: joerdav/xc@v0.8.0
   - name: go-task/task@v3.39.2
   - name: sqlc-dev/sqlc@v1.27.0
-  - name: kubernetes/kubectl@v1.31.1
+  - name: kubernetes/kubectl@v1.31.2
   - name: kubernetes/minikube@v1.34.0
   - name: ahmetb/kubectx@v0.9.5
   - name: ahmetb/kubectx/kubens@v0.9.5

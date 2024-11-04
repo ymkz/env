@@ -1,5 +1,5 @@
 [tools]
-node = "20"
+node = "22"
 java = "23"
 
 "npm:pnpm" = "latest"

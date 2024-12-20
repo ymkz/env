@@ -20,9 +20,9 @@ packages:
   - name: stateful/runme@v3.10.1
   - name: k1LoW/runn@v0.124.0
   # - name: k1LoW/tbls@v1.79.4
-  - name: sqlc-dev/sqlc@v1.27.0
-  - name: kubernetes/kubectl@v1.32.0
-  - name: kubernetes/minikube@v1.34.0
-  - name: ahmetb/kubectx@v0.9.5
-  - name: ahmetb/kubectx/kubens@v0.9.5
-  - name: stern/stern@v1.31.0
+  # - name: sqlc-dev/sqlc@v1.27.0
+  # - name: kubernetes/kubectl@v1.32.0
+  # - name: kubernetes/minikube@v1.34.0
+  # - name: ahmetb/kubectx@v0.9.5
+  # - name: ahmetb/kubectx/kubens@v0.9.5
+  # - name: stern/stern@v1.31.0

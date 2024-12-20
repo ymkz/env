@@ -2,8 +2,8 @@ alias cd-="cd -"
 alias cds="cd ~/work"
 alias cds="cd ~/sandbox"
 
-alias deps="cat package.json | gojq -r '.dependencies | keys[]' | tr '\n' ' '"
-alias devdeps="cat package.json | gojq -r '.devDependencies | keys[]' | tr '\n' ' '"
+alias deps="cat package.json | jq -r '.dependencies | keys[]' | tr '\n' ' '"
+alias devdeps="cat package.json | jq -r '.devDependencies | keys[]' | tr '\n' ' '"
 
 if type gat > /dev/null; then
   alias cat="gat --theme catppuccin-frappe"

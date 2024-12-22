@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
 
-autoload -Uz compinit; compinit
-autoload -Uz colors; colors
-
 zstyle ':completion::complete:*' use-cache true
 zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -59,19 +56,24 @@ export PATH="${HOME}/.local/bin:${PATH}"
 
 typeset -U path PATH
 
+fpath+=(${XDG_DATA_HOME}/zsh/pure)
+
 eval "$(mise activate zsh)"
-eval "$(starship init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
 
 source "${XDG_CONFIG_HOME}/zsh/alias.zsh"
 source "${XDG_CONFIG_HOME}/zsh/function.zsh"
-source "${XDG_CONFIG_HOME}/zsh/plugin/zsh-completions/zsh-completions.plugin.zsh"
-source "${XDG_CONFIG_HOME}/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
-source "${XDG_CONFIG_HOME}/zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
-source "${XDG_CONFIG_HOME}/zsh/plugin/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"
+source "${XDG_DATA_HOME}/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+source "${XDG_DATA_HOME}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 
 zle -N fzf_ghq
 bindkey '^g' fzf_ghq
 
 zle -N fzf_switch
 bindkey '^b' fzf_switch
+
+autoload -Uz compinit; compinit
+autoload -Uz colors; colors
+autoload -U promptinit; promptinit
+
+prompt pure

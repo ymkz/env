@@ -16,7 +16,6 @@ packages:
   - name: jqlang/jq@jq-1.7.1
   - name: sharkdp/fd@v10.2.0
   - name: dundee/gdu@v5.29.0
-  - name: sxyazi/yazi@v0.4.1
   - name: stateful/runme@v3.10.1
   - name: k1LoW/runn@v0.124.0
   # - name: k1LoW/tbls@v1.79.4

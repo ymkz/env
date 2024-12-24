@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 zstyle ':completion::complete:*' use-cache true
-zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 
@@ -50,13 +49,18 @@ export FZF_DEFAULT_OPTS=" \
 --height 40% --ansi --cycle --reverse --select-1 --exit-0 --bind=tab:down --bind=btab:up"
 
 export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
+export AQUA_ROOT_DIR=${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua
 
-export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:${PATH}"
-export PATH="${HOME}/.local/bin:${PATH}"
+path+=(
+  "${AQUA_ROOT_DIR}/bin"
+  "${HOME}/.local/bin"
+)
+
+fpath+=(
+  "${XDG_DATA_HOME}/zsh/pure"
+)
 
 typeset -U path PATH
-
-fpath+=(${XDG_DATA_HOME}/zsh/pure)
 
 eval "$(mise activate zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
@@ -72,8 +76,8 @@ bindkey '^g' fzf_ghq
 zle -N fzf_switch
 bindkey '^b' fzf_switch
 
-autoload -Uz compinit; compinit
 autoload -Uz colors; colors
-autoload -U promptinit; promptinit
+autoload -Uz compinit; compinit
+autoload -Uz promptinit; promptinit
 
 prompt pure

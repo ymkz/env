@@ -4,6 +4,7 @@ java = "21"
 
 "npm:pnpm" = "latest"
 "npm:@antfu/ni" = "latest"
+"npm:local-web-server" = "latest"
 "npm:npm-check-updates" = "latest"
 
 [settings]

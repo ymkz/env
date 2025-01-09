@@ -1,6 +1,7 @@
 [tools]
 node = "22"
 java = "21"
+quarkus = "latest"
 
 "npm:pnpm" = "latest"
 "npm:@antfu/ni" = "latest"
